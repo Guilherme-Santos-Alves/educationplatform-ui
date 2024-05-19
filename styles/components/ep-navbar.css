@@ -35,13 +35,20 @@
     color: var(--ep-color-purple);
 }
 
-.ed-navbar> .nav-content> .login> .login-btn{
+.ed-navbar> .nav-content> .login{
     background-color: var(--ep-color-purple);
     margin-left: 100px;
     height: 40px;
     width: 100px;
     border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.ed-navbar> .nav-content> .login> .login-btn{
     font-family: var(--ep-navbar-font);
     color: var(--ep-color-gray-lighter);
     font-size: 16px;
+    padding: 10px 30px;
+    text-decoration: none;
 }

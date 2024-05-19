@@ -5,6 +5,7 @@
     display: grid;
     grid-template-columns: 1000px auto;
     align-items: center;
+    width: 100%;
 }
 
 .who-we-are> .about> .content{
@@ -24,28 +25,18 @@
     margin-bottom: 20px;
 }
 
-.who-we-are> .perfil> .personal-data{
-    display: grid;
-    justify-content: center;
-    grid-template-columns: auto auto;
-    align-items: center;
-    
-}
 
-.who-we-are> .perfil> .personal-data> .name> h2{
-    display: grid;
+
+.who-we-are> .perfil> .personal-data> h2{
+    display: flex;
     justify-content: center;
     color: var(--ep-color-gray-lighter);
-    font-size: 25px;
+    font-size: 30px;
     font-family: var(--ep-surname-font);
-    justify-content: flex-start;
 }
 
-.who-we-are> .perfil> .personal-data> .name> h1{
-    display: grid;
+.who-we-are> .perfil> .personal-data{
     justify-content: center;
-    margin-top: 10px;
-    color: var(--ep-color-gray-lighter);
-    font-size: 35px;
-    font-family: var(--ep-name-font);
+    display: grid;
+
 }

@@ -19,6 +19,7 @@
 
     <link rel="stylesheet" href="../styles/components/ep-navbar.css">
     <link rel="stylesheet" href="../styles/components/who-we-are.css">
+    <link rel="stylesheet" href="../styles/components/to-learn.css">
 
     <link rel="stylesheet" href="../styles/generic/reset.css">
     <link rel="stylesheet" href="../styles/generic/box-sizing.css">
@@ -29,8 +30,59 @@
 </head>
 <body>
 
-    <section id="aprender" style="height: 500px; margin-top: 80px; background-color: #8543e2;">
-        <h2>aprender</h2>
+    <section class="to-learn" id="aprender">
+        <div class="to-learn-content">
+            <div class="title">
+                <h1>
+                    O que você vai aprender aqui!
+                </h1>
+            </div>
+            <div class="topics">
+                <div class="topic">
+                    <h2>Programação Orientada a Objetos</h2>
+                    <ul>
+                        <li>Classes e Objetos</li>
+                        <li>Herança e Polimorfismo</li>
+                        <li>Encapsulamento e Abstração</li>
+                    </ul>
+                </div>
+                <div class="topic">
+                    <h2>Criação de APIs RESTful</h2>
+                    <ul>
+                        <li>Configuração e Implementação de APIs</li>
+                        <li>Consumo de APIs com C#</li>
+                    </ul>
+                </div>
+                <div class="topic">
+                    <h2>LINQ (Language Integrated Query)</h2>
+                    <ul>
+                        <li>Consultas a Coleções</li>
+                        <li>Operações de Filtragem, Projeção e Agrupamento</li>
+                    </ul>
+                </div>
+                <div class="topic">
+                    <h2>Integração com Bancos de Dados</h2>
+                    <ul>
+                        <li>Introdução ao Entity Framework</li>
+                        <li>Operações CRUD (Create, Read, Update, Delete)</li>
+                    </ul>
+                </div>
+                <div class="topic">
+                    <h2>Testes Unitários</h2>
+                    <ul>
+                        <li>Introdução aos Testes Unitários</li>
+                        <li>Ferramentas e Frameworks de Teste</li>
+                    </ul>
+                </div>
+                <div class="topic">
+                    <h2>Boas Práticas de Desenvolvimento</h2>
+                    <ul>
+                        <li>Padrões de Projeto (Design Patterns)</li>
+                        <li>Práticas de Código Limpo e Manutenível</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
         
     </section>
 
@@ -42,7 +94,7 @@
         <h2>link</h2>
     </section>
 
-    <section class="who-we-are" id="somos" style="height: 500px;">
+    <section class="who-we-are" id="who-we-are" style="height: 500px;">
         <div class="about">
             <div class="content">
                 <div class="title">
@@ -56,10 +108,7 @@
         <div class="perfil">
             <div class="personal-data">
                 <img src="https://png.pngtree.com/png-vector/20231019/ourmid/pngtree-crossed-arm-pose-png-image_10263689.png" alt="">
-                <div class="name">
-                    <h1>Carlos</h1>
-                    <h2>Mendes</h2>
-                </div>
+                <h2>Carlos Mendes</h2>
                 
             </div>
             <div class="background">
@@ -82,11 +131,11 @@
                 <a href="#aprender">O que vou aprender?</a>
                 <a href="#curso">Adquirir o curso</a>
                 <a href="#link">Avaliações</a>
-                <a href="#somos">Quem Somos?</a>
+                <a href="#who-we-are">Quem Somos?</a>
                 <a href="#contato">Contato</a>
             </ul>
             <div class="login">
-                <button class="login-btn">Login</button>
+                <a class="login-btn" href="">Login</a>
             </div>
         </nav>
     </div>

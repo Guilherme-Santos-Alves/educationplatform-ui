@@ -1,0 +1,51 @@
+.to-learn{
+    background-color: var(--ep-color-purple);
+    height: 500px;
+    margin-top: var(--ep-navbar-size);
+    font-family: var(--ep-surname-font);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.to-learn> .to-learn-content{
+    margin: 0px 20px 20px 20px;
+    padding-top: 20px;
+    background-color: var(--ep-color-gray-lighter);
+    border-radius: 50px;
+    padding: 32px;
+    display: flex;
+}
+
+.to-learn> .to-learn-content> .title{
+    display: flex;
+    width: 310px;
+}
+.to-learn> .to-learn-content> .title> h1{
+    font-size: 40px;
+    margin-bottom: 10px;
+    color: var(--ep-color-purple);
+    margin-right: 40px;
+    display: flex;
+    align-items: center;
+}
+
+.to-learn> .to-learn-content> .topics{
+    display: grid;
+    grid-template-columns: 300px 300px 300px;
+    grid-template-rows: auto;
+    gap: 10px;
+}
+
+.to-learn> .to-learn-content> .topics> .topic{
+    padding-left: 20px;
+}
+
+.to-learn> .to-learn-content> .topics> .topic> h2{
+    font-size: 16px;
+    color: var(--ep-color-purple);
+}
+
+.to-learn> .to-learn-content> .topics> .topic> ul> li{
+    font-size: 17px;
+}
