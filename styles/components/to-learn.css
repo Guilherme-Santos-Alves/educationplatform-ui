@@ -21,6 +21,7 @@
     display: flex;
     width: 310px;
 }
+
 .to-learn> .to-learn-content> .title> h1{
     font-size: 40px;
     margin-bottom: 10px;
@@ -48,4 +49,74 @@
 
 .to-learn> .to-learn-content> .topics> .topic> ul> li{
     font-size: 17px;
+}
+
+
+@media (min-width: 320px) and (max-width: 450px) {
+    .to-learn{
+        max-width: 450px;
+        display: flex;
+        height: auto;
+        justify-content: center;
+    }
+
+    .to-learn> .to-learn-content> .topics{
+        display: block;
+    }
+
+    .to-learn> .to-learn-content> .topics> .topic{
+        margin-bottom: 10px;
+    }
+
+    .to-learn> .to-learn-content> .topics> .topic> h2{
+        font-size: 16px;
+    }
+
+    .to-learn> .to-learn-content{
+        margin: 20px 20px 20px 20px;
+        padding-top: 20px;
+        background-color: var(--ep-color-gray-lighter);
+        border-radius: 50px;
+        padding: 32px;
+        display: block;
+        max-width: 320px;
+    }
+}
+
+
+
+@media (min-width: 650px) and (max-width: 800px){
+    .to-learn{
+        max-width: 800px;
+        display: grid;
+        height: auto;
+        justify-content: center;
+        background-color: red;
+    }
+
+    .to-learn> .to-learn-content> .title{
+        width: auto;
+    }
+
+    .to-learn> .to-learn-content> .topics{
+        display: block;
+    }
+
+    .to-learn> .to-learn-content> .topics> .topic{
+        margin-bottom: 10px;
+    }
+
+    .to-learn> .to-learn-content> .topics> .topic> h2{
+        font-size: 16px;
+    }
+
+    .to-learn> .to-learn-content{
+        margin: 20px 20px 20px 20px;
+        padding-top: 20px;
+        background-color: var(--ep-color-gray-lighter);
+        border-radius: 50px;
+        padding: 32px;
+        display: block;
+        width: 700px;
+    }
 }
