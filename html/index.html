@@ -7,6 +7,7 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Passion+One:wght@400;700;900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Patua+One&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Bree+Serif&display=swap" rel="stylesheet">
 
@@ -21,6 +22,8 @@
     <link rel="stylesheet" href="../styles/components/who-we-are.css">
     <link rel="stylesheet" href="../styles/components/to-learn.css">
     <link rel="stylesheet" href="../styles/components/buy-course.css">
+    <link rel="stylesheet" href="../styles/components/costumer-reviews.css">
+    <link rel="stylesheet" href="../styles/components/about-course.css">
 
     <link rel="stylesheet" href="../styles/generic/reset.css">
     <link rel="stylesheet" href="../styles/generic/box-sizing.css">
@@ -30,6 +33,49 @@
     <script src="../js/index.js"></script>
 </head>
 <body>
+
+    <div class="ed-navbar">
+        <nav class="nav-content">
+
+            <ul class="nav-links">
+                <a href="#about-course">Sobre o curso</a>
+                <a href="#aprender">O que vou aprender?</a>
+                <a href="#curso">Adquirir o curso</a>
+                <a href="#link">Avaliações</a>
+                <a href="#who-we-are">Quem Somos?</a>
+
+            </ul>
+            <div class="login">
+                <a class="login-btn" href="">Área do aluno</a>
+            </div>
+        </nav>
+    </div>
+
+    <section class="about-course" id="about-course">
+        <div class="about-course-content">
+            <div class="course-intro">
+                <h1 class="title">Há 5 anos no mercado!</h1>
+                <h2 class="subtitle">Aprenda com quem entende do assunto!</h2 class="subtitle">
+                <p class="course-description">
+                    Transforme sua carreira com nosso curso de C#! Aprenda do básico ao avançado com projetos reais e instrutores experientes. Junte-se a mais de 10 mil alunos e destaque-se no mercado de desenvolvimento.
+                </p>
+            </div>
+            <div class="course-statistics">
+                <span>
+                    <h2>+8 mil certificados emitidos!</h2>   
+                </span>
+                <span>
+                    <h2>Top #12 na categoria cursos online 2023</h2>
+                </span>
+                <span>
+                    <h2>83% dos alunos tiveram um aumento salarial</h2>
+                </span>
+                <span>
+                    <h2>+600 alunos conseguiram seu primeiro emprego</h2>
+                </span>
+            </div>
+        </div>
+    </section>
 
     <section class="to-learn" id="aprender">
         <div class="to-learn-content">
@@ -98,13 +144,53 @@
                 <h2>R$1.199,00</h2>
             </span>
             <div class="to-buy">
-                <a href="https:youtube.com" class="buy-btn">Inscrever-se</a>
+                <a href="https:chrome.com" class="buy-btn">Inscrever-se</a>
             </div>
         </div>
     </section>
 
-    <section id="link" style="height: 500px; background-color: #8543e2; padding: 20px;">
-        <h2>link</h2>
+    <section class="costumer-reviews" id="link">
+        <div class="costumer-reviews-content">
+            <div class="card-review">
+                <div class="personal-data">
+                    <img class="photo" src="https://img.freepik.com/fotos-gratis/pessoa-lendo-mensagens-de-celular_23-2150409979.jpg?t=st=1716506245~exp=1716509845~hmac=46c527b6725c17489cb7619528785f0b3d7b8a768d9548fb114c21fe13cee1d9&w=360" alt="">
+                    <div class="data">
+                        <span class="name">Eduardo Silva</span>
+                        <span class="role">Dev Júnior</span>
+                    </div>
+                </div>
+                <span>"</span>    
+                <p>
+                    O curso de C# foi uma experiência fantástica! A maneira como os conceitos foram explicados e a praticidade dos exercícios realmente me ajudaram a entender a programação. Recomendo para todos que querem aprender de verdade!
+                </p>
+            </div>
+            <div class="card-review">
+                <div class="personal-data">
+                    <img class="photo" src="https://img.freepik.com/fotos-gratis/homem-sorridente-de-vista-frontal-posando-para-cv_23-2149927614.jpg?t=st=1716506308~exp=1716509908~hmac=9abd32eef697fc2020375b49c0358d5d4bc0f40020f71c537c2bc685308d5766&w=360" alt="">
+                    <div class="data">
+                        <span class="name">Bruno Gomes</span>
+                        <span class="role">Dev Pleno</span>
+                    </div>
+                </div>
+                <span>"</span>    
+                <p>
+                    O curso de C# foi uma experiência fantástica! A maneira como os conceitos foram explicados e a praticidade dos exercícios realmente me ajudaram a entender a programação. Recomendo para todos que querem aprender de verdade!
+                </p>
+            </div>
+            <div class="card-review">
+                <div class="personal-data">
+                    <img class="photo" src="https://img.freepik.com/fotos-gratis/mulher-atraente-com-sorriso-encantador_176532-10368.jpg?t=st=1716506651~exp=1716510251~hmac=ded3035ae2fa9106388354624112cdfdccf09a659285f5e5389f77d99df49bce&w=996" alt="">
+                    <div class="data">
+                        <span class="name">Juliana Queiroz</span>
+                        <span class="role">Dev .NET</span>
+                    </div>
+                </div>
+                <span>"</span>   
+                <p>
+                    O curso de C# foi uma experiência fantástica! A maneira como os conceitos foram explicados e a praticidade dos exercícios realmente me ajudaram a entender a programação. Recomendo para todos que querem aprender de verdade!
+                </p> 
+            </div>       
+        </div>
     </section>
 
     <section class="who-we-are" id="who-we-are" style="height: 500px;">
@@ -130,28 +216,9 @@
         </div>
     </section>
 
-    <section id="contato" style="height: 500px; background-color: #8543e2;">
+    <section id="contato" style="height: 500px; background-color: #1C1429;">
         <h2>contato</h2>
     </section>
-
-
-
-
-    <div class="ed-navbar">
-        <nav class="nav-content">
-
-            <ul class="nav-links">
-                <a href="#aprender">O que vou aprender?</a>
-                <a href="#curso">Adquirir o curso</a>
-                <a href="#link">Avaliações</a>
-                <a href="#who-we-are">Quem Somos?</a>
-                <a href="#contato">Contato</a>
-            </ul>
-            <div class="login">
-                <a class="login-btn" href="">Login</a>
-            </div>
-        </nav>
-    </div>
 
 </body>
 </html>

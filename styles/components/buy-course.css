@@ -2,7 +2,7 @@
     display: grid;
     align-items: center;
     height: 500px;
-    background-color: var(--ep-color-dark);
+    background-color: var(--ep-color-purple);
 }
 
 .buy-course> .buy-course-content{
@@ -35,7 +35,7 @@
     font-size: 30px;
     display: grid;
     justify-content: center;
-    margin-top: 40px;
+    margin: 40px 0px;
 }
 
 .buy-course> .buy-course-content> .to-buy{
@@ -55,7 +55,9 @@
     height: 60px;
     width: 400px;
     border-radius: 20px;
-    margin-top: 40px;
     transition: ease 0.5s;
+}
+.buy-course> .buy-course-content> .to-buy> .buy-btn:hover{
+    background-color: var(--ep-color-purple-light);
 }
 

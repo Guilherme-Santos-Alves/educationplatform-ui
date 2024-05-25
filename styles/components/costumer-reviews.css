@@ -1,0 +1,54 @@
+.costumer-reviews{
+    background-color: var(--ep-color-dark);
+    height: 500px;
+    padding: 50px;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+}
+
+.costumer-reviews> .costumer-reviews-content{
+    display: grid;
+    grid-template-columns: 350px 350px 350px;
+    height: 400px;
+    gap: 20px;
+}
+
+.costumer-reviews> .costumer-reviews-content> .card-review{
+    background-color: var(--ep-color-gray-lighter);
+    border-radius: 50px;
+    transition: 0.2s;
+    padding: 20px;
+    font-family: var(--ep-surname-font);
+    height: 400px;
+    width: 350px;
+}
+
+.costumer-reviews> .costumer-reviews-content> .card-review> span{
+    color: var(--ep-color-purple);
+    font-size: 70px;
+    font-family: var(--ep-big-font);
+    display: flex;
+    height: 50px;
+}
+
+.costumer-reviews> .costumer-reviews-content> .card-review> .personal-data{
+    display: grid;
+    grid-template-columns: auto auto;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+    height: auto;
+    bottom: 0;
+}
+
+.costumer-reviews> .costumer-reviews-content> .card-review> .personal-data> .photo{
+    height: 60px;
+    width: 60px;
+    border-radius: 50px;
+}
+
+.costumer-reviews> .costumer-reviews-content> .card-review> .personal-data> .data{
+    display: grid;
+    align-items: baseline;
+}

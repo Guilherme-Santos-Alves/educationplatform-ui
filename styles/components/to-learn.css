@@ -1,7 +1,6 @@
 .to-learn{
-    background-color: var(--ep-color-purple);
+    background-color: var(--ep-color-dark);
     height: 500px;
-    margin-top: var(--ep-navbar-size);
     font-family: var(--ep-surname-font);
     display: flex;
     align-items: center;
