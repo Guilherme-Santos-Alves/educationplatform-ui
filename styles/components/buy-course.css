@@ -12,7 +12,6 @@
     background-color: var(--ep-color-gray-lighter);
     padding: 30px;
     border-radius: 50px;
-
 }
 
 .buy-course> .buy-course-content> .title> h1{
@@ -21,12 +20,12 @@
     font-size: 40px;
 }
 
-.buy-course> .buy-course-content> .title> h2{
+.buy-course> .buy-course-content> .title> .subtitle{
     color: var(--ep-color-purple);
     font-family: var(--ep-surname-font);
     display: flex;
     justify-content: center;
-    font-size: 30px;
+    font-size: 40px;
 }
 
 .buy-course> .buy-course-content> .value{
@@ -36,6 +35,11 @@
     display: grid;
     justify-content: center;
     margin: 40px 0px;
+}
+
+.buy-course> .buy-course-content> .value> h2{
+    display: flex;
+    justify-content: center;
 }
 
 .buy-course> .buy-course-content> .to-buy{
@@ -48,11 +52,11 @@
     text-decoration: none;
     color: var(--ep-color-gray-lighter);
     font-family: var(--ep-name-font);
-    font-size: 20px;
+    font-size: 22px;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 60px;
+    height: 80px;
     width: 400px;
     border-radius: 20px;
     transition: ease 0.5s;
