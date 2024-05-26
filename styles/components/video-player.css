@@ -1,0 +1,39 @@
+.video-player{
+    background-color: red;
+}
+
+.video-player> .video-header{
+    display: flex;
+    justify-content: space-between;
+    width: var(--ep-video-player-width);
+    height: 60px;
+    align-items: center;
+    background-color: var(--ep-color-dark);
+    padding: 0px 20px;
+}
+
+.video-player> .video-header> .video-title{
+    display: flex;
+    font-size: 20px;
+    gap: 20px;
+}
+
+.video-player> .video-header> .completed-lesson{
+    background-color: var(--ep-color-purple);
+    height: 40px;
+    cursor: pointer;
+    width: 150px;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: 600;
+    transition: ease 0.5s;
+}
+.video-player> .video-header> .completed-lesson:hover{
+    background-color: var(--ep-color-purple-light);
+}
+
+.video-player> .embed-video{
+    width: var(--ep-video-player-width);
+    height: var(--ep-video-player-height);
+    background-color: black;
+}

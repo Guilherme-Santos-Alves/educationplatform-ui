@@ -1,0 +1,5 @@
+.watch-videos{
+    margin-top: var(--ep-navbar-home-size);
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+}

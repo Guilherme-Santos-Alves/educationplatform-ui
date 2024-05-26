@@ -1,0 +1,65 @@
+.ep-navbar-home{
+    width: 100%;
+    background-color: var(--ep-color-gray-dark);
+    top: 0;
+    position: fixed;
+    height: var(--ep-navbar-home-size);
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+}
+
+.ep-navbar-home> .logo> img{
+    height: 5rem;
+}
+
+.ep-navbar-home> .nav-content> .user-photo> img{
+    height: 60px;
+    width: 60px;
+    border-radius: 50px;
+    cursor: pointer;
+}
+
+.nav-content{
+    display: flex;
+    align-items: center;
+    gap: 50px;
+}
+
+.ep-navbar-home> .nav-content> .search-content{
+    background-color: var(--ep-color-purple);
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+    font-family: var(--ep-footer-font);
+}
+
+.ep-navbar-home> .nav-content> .search-content> input,
+.ep-navbar-home> .nav-content> .search-content> button{
+    color: var(--ep-color-gray-lighter);
+    background-color: transparent;
+    height: 40px;
+    border: none;
+    text-decoration: none;
+    font-size: 16px;
+    outline: none;
+    padding: 10px 15px;
+    font-family: var(--ep-footer-font);
+}
+
+.ep-navbar-home> .nav-content> .search-content> button{
+    cursor: pointer;
+    padding-left: 0px;
+}
+
+.ep-navbar-home> .nav-content> .notifications{
+    background-color: transparent;
+    color: var(--ep-color-gray-lighter);
+    font-size: 22px;
+    cursor: pointer;
+}
