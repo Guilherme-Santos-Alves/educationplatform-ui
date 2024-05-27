@@ -19,7 +19,7 @@
     border-radius: 50px;
     transition: 0.2s;
     padding: 20px;
-    font-family: var(--ep-surname-font);
+    font-family: var(--ep-secondary-font);
     height: 400px;
     width: 350px;
 }

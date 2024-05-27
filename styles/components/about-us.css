@@ -1,4 +1,4 @@
-.who-we-are{
+.about-us{
     background-color: var(--ep-color-purple);
     font-family: var(--ep-navbar-font);
     padding: 20px;
@@ -8,7 +8,7 @@
     width: 100%;
 }
 
-.who-we-are> .about> .content{
+.about-us> .about> .content{
     background-color: white;
     border-radius: 50px;
     vertical-align: middle;
@@ -19,7 +19,7 @@
     margin: 0 auto;
 }
 
-.who-we-are> .about> .content> .title{
+.about-us> .about> .content> .title{
     color: var(--ep-color-purple);
 
     margin-bottom: 20px;
@@ -27,15 +27,15 @@
 
 
 
-.who-we-are> .perfil> .personal-data> h2{
+.about-us> .perfil> .personal-data> h2{
     display: flex;
     justify-content: center;
     color: var(--ep-color-gray-lighter);
     font-size: 30px;
-    font-family: var(--ep-surname-font);
+    font-family: var(--ep-secondary-font);
 }
 
-.who-we-are> .perfil> .personal-data{
+.about-us> .perfil> .personal-data{
     justify-content: center;
     display: grid;
 

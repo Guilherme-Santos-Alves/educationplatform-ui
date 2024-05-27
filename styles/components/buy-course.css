@@ -16,13 +16,13 @@
 
 .buy-course> .buy-course-content> .title> h1{
     color: var(--ep-color-purple);
-    font-family: var(--ep-surname-font);
+    font-family: var(--ep-secondary-font);
     font-size: 40px;
 }
 
 .buy-course> .buy-course-content> .title> .subtitle{
     color: var(--ep-color-purple);
-    font-family: var(--ep-surname-font);
+    font-family: var(--ep-secondary-font);
     display: flex;
     justify-content: center;
     font-size: 40px;
@@ -30,7 +30,7 @@
 
 .buy-course> .buy-course-content> .value{
     color: var(--ep-color-dark);
-    font-family: var(--ep-surname-font);
+    font-family: var(--ep-secondary-font);
     font-size: 30px;
     display: grid;
     justify-content: center;
@@ -51,7 +51,7 @@
     background-color: var(--ep-color-purple);
     text-decoration: none;
     color: var(--ep-color-gray-lighter);
-    font-family: var(--ep-name-font);
+    font-family: var(--ep-secondary-big-font);
     font-size: 22px;
     display: flex;
     justify-content: center;

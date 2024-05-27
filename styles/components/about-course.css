@@ -5,7 +5,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    font-family: var(--ep-surname-font);
+    font-family: var(--ep-secondary-font);
 }
 
 .about-course> .about-course-content{
@@ -21,13 +21,13 @@
 
 .course-intro> .title{
     color: var(--ep-color-purple);
-    font-family: var(--ep-surname-font);
+    font-family: var(--ep-secondary-font);
     font-size: 50px;
 }
 
 .course-intro> .subtitle{
     color: var(--ep-color-purple);
-    font-family: var(--ep-surname-font);
+    font-family: var(--ep-secondary-font);
     font-size: 20px;
 }
 
@@ -46,7 +46,7 @@
 }
 
 .course-description{
-    font-family: var(--ep-surname-font);
+    font-family: var();
     font-size: 22px;
     background-color: var(--ep-color-gray-lighter);
     color: var(--ep-color-dark);

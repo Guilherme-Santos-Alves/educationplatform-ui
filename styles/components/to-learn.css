@@ -1,7 +1,7 @@
 .to-learn{
     background-color: var(--ep-color-dark);
     height: 500px;
-    font-family: var(--ep-surname-font);
+    font-family: var(--ep-secondary-font);
     display: flex;
     align-items: center;
     justify-content: center;

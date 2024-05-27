@@ -39,6 +39,10 @@
     font-family: var(--ep-footer-font);
 }
 
+.ep-navbar-home> .nav-content> .search-content:focus-within{
+    border: 2px solid var(--ep-color-gray-lighter);
+}
+
 .ep-navbar-home> .nav-content> .search-content> input,
 .ep-navbar-home> .nav-content> .search-content> button{
     color: var(--ep-color-gray-lighter);
