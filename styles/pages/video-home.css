@@ -1,5 +1,50 @@
 .video-home{
     margin-top: var(--ep-navbar-home-size);
     display: grid;
-    grid-template-columns: 1fr 3fr;
+    grid-template-columns: 100px auto 500px;
+    height: 600px;
+}
+
+.video-home> .module-lesson-list{
+    background-color: var(--ep-color-dark);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px ;
+    width: 100%;
+    overflow-y: auto;
+}
+
+.video-home> .module-lesson-list> .module-lesson{
+    display: flex;
+    align-items: center;
+    transition: all 0.5s;
+    cursor: pointer;
+}
+
+.video-home> .module-lesson-list> .module-lesson:hover{
+    background-color: rgba(255, 255, 255, 0.047);
+}
+
+.video-home> .module-lesson-list> .module-lesson> .lesson-title{
+    font-size: 16px;
+    padding: 0px 5px;
+    display: flex;
+    align-items: center;
+    font-weight: 400;
+}
+
+.video-home> .module-lesson-list> .module-lesson> .lesson-thumb{
+    width: 100px;
+    height: 60px;
+    border-radius: 12px;
+}
+  
+body ::-webkit-scrollbar-track {
+
+    background-color: var(--ep-color-dark);
+}
+
+body ::-webkit-scrollbar-thumb {
+    background: var(--ep-color-purple);
 }
