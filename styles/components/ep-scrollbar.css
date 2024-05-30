@@ -1,0 +1,17 @@
+::-webkit-scrollbar {
+    width: 15px; 
+    height: 12px; 
+}
+
+::-webkit-scrollbar-track {
+    background: var(--ep-color-gray-dark);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--ep-color-gray); 
+    border-radius: 10px; 
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--ep-color-gray-dark-light); 
+}

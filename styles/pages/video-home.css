@@ -1,12 +1,13 @@
 .video-home{
     margin-top: var(--ep-navbar-home-size);
     display: grid;
-    grid-template-columns: 100px auto 500px;
+    grid-template-columns: auto 500px;
     height: 600px;
 }
 
 .video-home> .module-lesson-list{
     background-color: var(--ep-color-dark);
+    color: var(--ep-color-gray-lighter);
     display: flex;
     flex-direction: column;
     gap: 20px;
@@ -38,13 +39,4 @@
     width: 100px;
     height: 60px;
     border-radius: 12px;
-}
-  
-body ::-webkit-scrollbar-track {
-
-    background-color: var(--ep-color-dark);
-}
-
-body ::-webkit-scrollbar-thumb {
-    background: var(--ep-color-purple);
 }

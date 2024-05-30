@@ -1,0 +1,16 @@
+.ep-sidebar{
+    background-color: red;
+    width: 80px;
+    height: calc(100vh - var(--ep-navbar-home-size));
+    float: left;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+
+}
+
+.nav-links{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
