@@ -2,7 +2,8 @@
     margin-top: var(--ep-navbar-home-size);
     display: grid;
     grid-template-columns: auto 500px;
-    height: 600px;
+    height: 500px;
+    background-color: var(--ep-color-dark);
 }
 
 .video-home> .module-lesson-list{
@@ -14,6 +15,24 @@
     padding: 20px ;
     width: 100%;
     overflow-y: auto;
+}
+
+.video-home > .module-lesson-list::-webkit-scrollbar {
+    width: 10px;
+    height: 12px;
+}
+
+.video-home > .module-lesson-list::-webkit-scrollbar-track {
+    background: var(--ep-color-gray-dark);
+}
+
+.video-home > .module-lesson-list::-webkit-scrollbar-thumb {
+    background: var(--ep-color-purple); 
+    border-radius: 10px; 
+}
+
+.video-home > .module-lesson-list::-webkit-scrollbar-thumb:hover {
+    background: var(--ep-color-purple-light); 
 }
 
 .video-home> .module-lesson-list> .module-lesson{
@@ -39,4 +58,5 @@
     width: 100px;
     height: 60px;
     border-radius: 12px;
+    padding: 0px 5px 0px 0px;
 }

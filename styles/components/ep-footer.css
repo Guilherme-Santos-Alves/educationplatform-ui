@@ -9,6 +9,7 @@
     font-family: var(--ep-primary-font);
     width: 100%;
     color: var(--ep-color-neutral-40);
+    display: block;
 }
 
 .footer-link{
