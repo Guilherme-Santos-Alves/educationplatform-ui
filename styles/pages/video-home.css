@@ -23,7 +23,7 @@
 }
 
 .video-home > .module-lesson-list::-webkit-scrollbar-track {
-    background: var(--ep-color-gray-dark);
+    background: var(--ep-color-dark);
 }
 
 .video-home > .module-lesson-list::-webkit-scrollbar-thumb {

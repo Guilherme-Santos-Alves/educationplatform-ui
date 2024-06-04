@@ -86,32 +86,6 @@
     height: 20px;
 }
 
-#open-sidebar-btn{
-    position: absolute;
-    top: 30px;
-    right: -10px;
-    background-color: var(--ep-color-gray-lighter);
-    color: var(--ep-color-purple);
-    border-radius: 100%;
-    width: 20px;
-    height: 20px;
-    border: none;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 14px;
-    font-weight: bold;
-}
-
-#open-sidebar-icon{
-    transition: transform .3s ease;
-}
-
-.open-ep-sidebar #open-sidebar-icon{
-    transform: rotate(180deg);
-}
-
 .item-description{
     width: 0px;
     overflow: hidden;

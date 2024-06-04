@@ -3,7 +3,7 @@ class Nav extends HTMLElement {
         this.innerHTML = `
             <div class="ep-sidebar-content">
                 <ul id="side-itens">
-                    <li class="side-item active">
+                    <li class="side-item">
                         <a href="">
                             <i class="fa-solid fa-house"></i>
                             <span class="item-description">
@@ -29,6 +29,14 @@ class Nav extends HTMLElement {
                     </li>
                     <li class="side-item">
                         <a href="">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                            <span class="item-description">
+                                Pesquisar
+                            </span>
+                        </a>
+                    </li>
+                    <li class="side-item">
+                        <a href="">
                             <i class="fa-solid fa-medal"></i>
                             <span class="item-description">
                                 Certificados
@@ -41,10 +49,7 @@ class Nav extends HTMLElement {
                             Sair
                         </span>
                     </button>
-                </ul>
-                <button id="open-sidebar-btn">
-                    <i id="open-sidebar-icon" class="fa-solid fa-chevron-right"></i>
-                </button>
+                </ul>            
             </div>`;
     }
 }

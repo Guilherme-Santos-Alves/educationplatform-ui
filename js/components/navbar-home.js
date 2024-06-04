@@ -1,10 +1,15 @@
 class Header extends HTMLElement {
     connectedCallback(){
         this.innerHTML = `
-            <div class="logo">
-                <img src="../assets/logo/logo-ed-platform.png" alt="">
+            <div class="nav-content-left">
+                <button id="open-sidebar-btn">
+                    <i id="open-sidebar-icon" class="fa-solid fa-bars"></i>
+                </button>
+                <div class="logo">
+                    <img src="../assets/logo/logo-ed-platform.png" alt="">
+                </div>
             </div>
-            <div class="nav-content">
+            <div class="nav-content-right"> 
                 <div class="search-content">
                     <input type="text" id="search-content-input">
                     <button id="search-content-btn">
