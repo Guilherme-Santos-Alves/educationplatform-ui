@@ -28,12 +28,11 @@ class Nav extends HTMLElement {
                         </a>
                     </li>
                     <li class="side-item">
-                        <a href="">
+                        
                         <i class="fa-solid fa-magnifying-glass"></i>
-                            <span class="item-description">
-                                Pesquisar
-                            </span>
+                            <input class="item-description" id="search-content-input" type="text" placeholder="Pesquisar">
                         </a>
+  
                     </li>
                     <li class="side-item">
                         <a href="">

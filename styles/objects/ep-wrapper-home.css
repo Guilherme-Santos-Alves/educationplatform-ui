@@ -1,0 +1,4 @@
+.ep-wrapper-home{
+    margin-top: var(--ep-navbar-home-size);
+    margin-left: var(--ep-sidebar-home-size);
+}

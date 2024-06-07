@@ -1,7 +1,6 @@
 .lesson-footer{
     padding: 10px 20px;
     border-bottom: 2px solid var(--ep-color-gray);
-    margin-left: var(--ep-sidebar-home-size);
 }
 
 .lesson-footer> .lesson-footer-content{
