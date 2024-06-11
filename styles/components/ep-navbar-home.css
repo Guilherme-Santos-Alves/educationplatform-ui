@@ -12,7 +12,7 @@
     box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
 }
 
-#open-sidebar-btn{
+/* #open-sidebar-btn{
     top: 30px;
     background-color: var(--ep-color-purple);
     color: var(--ep-color-gray-lighter);
@@ -27,7 +27,8 @@
     font-size: 14px;
     font-weight: bold;
     padding: 15px;
-}
+} */
+
 .ep-navbar-home> .nav-content-left{
     display: flex;
     align-items: center;
@@ -35,7 +36,7 @@
 }
 
 .ep-navbar-home> .nav-content-left> .logo> img{
-    height: 5rem;
+    height: 7rem;
 }
 
 .ep-navbar-home> .nav-content-right> .user-photo> img{
@@ -78,6 +79,11 @@
     font-family: var(--ep-footer-font);
 }
 
+.ep-navbar-home> .nav-content-right> .search-content> input::-webkit-input-placeholder {
+    color: var(--ep-color-gray-lighter);
+    font-size: 0.88rem;
+}
+
 .ep-navbar-home> .nav-content-right> .search-content> button{
     cursor: pointer;
     padding-left: 0px;
@@ -88,10 +94,4 @@
     color: var(--ep-color-gray-lighter);
     font-size: 20px;
     cursor: pointer;
-}
-
-@media (max-width: 480px){
-    .ep-navbar-home> .nav-content-right> .search-content{
-        display: none;
-    }
 }

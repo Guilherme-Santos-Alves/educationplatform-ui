@@ -1,5 +1,5 @@
 #ep-sidebar{
-    display: flex;
+    display: var(--ep-sidebar-home-display);
     flex-direction: column;
     justify-content: space-between;
     background-color: var(--ep-color-dark);
@@ -34,6 +34,7 @@
     cursor: pointer;
     border-radius: 8px;
     font-size: 16px;
+    width: 200px;
 }
 
 .side-item.active{
@@ -73,6 +74,7 @@
     display: flex;
     font-size: 16px;
     justify-content: center;
+    width: 200px;
 }
 
 #logout-btn.active{
@@ -141,6 +143,7 @@
     border-radius: 5px;
     padding: 4px;
     border: 2px solid var(--ep-color-gray);
+    color: var(--ep-color-gray-lighter);
 }
 
 #search-content-input::-webkit-input-placeholder {

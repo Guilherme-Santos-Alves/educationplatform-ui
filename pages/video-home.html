@@ -8,7 +8,23 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
+    
+    <link rel="stylesheet" href="../styles/pages/video-home.css">
+    
     <link rel="stylesheet" href="../styles/settings/video-player.css">
+    <link rel="stylesheet" href="../styles/settings/color.css">
+    <link rel="stylesheet" href="../styles/settings/text.css">
+    <link rel="stylesheet" href="../styles/settings/navbar-home.css">
+    <link rel="stylesheet" href="../styles/settings/sidebar-home.css">
+
+    <link rel="stylesheet" href="../styles/generic/reset.css">
+    <link rel="stylesheet" href="../styles/generic/box-sizing.css">
+    <link rel="stylesheet" href="../styles/generic/auto-complete-input.css">
+
+    <link rel="stylesheet" href="../styles/base/html.css">
+
+    <link rel="stylesheet" href="../styles/objects/ep-wrapper-home-top.css">
+    <link rel="stylesheet" href="../styles/objects/ep-wrapper-home-left.css">
     
     <link rel="stylesheet" href="../styles/components/ep-navbar-home.css">
     <link rel="stylesheet" href="../styles/components/video-player.css">
@@ -17,109 +33,105 @@
     <link rel="stylesheet" href="../styles/components/ep-footer.css">
     <link rel="stylesheet" href="../styles/components/lesson-comment.css">
     <link rel="stylesheet" href="../styles/components/lesson-footer.css">
-
-    <link rel="stylesheet" href="../styles/objects/ep-wrapper-home.css">
-
-    <link rel="stylesheet" href="../styles/generic/reset.css">
-    <link rel="stylesheet" href="../styles/generic/box-sizing.css">
-
-    <link rel="stylesheet" href="../styles/base/html.css">
-    
-    <link rel="stylesheet" href="../styles/settings/color.css">
-    <link rel="stylesheet" href="../styles/settings/text.css">
-    <link rel="stylesheet" href="../styles/settings/navbar-home.css">
-    <link rel="stylesheet" href="../styles/settings/sidebar-home.css">
-
-    <link rel="stylesheet" href="../styles/pages/video-home.css">
+    <link rel="stylesheet" href="../styles/components/lesson-evaluate.css">
 
     <script src="../js/components/navbar-home.js"></script>
     <script src="../js/components/sidebar-home.js"></script>
+    <script src="../js/components/popup-lesson-evaluate.js"></script>
 </head></head>
 <body>
     <navbar-home class="ep-navbar-home"></navbar-home>
+    <popup-lesson-evaluate class="popup-lesson-evaluate" id="popup-lesson-evaluate"></popup-lesson-evaluate>
 
-    <div class="container">
-        <ep-sidebar-home class="ep-sidebar" id="ep-sidebar"></ep-sidebar-home>
 
-        <div class="ep-wrapper-home">
-            <div class="video-home">
-                <main class="video-player">
-                    <div class="embed-video">
-                        <iframe class="video" src="https://player.vimeo.com/video/952720328?badge=0&amp;autopause=0&amp;transparent=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write" title="agendamento paciente"></iframe>
-                    </div>
-                </main>
+        <ep-sidebar-home class="ep-sidebar open-ep-sidebar" id="ep-sidebar"></ep-sidebar-home>
 
-                <div class="module-lesson-list">
-                    <div class="module-lesson">
-                        <img class="lesson-thumb" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQVEGG2rkncmjWDVTmTbce8TwSzAUTjbmJmBw&s" alt="">
-                        <h2 class="lesson-title">Introdução</h2>
-                    </div>
-                    <div class="module-lesson">
-                        <img class="lesson-thumb" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQVEGG2rkncmjWDVTmTbce8TwSzAUTjbmJmBw&s" alt="">
-                        <h2 class="lesson-title">Introdução</h2>
-                    </div>
-                    <div class="module-lesson">
-                        <img class="lesson-thumb" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQVEGG2rkncmjWDVTmTbce8TwSzAUTjbmJmBw&s" alt="">
-                        <h2 class="lesson-title">Introdução</h2>
-                    </div>
-                    <div class="module-lesson">
-                        <img class="lesson-thumb" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQVEGG2rkncmjWDVTmTbce8TwSzAUTjbmJmBw&s" alt="">
-                        <h2 class="lesson-title">Introdução</h2>
-                    </div>
-                    <div class="module-lesson">
-                        <img class="lesson-thumb" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQVEGG2rkncmjWDVTmTbce8TwSzAUTjbmJmBw&s" alt="">
-                        <h2 class="lesson-title">Introdução</h2>
-                    </div>
-                    <div class="module-lesson">
-                        <img class="lesson-thumb" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQVEGG2rkncmjWDVTmTbce8TwSzAUTjbmJmBw&s" alt="">
-                        <h2 class="lesson-title">Introdução</h2>
-                    </div>
-                    <div class="module-lesson">
-                        <img class="lesson-thumb" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQVEGG2rkncmjWDVTmTbce8TwSzAUTjbmJmBw&s" alt="">
-                        <h2 class="lesson-title">Introdução</h2>
-                    </div>
-                    <div class="module-lesson">
-                        <img class="lesson-thumb" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQVEGG2rkncmjWDVTmTbce8TwSzAUTjbmJmBw&s" alt="">
-                        <h2 class="lesson-title">Introdução</h2>
-                    </div>
-                    <div class="module-lesson">
-                        <img class="lesson-thumb" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQVEGG2rkncmjWDVTmTbce8TwSzAUTjbmJmBw&s" alt="">
-                        <h2 class="lesson-title">Introdução</h2>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="lesson-footer">  
-                <div class="lesson-footer-content">
-                    <div class="up">
-                        <div class="lesson-title">
-                            <h2>Aula 02 Introdução</h2>
+        <div class="ep-wrapper-home-top">
+            <div class="ep-wrapper-home-left">
+                <div class="video-home">
+                    <main class="video-player">
+                        <div class="embed-video">
+                            <iframe class="video" src="https://player.vimeo.com/video/952720328?badge=0&amp;autopause=0&amp;transparent=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write" title="agendamento paciente"></iframe>
                         </div>
-                    </div>
-                    <div class="down">
-                        <div class="lesson-finish">
-                            <button>Finalizar Aula</button>
+                    </main>
+    
+                    <div class="module-lesson-list">
+                        <div class="module-lesson">
+                            <img class="lesson-thumb" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQVEGG2rkncmjWDVTmTbce8TwSzAUTjbmJmBw&s" alt="">
+                            <h2 class="lesson-title">Introdução</h2>
                         </div>
-                        <div class="lesson-navgation">
-                            <button><i class="fa-solid fa-chevron-left"></i></button>
-                            <button><i class="fa-solid fa-chevron-right"></i></button>
+                        <div class="module-lesson">
+                            <img class="lesson-thumb" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQVEGG2rkncmjWDVTmTbce8TwSzAUTjbmJmBw&s" alt="">
+                            <h2 class="lesson-title">Introdução</h2>
+                        </div>
+                        <div class="module-lesson">
+                            <img class="lesson-thumb" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQVEGG2rkncmjWDVTmTbce8TwSzAUTjbmJmBw&s" alt="">
+                            <h2 class="lesson-title">Introdução</h2>
+                        </div>
+                        <div class="module-lesson">
+                            <img class="lesson-thumb" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQVEGG2rkncmjWDVTmTbce8TwSzAUTjbmJmBw&s" alt="">
+                            <h2 class="lesson-title">Introdução</h2>
+                        </div>
+                        <div class="module-lesson">
+                            <img class="lesson-thumb" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQVEGG2rkncmjWDVTmTbce8TwSzAUTjbmJmBw&s" alt="">
+                            <h2 class="lesson-title">Introdução</h2>
+                        </div>
+                        <div class="module-lesson">
+                            <img class="lesson-thumb" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQVEGG2rkncmjWDVTmTbce8TwSzAUTjbmJmBw&s" alt="">
+                            <h2 class="lesson-title">Introdução</h2>
+                        </div>
+                        <div class="module-lesson">
+                            <img class="lesson-thumb" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQVEGG2rkncmjWDVTmTbce8TwSzAUTjbmJmBw&s" alt="">
+                            <h2 class="lesson-title">Introdução</h2>
+                        </div>
+                        <div class="module-lesson">
+                            <img class="lesson-thumb" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQVEGG2rkncmjWDVTmTbce8TwSzAUTjbmJmBw&s" alt="">
+                            <h2 class="lesson-title">Introdução</h2>
+                        </div>
+                        <div class="module-lesson">
+                            <img class="lesson-thumb" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQVEGG2rkncmjWDVTmTbce8TwSzAUTjbmJmBw&s" alt="">
+                            <h2 class="lesson-title">Introdução</h2>
                         </div>
                     </div>
                 </div>
-            </div>
-
-            <div class="lesson-comment-container">
-                <div class="lesson-comment-content">
-                    <div class="user-photo">
-                        <img src="../assets/image/user-photo.jpeg" alt="" style="height: 45px; width: 45px;">
-                    </div>
-                    <div class="comment-section">
-                        <h2>dsf</h2>
-                        <input type="text">
+                
+                <div class="lesson-footer">  
+                    <div class="lesson-footer-content">
+                            <div class="lesson-title">
+                                <h2>Aula 02 Introdução</h2>
+                            </div>
+                            <div class="lesson-finish">
+                                <button>Finalizar Aula</button>
+                            </div>
                     </div>
                 </div>
+    
+                <div class="lesson-comment-container">
+                    <h2 class="lesson-comment-title">Comentários</h2>
+                    <div class="lesson-comment-content">
+                        <div class="user-photo">
+                            <img src="../assets/image/user-photo.jpeg" alt="">
+                        </div>
+                        <div class="comment-section">
+                            <textarea type="text" placeholder="Adicione um comentário..."></textarea>
+                            <button>Comentar</button>
+                        </div>
+                    </div>
+                </div>
+                
             </div>
         </div>
-    </div>
+        <button onclick="remove('--ep-sidebar-home-size', '90px')">remover wrapper</button>
+        <script>
+            function remove(root, value){
+                
+                const currentValue = getComputedStyle(document.documentElement).getPropertyValue(root).trim();
+                if (currentValue == '0px') {
+                    document.documentElement.style.setProperty(root, value);
+                } else {
+                    alert('não é');
+                }
+            }
+        </script>
 </body>
 </html>

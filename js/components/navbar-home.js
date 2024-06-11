@@ -1,17 +1,14 @@
-class Header extends HTMLElement {
+class NavbarHome extends HTMLElement {
     connectedCallback(){
         this.innerHTML = `
             <div class="nav-content-left">
-                <button id="open-sidebar-btn">
-                    <i id="open-sidebar-icon" class="fa-solid fa-bars"></i>
-                </button>
                 <div class="logo">
                     <img src="../assets/logo/logo-ed-platform.png" alt="Logo da marca">
                 </div>
             </div>
             <div class="nav-content-right"> 
                 <div class="search-content">
-                    <input type="text" id="search-content-input">
+                    <input type="text" id="search-content-input" placeholder="Pesquisar Conteúdo">
                     <button id="search-content-btn">
                         <i class="fa-solid fa-magnifying-glass"></i>
                     </button>
@@ -28,4 +25,8 @@ class Header extends HTMLElement {
     }
 }
 
-customElements.define('navbar-home', Header);
+/* <button id="open-sidebar-btn">
+    <i id="open-sidebar-icon" class="fa-solid fa-bars"></i>
+</button> */
+
+customElements.define('navbar-home', NavbarHome);

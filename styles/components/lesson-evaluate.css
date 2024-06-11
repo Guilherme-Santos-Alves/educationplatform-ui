@@ -1,0 +1,73 @@
+.popup-lesson-evaluate{
+    position: absolute;
+    display: flex;
+    top: var(--ep-navbar-home-size);
+    width: 100%;
+}
+
+.popup-lesson-evaluate> .lesson-evaluate-content{
+    justify-content: center;
+    margin: 0 auto;
+    display: grid;
+    text-transform: none;
+    border: 5px solid var(--ep-color-purple);
+    border-radius: 10px;
+    background-color: var(--ep-color-dark);
+    padding: 15px 0px 20px 0px;
+    transition: all ease 0.5s;
+}
+
+.popup-lesson-evaluate> .lesson-evaluate-content> .close-popup-btn{
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 15px;
+}
+
+.popup-lesson-evaluate> .lesson-evaluate-content> .close-popup-btn> button{
+    background-color: var(--ep-color-gray-lighter);
+    color: var(--ep-color-purple);
+    width: 20px;
+    height: 20px;
+    border-radius: 8px;
+    margin: 0px 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.popup-lesson-evaluate> .lesson-evaluate-content> .lesson-evaluate-title{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: var(--ep-color-gray-lighter);
+    padding: 0px 30px;
+}
+
+.popup-lesson-evaluate> .lesson-evaluate-content> .lesson-evaluate-title h3{
+    display: flex;
+    justify-content: center;
+}
+
+.popup-lesson-evaluate> .lesson-evaluate-content> .evaluation-buttons{
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.popup-lesson-evaluate> .lesson-evaluate-content> .evaluation-buttons> i{
+    color: var(--ep-color-gray);
+    cursor: pointer;
+    font-size: 30px;
+    transition: all 0.2s;
+}
+.popup-lesson-evaluate> .lesson-evaluate-content> .evaluation-buttons> i.active{
+    color: yellow;
+}
+
+.popup-lesson-evaluate> .lesson-evaluate-content> .evaluation-buttons> i:hover{
+    color: yellow;
+    transform: scale(1.2);
+}

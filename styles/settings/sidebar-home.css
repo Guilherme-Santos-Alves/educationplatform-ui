@@ -1,3 +1,12 @@
 :root{
     --ep-sidebar-home-size: 80px;
+    --ep-sidebar-home-display: flex;
+}
+
+@media (max-width: 480px){
+    :root{
+        --ep-sidebar-home-size: 0px;
+        --ep-sidebar-home-display: none;
+
+    }
 }

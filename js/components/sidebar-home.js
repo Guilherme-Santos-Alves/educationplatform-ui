@@ -1,4 +1,4 @@
-class Nav extends HTMLElement {
+class SidebarHome extends HTMLElement {
     connectedCallback() {
         this.innerHTML = `
             <div class="ep-sidebar-content">
@@ -28,13 +28,6 @@ class Nav extends HTMLElement {
                         </a>
                     </li>
                     <li class="side-item">
-                        
-                        <i class="fa-solid fa-magnifying-glass"></i>
-                            <input class="item-description" id="search-content-input" type="text" placeholder="Pesquisar">
-                        </a>
-  
-                    </li>
-                    <li class="side-item">
                         <a href="">
                             <i class="fa-solid fa-medal"></i>
                             <span class="item-description">
@@ -53,10 +46,18 @@ class Nav extends HTMLElement {
     }
 }
 
-customElements.define('ep-sidebar-home', Nav);
+customElements.define('ep-sidebar-home', SidebarHome);
 
 document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('open-sidebar-btn').addEventListener('click', () => {
         document.getElementById('ep-sidebar').classList.toggle('open-ep-sidebar');
     })
 })
+
+/* <li class="side-item">
+                        
+<i class="fa-solid fa-magnifying-glass"></i>
+    <input class="item-description" id="search-content-input" type="text" placeholder="Pesquisar">
+</a>
+
+</li> */

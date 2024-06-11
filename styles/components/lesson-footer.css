@@ -1,54 +1,25 @@
 .lesson-footer{
-    padding: 10px 20px;
+    padding: 20px 20px;
     border-bottom: 2px solid var(--ep-color-gray);
 }
 
 .lesson-footer> .lesson-footer-content{
-    display: grid;
-}
-
-.down{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-top: 20px;
 }
 
-.lesson-footer> .lesson-footer-content> .up> .lesson-title> h2{
+.lesson-footer> .lesson-footer-content> .lesson-title> h2{
     font-size: 18px;
     color: var(--ep-color-gray-lighter);
     font-weight: 600;
 }
 
-.lesson-evaluate{
-    gap: 10px;
-    display: grid;
-    text-transform: none;
-    background-color: var(--ep-color-gray-dark-light);
-    padding: 10px;
-    border-radius: 10px;
-}
+/* .lesson-footer> .lesson-footer-content> .lesson-navgation{
+    /* background-color: gray; 
+}*/
 
-.lesson-evaluate> .evaluation-buttons> i{
-    color: var(--ep-color-gray);
-    cursor: pointer;
-    font-size: 20px;
-    transition: all 0.2s;
-}
-.lesson-evaluate> .evaluation-buttons> i.active{
-    color: yellow;
-}
-
-.lesson-evaluate> .evaluation-buttons> i:hover{
-    color: yellow;
-    transform: scale(1.2);
-}
-
-.lesson-footer> .lesson-footer-content> .down> .lesson-navgation{
-    /* background-color: gray; */
-}
-
-.lesson-footer> .lesson-footer-content> .down> .lesson-navgation> button{
+.lesson-footer> .lesson-footer-content> .lesson-navgation> button{
     height: 40px;
     width: 50px;
     background-color: var(--ep-color-purple);
@@ -58,11 +29,11 @@
     cursor: pointer;
 }
 
-.lesson-footer> .lesson-footer-content> .down> .lesson-navgation> button:hover{
+.lesson-footer> .lesson-footer-content> .lesson-navgation> button:hover{
     background-color: var(--ep-color-purple-light);
 }
 
-.lesson-footer> .lesson-footer-content> .down> .lesson-finish> button{
+.lesson-footer> .lesson-footer-content> .lesson-finish> button{
     height: 40px;
     background-color: var(--ep-color-purple);
     color: var(--ep-color-gray-lighter);
@@ -73,7 +44,7 @@
     font-weight: 600;
 }
 
-.lesson-footer> .lesson-footer-content> .down> .lesson-finish> button:hover{
+.lesson-footer> .lesson-footer-content> .lesson-finish> button:hover{
     background-color: var(--ep-color-purple-light);
 }
 

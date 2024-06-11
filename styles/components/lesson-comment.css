@@ -1,3 +1,66 @@
 .lesson-comment-container{
-    background-color: red;
+    padding: 20px;
+    width: 100%;
+}
+
+.lesson-comment-content{
+    display: flex;
+    gap: 20px;
+    justify-content: flex-start;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.lesson-comment-container> .lesson-comment-title{
+    color: var(--ep-color-gray-lighter);
+    margin: 20px 0px 40px 0px;
+    font-weight: 600;
+    font-size: 2rem;
+}
+
+.lesson-comment-container> .lesson-comment-content> .user-photo> img{
+    height: 45px;
+    width: 45px;
+    border-radius: 50px;
+    border: 2px solid var(--ep-color-purple);
+    cursor: pointer;
+}
+
+.lesson-comment-container> .lesson-comment-content> .comment-section{
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    align-items: flex-end;
+    color: var(--ep-color-gray-lighter);
+}
+
+.lesson-comment-container> .lesson-comment-content> .comment-section> textarea{
+    width: 100%;
+    padding: 5px;
+    color: var(--ep-color-gray-lighter);
+    border-bottom: 2px solid var(--ep-color-gray);
+    background-color: transparent;
+    font-family: var(--ep-primary-font);
+    resize: none;
+    font-size: 1rem;
+}
+
+.lesson-comment-container> .lesson-comment-content> .comment-section> textarea:focus{
+    border-bottom: 2px solid var(--ep-color-purple);
+    outline: 0;
+}
+
+.lesson-comment-container> .lesson-comment-content> .comment-section> button{
+    height: 40px;
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin-top: 5px;
+    color: var(--ep-color-gray-lighter);
+    background-color: var(--ep-color-purple);
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.lesson-comment-container> .lesson-comment-content> .comment-section> button:hover{
+    background-color: var(--ep-color-purple-light);
 }

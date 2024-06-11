@@ -1,4 +1,4 @@
-class Footer extends HTMLElement{
+class Header extends HTMLElement{
     connectedCallback() {
         this.innerHTML = `
             <footer class="ep-footer">
@@ -72,4 +72,4 @@ class Footer extends HTMLElement{
     }
 }
 
-customElements.define('ep-footer', Footer);
+customElements.define('ep-footer', Header);
