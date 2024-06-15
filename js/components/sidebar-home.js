@@ -48,11 +48,11 @@ class SidebarHome extends HTMLElement {
 
 customElements.define('ep-sidebar-home', SidebarHome);
 
-document.addEventListener('DOMContentLoaded', () => {
-    document.getElementById('open-sidebar-btn').addEventListener('click', () => {
-        document.getElementById('ep-sidebar').classList.toggle('open-ep-sidebar');
-    })
-})
+// document.addEventListener('DOMContentLoaded', () => {
+//     document.getElementById('open-sidebar-btn').addEventListener('click', () => {
+//         document.getElementById('ep-sidebar').classList.toggle('open-ep-sidebar');
+//     })
+// })
 
 /* <li class="side-item">
                         

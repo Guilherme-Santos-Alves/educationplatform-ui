@@ -1,0 +1,74 @@
+.all-courses-section{
+    width: 100%;
+    justify-content: center;
+    display: flex;
+}
+
+.all-courses-section> .choose-course-content{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    padding: 3rem 3.5rem;
+    gap: 30px;
+}
+
+.all-courses-section> .choose-course-content> .course{
+    background-color: var(--ep-color-purple);
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: all 0.5s;
+    cursor: pointer;
+}
+
+.all-courses-section> .choose-course-content> .course:hover{
+    box-shadow: rgba(150, 42, 189, 0.411) 0px 20px 30px -10px;
+    transform: translatey(-1%);
+}
+
+.all-courses-section> .choose-course-content> .course> .course-picture{
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.all-courses-section> .choose-course-content> .course> .course-picture img{
+    width: 300px;
+    height: 300px;
+    border-radius: 20px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.all-courses-section> .choose-course-content> .course> .course-btn{
+    display: flex;
+    align-items: flex-end;
+}
+
+.all-courses-section> .choose-course-content> .course> .course-btn> button{
+    border-radius: 5px;
+    background-color: var(--ep-color-dark);
+    color: var(--ep-color-gray-lighter);
+    padding: 15px 25px;
+    cursor: pointer;
+    margin-top: 10px;
+    font-weight: 600;
+    font-size: 16px;
+    transition: ease 0.3s;
+}
+
+.all-courses-section> .choose-course-content> .course> .course-btn> button:hover{
+    opacity: 0.8;
+}
+
+.all-courses-section> .choose-course-content> .course> .course-title{
+    padding: 5px 0px;
+}
+
+.all-courses-section> .choose-course-content> .course> .course-title> h1{
+    font-family: var(--ep-primary-font);
+    font-weight: 600;
+    color: var(--ep-color-dark);
+}
+

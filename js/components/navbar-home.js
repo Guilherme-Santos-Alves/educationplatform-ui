@@ -25,8 +25,4 @@ class NavbarHome extends HTMLElement {
     }
 }
 
-/* <button id="open-sidebar-btn">
-    <i id="open-sidebar-icon" class="fa-solid fa-bars"></i>
-</button> */
-
 customElements.define('navbar-home', NavbarHome);
