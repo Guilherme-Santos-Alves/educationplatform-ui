@@ -80,16 +80,27 @@
     display: none;
 }
 
-.course-modules-section> .course-modules-content> .course-modules> .module> .module-lessons> .lesson{
-    list-style: none;
+.course-modules-section> .course-modules-content> .course-modules> .module> .module-lessons> .lesson-content{
+    display: flex;
+    gap: 20px;
     border-top: 2px solid var(--ep-color-purple-light);
-    box-sizing: border-box;
-    padding: 0px -13px;
+    margin: 10px -13px 0px -13px;
+    padding: 10px 13px 0px 13px;
+    align-items: center;
+}
+
+.course-modules-section> .course-modules-content> .course-modules> .module> .module-lessons> .lesson-content> .lesson-status{
+    color: var(--ep-color-gray);
+    font-size: 19px;
+}
+
+.course-modules-section> .course-modules-content> .course-modules> .module> .module-lessons> .lesson-content> .lesson-status.-finished{
+    color: var(--ep-color-dark);
+}
+
+.course-modules-section> .course-modules-content> .course-modules> .module> .module-lessons> .lesson-content> .lesson-name{
     font-size: 18px;
     font-weight: 400;
     color: var(--ep-color-dark);
     cursor: pointer;
-    display: flex;
-    margin: 10px -13px 0px -13px;
-    padding: 10px 13px 0px 13px;
 }
