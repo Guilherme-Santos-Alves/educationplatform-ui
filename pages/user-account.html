@@ -35,6 +35,7 @@
     <script src="../js/components/navbar-home.js"></script>
     <script src="../js/components/sidebar-home.js"></script>
     <script src="../js/scripts/testes.js"></script>
+    <script src="../js/components/user-account/user-account.js"></script>
 </head></head>
 <body>
     <navbar-home class="ep-navbar-home"></navbar-home>
@@ -42,49 +43,7 @@
 
     <div class="ep-wrapper-home-top">
         <div class="ep-wrapper-home-left"> 
-            <div class="user-account-section">
-                <div class="user-account-content">
-                    <div class="user-account-header">
-                        <div class="header-content">
-                            <div class="header-description">
-                                <h1>Olá, Guilherme Santos!</h1>
-                                <h2>Gerencie tudo que importa em um só lugar.</h2>
-                            </div>
-                            
-                            <i class="fa-solid fa-gears"></i>
-                        </div>
-                        
-                    </div>
-                    <div class="user-personal-data">
-                        <h2 class="title">Informações pessoais</h2>
-                        <div class="personal-data-inputs">
-                                <div class="line">
-                                    <label for="user-fullname">Nome Completo</label>
-                                    <input id="user-fullname" type="text">
-                                </div>
-                                <div class="line">
-                                    <label for="user-email">E-mail</label>                              
-                                    <input id="user-email" type="text">
-                                </div>
-                                <div class="line">                 
-                                    <label for="user-phone">Telefone</label>
-                                    <input id="user-phone" type="text">
-                                </div>
-                        </div>
-                        <div class="user-photo-edit">
-                            <h2 for="">Editar Imagem de Perfil</h2>
-                            <div class="photo-edit">
-                                <div class="edit-background">
-                                    <i class="fa-solid fa-pen-to-square"></i>
-                                </div>
-                            </div>
-                        </div>
-                        
-                    </div>
-                    <div class="user-config"></div>
-                    <div class="user-security"></div>
-                </div>
-            </div>
+            <user-account-section></user-account-section>
         </div>
     </div>
 

@@ -12,9 +12,12 @@
 .user-account-section> .user-account-content> .user-personal-data{
     border-radius: 15px;
     padding: 20px;
-    width: 800px;
+    min-width: 560px;
+    width: 80%;
+    max-width: 800px;
     color: var(--ep-color-gray-lighter);
-    border: 2px solid var(--ep-color-purple);
+    border: 1px solid var(--ep-color-purple);
+ 
 }
 
 .user-account-section> .user-account-content> .user-personal-data> .personal-data-inputs{
@@ -71,7 +74,7 @@
     cursor: pointer;
 }
 
-.edit-background> i{
+.user-account-section> .user-account-content> .user-personal-data> .user-photo-edit> .photo-edit> .edit-background> i{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -79,7 +82,7 @@
     font-size: 20px;
 }
 
-.edit-background{
+.user-account-section> .user-account-content> .user-personal-data> .user-photo-edit> .photo-edit> .edit-background{
     background-color: rgba(117, 0, 128, 0.26);
     height: 100%;
     border-radius: 50px;
@@ -87,31 +90,144 @@
     justify-content: center;
 }
 
-.user-account-header{
+.user-account-section> .user-account-content> .user-account-header{
     width: 100%;
-    height: 180px;
+    height: 120px;
     background-color: var(--ep-color-purple);
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.user-account-header> .header-content> i{
-    font-size: 100px;
+.user-account-section> .user-account-content> .user-account-header> .header-content> i{
+    font-size: 80px;
     color: var(--ep-color-dark);
 }
 
-.user-account-header h1{
+.user-account-section> .user-account-content> .user-account-header h1{
     font-family: var( --ep-secondary-big-font);
 }
 
-.user-account-header> .header-content{
+.user-account-section> .user-account-content> .user-account-header> .header-content{
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 20px;
 }
 
-.user-account-header> .header-content> .header-description> h2{
+.user-account-section> .user-account-content> .user-account-header> .header-content> .header-description> h2{
     font-size: 16px;
+}
+
+.user-account-section> .user-account-content> .user-config{
+    border-radius: 15px;
+    padding: 20px;
+    min-width: 560px;
+    width: 80%;
+    max-width: 800px;
+    color: var(--ep-color-gray-lighter);
+    border: 1px solid var(--ep-color-purple);
+}
+
+.user-account-section> .user-account-content> .user-config> .inputs-select{
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+    gap: 10px;
+}
+
+.user-account-section> .user-account-content> .user-config> .inputs-select> .line{
+    display: grid;
+    grid-template-columns: 150px calc(100% - 150px);
+    align-items: center;
+}
+
+.user-account-section> .user-account-content> .user-config> .inputs-select> .line> select{
+    border: 2px solid var(--ep-color-purple-light);
+    height: 40px;
+    border-radius: 5px;
+    background-color: transparent;
+    color: var(--ep-color-gray-lighter);
+    padding: 5px;
+    font-size: 16px;
+    width: 100%;
+}
+
+.user-account-section> .user-account-content> .user-config> .inputs-select> .line> select> option{
+    background-color: var(--ep-color-gray-dark);
+}
+
+.user-account-section> .user-account-content> .user-security{
+    border-radius: 15px;
+    padding: 20px;
+    min-width: 560px;
+    width: 80%;
+    max-width: 800px;
+    color: var(--ep-color-gray-lighter);
+    border: 1px solid var(--ep-color-purple);
+}
+
+.user-account-section> .user-account-content> .user-security> .user-security-inputs> .line{
+    display: grid;
+    grid-template-columns: 150px calc(100% - 150px);
+    align-items: center;
+}
+
+.user-account-section> .user-account-content> .user-security> .user-security-inputs{
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+    gap: 10px;
+}
+
+.user-account-section> .user-account-content> .user-security> .user-security-inputs> .line> .input-group{
+    border: 2px solid var(--ep-color-purple-light);
+    height: 40px;
+    border-radius: 5px;
+    background-color: transparent;
+    color: var(--ep-color-gray-lighter);
+    padding: 5px;
+    font-size: 16px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.user-account-section> .user-account-content> .user-security> .user-security-inputs> .line> .input-group> input{
+    width: calc(100% - 25px);
+    height: 100%;
+    background-color: transparent;
+    outline: none;
+    color: var(--ep-color-gray-lighter);
+    font-size: 16px;
+}
+
+.user-account-section> .user-account-content> .user-security> .user-security-inputs> .line> .input-group> button{
+    width: 20px;
+    height: 100%;
+    background-color: transparent;
+    outline: none;
+    color: var(--ep-color-gray-lighter);
+    cursor: pointer;
+}
+
+.user-account-section> .user-account-content> .save-editions{
+    border-radius: 15px;
+    min-width: 560px;
+    width: 80%;
+    max-width: 800px;
+    color: var(--ep-color-gray-lighter);
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 40px;
+}
+
+.user-account-section> .user-account-content> .save-editions> .save-editions-btn{
+    background-color: var(--ep-color-purple);
+    padding: 15px 25px;
+    color: var(--ep-color-gray-lighter);
+    font-weight: 600;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 15px;
 }
