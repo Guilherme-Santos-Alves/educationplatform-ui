@@ -6,8 +6,8 @@ class userAccountSection extends HTMLElement{
                     <div class="user-account-header">
                         <div class="header-content">
                             <div class="header-description">
-                                <h1>Olá, Guilherme Santos!</h1>
-                                <h2>Gerencie tudo que importa em um só lugar.</h2>
+                                <h1 data-translate="userAccountTitle">Olá, Guilherme!</h1>
+                                <h2 data-translate="userAccountSubtitle">Gerencie tudo que importa em um só lugar.</h2>
                             </div>
                             
                             <i class="fa-solid fa-gears"></i>
@@ -51,7 +51,7 @@ class userAccountSection extends HTMLElement{
                                     <option value="zh">Chinês</option>
                                     <option value="hi">Hindi</option>
                                     <option value="ar">Árabe</option>
-                                    <option value="pt" selected>Português</option>
+                                    <option value="pt">Português</option>
                                     <option value="bn">Bengali</option>
                                     <option value="ru">Russo</option>
                                     <option value="ja">Japonês</option>
@@ -110,12 +110,12 @@ class userAccountSection extends HTMLElement{
                     </div>
                     <div class="user-security">
                         <h2 class="title">Alterar senha</h2>
-                        <div class="user-security-inputs">
+                        <form class="user-security-inputs">
                             <div class="line">
                                     <label for="current-password">Senha atual</label>
                                     <div class="input-group">
                                         <input id="current-password" type="password">
-                                        <button id="show-current-password">
+                                        <button id="show-current-password" type="button">
                                             <i class="fa-solid fa-eye-slash"></i>
                                         </button>
                                     </div>
@@ -124,7 +124,7 @@ class userAccountSection extends HTMLElement{
                                     <label for="new-password">Nova senha</label>                              
                                     <div class="input-group">
                                         <input id="new-password" type="password">
-                                        <button id="show-new-password">
+                                        <button id="show-new-password" type="button">
                                             <i class="fa-solid fa-eye-slash"></i>
                                         </button>
                                     </div>
@@ -133,16 +133,17 @@ class userAccountSection extends HTMLElement{
                                     <label for="confirm-password">Confirmar senha</label>
                                     <div class="input-group">
                                         <input id="confirm-password" type="password">
-                                        <button id="show-confirm-password">
+                                        <button id="show-confirm-password" type="button">
                                             <i class="fa-solid fa-eye-slash"></i>
                                         </button>
                                     </div>
 
                                 </div>
-                        </div>
+                                <button class="save-editions-btn">Salvar Alterações</button>
+                        </form>
                     </div>
                     <div class="save-editions">
-                        <button class="save-editions-btn">Salvar Alterações</button>
+                        <button class="save-editions-btn" >Salvar Alterações</button>
                     </div>
                 </div>
             </div>`;
@@ -152,40 +153,51 @@ class userAccountSection extends HTMLElement{
 customElements.define('user-account-section', userAccountSection);
 
 document.addEventListener('DOMContentLoaded', () => {
-    const currentPasswordInput = document.getElementById('current-password');
-    const currentPasswordBtn = document.getElementById('show-current-password');
-    const newPasswordInput = document.getElementById('new-password');
-    const newPasswordBtn = document.getElementById('show-new-password');
-    const confirmPasswordInput = document.getElementById('confirm-password');
-    const confirmPasswordBtn = document.getElementById('show-confirm-password');
+    const fieldsUpdatePassword = [{
+        input: document.getElementById('current-password'),
+        btn: document.getElementById('show-current-password')
+    }, {
+        input: document.getElementById('new-password'),
+        btn: document.getElementById('show-new-password')
+    }, {
+        input: document.getElementById('confirm-password'),
+        btn: document.getElementById('show-confirm-password')
+    }];
 
-    currentPasswordBtn.addEventListener('click', () => {
-        if (currentPasswordInput.type === 'password'){
-            currentPasswordInput.type = 'text';
-            currentPasswordBtn.innerHTML = '<i class="fa-solid fa-eye"></i>'
-        } else {
-            currentPasswordInput.type = 'password'
-            currentPasswordBtn.innerHTML = '<i class="fa-solid fa-eye-slash"></i>'
-        }
-    });
-
-    newPasswordBtn.addEventListener('click', () => {
-        if (newPasswordInput.type === 'password'){
-            newPasswordInput.type = 'text';
-            newPasswordBtn.innerHTML = '<i class="fa-solid fa-eye"></i>'
-        } else {
-            newPasswordInput.type = 'password'
-            newPasswordBtn.innerHTML = '<i class="fa-solid fa-eye-slash"></i>'
-        }
-    });
-
-    confirmPasswordBtn.addEventListener('click', () => {
-        if (confirmPasswordInput.type === 'password'){
-            confirmPasswordInput.type = 'text';
-            confirmPasswordBtn.innerHTML = '<i class="fa-solid fa-eye"></i>'
-        } else {
-            confirmPasswordInput.type = 'password'
-            confirmPasswordBtn.innerHTML = '<i class="fa-solid fa-eye-slash"></i>'
-        }
-    });
+    updatePassword(fieldsUpdatePassword);
 })
+
+function updatePassword(fields) {
+    fields.forEach( field => {
+        field.btn.addEventListener('click', () => {
+            if ( field.input.type === 'password'){
+                field.input.type = 'text';
+                field.btn.innerHTML = '<i class="fa-solid fa-eye"></i>'
+            } else {
+                field.input.type = 'password';
+                field.btn.innerHTML = '<i class="fa-solid fa-eye-slash"></i>'
+            }
+        });
+    });
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    const inputs = [
+        document.getElementById('current-password'),
+        document.getElementById('new-password'),
+        document.getElementById('confirm-password')
+    ];
+    verificarInputs(inputs);
+});
+
+function verificarInputs(inputs) {
+    inputs.forEach(input => {
+        input.addEventListener('change', () => {
+            if (inputs.some(input => input.value !== '')) {
+                inputs.forEach(input => input.setAttribute('required', 'required'));
+            } else {
+                inputs.forEach(input => input.removeAttribute('required'));
+            }
+        });
+    });
+}

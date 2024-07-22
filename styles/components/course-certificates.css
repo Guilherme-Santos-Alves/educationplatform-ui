@@ -1,0 +1,72 @@
+.course-certificates{
+    background-color: transparent;
+}
+
+.course-certificates> .course-certificates-content{
+    padding: 50px;
+}
+
+.course-certificates> .course-certificates-content> .title{
+    color: var(--ep-color-gray-lighter);
+    border-left: 8px solid var(--ep-color-purple);
+    padding-left: 5px;
+    font-size: 24px;
+}
+
+.course-certificates> .course-certificates-content> .course-certificates-group{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.course-certificates> .course-certificates-content> .course-certificates-group> .course-certificate{
+    background-color: transparent;
+    width: 300px;
+    display: grid;
+    border: 2px solid var(--ep-color-purple);
+    margin: 20px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.course-certificates> .course-certificates-content> .course-certificates-group> .course-certificate> .certificate{
+    background-color: transparent;
+    display: flex;
+}
+
+.course-certificates> .course-certificates-content> .course-certificates-group> .course-certificate> .certificate> img{
+    background-color: transparent;
+    display: flex;
+    width: 100%;
+    height: 250px;
+}
+
+.course-certificates> .course-certificates-content> .course-certificates-group> .course-certificate> .certificate-title{
+    color: var(--ep-color-gray-lighter);
+    padding: 8px 1px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80px;
+    text-align: center;
+}
+
+.course-certificates> .course-certificates-content> .course-certificates-group> .course-certificate> .view-certificate{
+    display: flex;
+    min-height: 45px;
+    flex-direction: column;
+}
+
+.course-certificates> .course-certificates-content> .course-certificates-group> .course-certificate> .view-certificate> .view-certificate-btn{
+    background-color: var(--ep-color-purple);
+    width: 100%;
+    height: 100%;
+    color: var(--ep-color-dark);
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: ease 0.5s;
+}
+
+.course-certificates> .course-certificates-content> .course-certificates-group> .course-certificate> .view-certificate> .view-certificate-btn:hover{
+    background-color: var(--ep-color-purple-light);
+}

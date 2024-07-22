@@ -12,7 +12,7 @@
 .user-account-section> .user-account-content> .user-personal-data{
     border-radius: 15px;
     padding: 20px;
-    min-width: 560px;
+    min-width: 370px;
     width: 80%;
     max-width: 800px;
     color: var(--ep-color-gray-lighter);
@@ -122,7 +122,7 @@
 .user-account-section> .user-account-content> .user-config{
     border-radius: 15px;
     padding: 20px;
-    min-width: 560px;
+    min-width: 370px;
     width: 80%;
     max-width: 800px;
     color: var(--ep-color-gray-lighter);
@@ -160,7 +160,7 @@
 .user-account-section> .user-account-content> .user-security{
     border-radius: 15px;
     padding: 20px;
-    min-width: 560px;
+    min-width: 370px;
     width: 80%;
     max-width: 800px;
     color: var(--ep-color-gray-lighter);

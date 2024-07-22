@@ -1,31 +1,31 @@
 .all-courses-section{
     width: 100%;
-    justify-content: center;
     display: flex;
 }
 
 .all-courses-section> .choose-course-content{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    padding: 3rem 3.5rem;
-    gap: 30px;
+    padding: 50px;
+    gap: 20px;
+    width: 100%;
 }
 
 .all-courses-section> .choose-course-content> .course{
-    background-color: var(--ep-color-purple);
-    padding: 20px;
-    border-radius: 20px;
+    border: 2px solid var(--ep-color-purple);
+    border-radius: 10px;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
     transition: all 0.5s;
     cursor: pointer;
+    overflow: hidden;
+    margin: 20px;
+    width: 300px;
 }
 
 .all-courses-section> .choose-course-content> .course:hover{
-    box-shadow: rgba(150, 42, 189, 0.411) 0px 20px 30px -10px;
-    transform: translatey(-1%);
+    box-shadow: rgba(145, 51, 179, 0.211) 0px 20px 30px -10px;
 }
 
 .all-courses-section> .choose-course-content> .course> .course-picture{
@@ -35,31 +35,30 @@
 }
 
 .all-courses-section> .choose-course-content> .course> .course-picture img{
-    width: 300px;
-    height: 300px;
-    border-radius: 20px;
+    width: 100%;
+    height: 250px;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
 .all-courses-section> .choose-course-content> .course> .course-btn{
     display: flex;
-    align-items: flex-end;
+    min-height: 45px;
+    flex-direction: column;
 }
 
 .all-courses-section> .choose-course-content> .course> .course-btn> button{
-    border-radius: 5px;
-    background-color: var(--ep-color-dark);
-    color: var(--ep-color-gray-lighter);
-    padding: 15px 25px;
-    cursor: pointer;
-    margin-top: 10px;
+    background-color: var(--ep-color-purple);
+    width: 100%;
+    height: 100%;
+    color: var(--ep-color-dark);
+    font-size: 14px;
     font-weight: 600;
-    font-size: 16px;
-    transition: ease 0.3s;
+    cursor: pointer;
+    transition: ease 0.5s;
 }
 
 .all-courses-section> .choose-course-content> .course> .course-btn> button:hover{
-    opacity: 0.8;
+    background-color: var(--ep-color-purple-light);
 }
 
 .all-courses-section> .choose-course-content> .course> .course-title{
@@ -67,8 +66,13 @@
 }
 
 .all-courses-section> .choose-course-content> .course> .course-title> h1{
-    font-family: var(--ep-primary-font);
-    font-weight: 600;
-    color: var(--ep-color-dark);
+    color: var(--ep-color-gray-lighter);
+    padding: 8px 1px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 65px;
+    text-align: center;
+    font-size: 18px;
 }
 

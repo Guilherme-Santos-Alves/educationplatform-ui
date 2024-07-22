@@ -23,6 +23,9 @@
 
 .course-modules-section> .course-modules-content> .course-description-content> .course-title{
     color: var(--ep-color-gray-lighter);
+    border-left: 8px solid var(--ep-color-purple);
+    padding-left: 5px;
+    font-size: 20px;
 }
 
 .course-modules-section> .course-modules-content> .course-description-content> .course-description{
@@ -36,7 +39,8 @@
 }
 
 .course-modules-section> .course-modules-content> .course-modules> .module{
-    background-color: var(--ep-color-purple);
+    background-color: transparent;
+    border: 1px solid var(--ep-color-purple);
     border-radius: 10px;
     padding: 13px;
 }
@@ -49,13 +53,14 @@
 }
 
 .course-modules-section> .course-modules-content> .course-modules> .module> .module-header> .title{
-    color: var(--ep-color-dark);
+    color: var(--ep-color-gray-lighter);
+    font-size: 20px;
 }
 
 .course-modules-section> .course-modules-content> .course-modules> .module> .module-header> .show-lessons-btn{
-    color: var(--ep-color-dark);
+    color: var(--ep-color-gray-lighter);
     background-color: transparent;
-    font-size: 20px;
+    font-size: 16px;
     cursor: pointer;
 }
 
@@ -83,7 +88,7 @@
 .course-modules-section> .course-modules-content> .course-modules> .module> .module-lessons> .lesson-content{
     display: flex;
     gap: 20px;
-    border-top: 2px solid var(--ep-color-purple-light);
+    border-top: 1px solid var(--ep-color-purple);
     margin: 10px -13px 0px -13px;
     padding: 10px 13px 0px 13px;
     align-items: center;
@@ -95,12 +100,12 @@
 }
 
 .course-modules-section> .course-modules-content> .course-modules> .module> .module-lessons> .lesson-content> .lesson-status.-finished{
-    color: var(--ep-color-dark);
+    color: var(--ep-color-purple);
 }
 
 .course-modules-section> .course-modules-content> .course-modules> .module> .module-lessons> .lesson-content> .lesson-name{
     font-size: 18px;
     font-weight: 400;
-    color: var(--ep-color-dark);
+    color: var(--ep-color-gray-light);
     cursor: pointer;
 }
