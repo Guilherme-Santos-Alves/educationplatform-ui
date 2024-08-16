@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    
+    <link rel="stylesheet" href="../styles/pages/video-home.css">
+    
+    <link rel="stylesheet" href="../styles/settings/video-player.css">
+    <link rel="stylesheet" href="../styles/settings/color.css">
+    <link rel="stylesheet" href="../styles/settings/text.css">
+    <link rel="stylesheet" href="../styles/settings/navbar-home.css">
+    <link rel="stylesheet" href="../styles/settings/sidebar-home.css">
+
+    <link rel="stylesheet" href="../styles/generic/reset.css">
+    <link rel="stylesheet" href="../styles/generic/box-sizing.css">
+    <link rel="stylesheet" href="../styles/generic/auto-complete-input.css">
+
+    <link rel="stylesheet" href="../styles/base/html.css">
+
+    <link rel="stylesheet" href="../styles/objects/ep-wrapper-home.css">
+
+    <link rel="stylesheet" href="../styles/components/ep-navbar-home.css">
+    <link rel="stylesheet" href="../styles/components/ep-scrollbar.css">
+    <link rel="stylesheet" href="../styles/components/ep-sidebar.css">
+    <link rel="stylesheet" href="../styles/components/course-create.css">
+    
+    <script src="../js/components/navbar-home.js"></script>
+    <script src="../js/components/sidebar-home.js"></script>
+    <script src="../js/scripts/testes.js"></script>
+
+</head></head>
+<body>
+    <navbar-home class="ep-navbar-home"></navbar-home>
+    <ep-sidebar-home class="ep-sidebar open-ep-sidebar" id="ep-sidebar"></ep-sidebar-home>
+
+    <div class="ep-wrapper-home">
+        <div class="course-create-section">
+            <div class="course-create-content">
+                <h1 class="title">Cadastrar Curso</h1>
+                <form class="course-create-inputs" action="javascript:void(0)">
+                    <label for="course-title">Título do Curso:</label>
+                    <input type="text" id="course-title">
+                    <label for="course-description">Descrição:</label>
+                    <textarea name="" id="course-description"></textarea>
+                    <label for="course-cover">Selecionar Capa do Curso:</label>
+                    <input type="file" value="" id="course-cover">
+
+                    <label for="">Adicionar Módulo:</label>
+                    <div class="add-module">
+                        <input class="module-title-field" type="text" id="" placeholder="Título do Módulo...">
+                        <button id="adicionar-modulo">adicionar</button>
+                    </div>
+
+                    <div class="modules-container">
+
+                    </div>
+                    <!-- <label for="">adicionar modulo</label>
+                    <input type="text" placeholder="nome">
+                    <button>adiconar</button>
+
+                    <div class="modulo">
+                    
+                    </div>
+                    <div class="modulo"></div>
+                    <div class="modulo"></div>
+                     -->
+
+                    
+
+                    <div class="send-form">
+                        <button class="send-form-btn" type="submit">Salvar</button>
+                    </div>
+
+
+                </form>
+            </div>
+        </div>
+        
+    </div>
+            
+        
+
+</body>
+</html>

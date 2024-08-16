@@ -106,6 +106,7 @@
 
 .user-account-section> .user-account-content> .user-account-header h1{
     font-family: var( --ep-secondary-big-font);
+        color: var(--ep-color-gray-lighter);
 }
 
 .user-account-section> .user-account-content> .user-account-header> .header-content{
@@ -117,6 +118,7 @@
 
 .user-account-section> .user-account-content> .user-account-header> .header-content> .header-description> h2{
     font-size: 16px;
+    color: var(--ep-color-gray-lighter);
 }
 
 .user-account-section> .user-account-content> .user-config{
@@ -231,3 +233,4 @@
     cursor: pointer;
     font-size: 15px;
 }
+

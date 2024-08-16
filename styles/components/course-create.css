@@ -1,0 +1,121 @@
+.course-create-section{
+    padding: 50px;
+}
+
+.course-create-section> .course-create-content{
+
+}
+
+.course-create-section> .course-create-content> .title{
+    color: var(--ep-color-gray-lighter);
+    font-size: 24px;
+    border-left: 8px solid var(--ep-color-purple);
+    padding-left: 5px;
+    font-weight: 600;
+}
+
+.course-create-section> .course-create-content> .course-create-inputs{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    margin-top: 50px;
+}
+ 
+.course-create-section> .course-create-content> .course-create-inputs input[type="text"]{
+    width: 100%;
+    border: 1px solid var(--ep-color-purple);
+    background-color: transparent;
+    height: 40px;
+    border-radius: 5px;
+    padding: 5px;
+    font-size: 16px;
+    color: var(--ep-color-gray-lighter);
+
+}
+
+.course-create-section> .course-create-content> .course-create-inputs textarea{
+    max-width: 100%;
+    border: 1px solid var(--ep-color-purple);
+    background-color: transparent;
+    height: 80px;
+    border-radius: 5px;
+    padding: 5px;
+    font-size: 16px;
+    color: var(--ep-color-gray-lighter);
+    font-family: var(--ep-primary-font);
+}
+
+.course-create-section> .course-create-content> .course-create-inputs label{
+    color: var(--ep-color-gray-lighter);
+    font-size: 18px;
+    font-weight: 400;
+    padding: 10px 2px 0px 0px;
+}
+
+input[type="file"] {
+    position: relative;
+    height: 40px;
+    border: 1px solid var(--ep-color-purple);
+    border-radius: 5px;
+    overflow: hidden;
+    cursor: pointer;
+    font-size: 16px;
+    color: var(--ep-color-gray-lighter);
+    padding: 0px;
+}
+
+input[type="file"]::-webkit-file-upload-button {
+    visibility: hidden;
+}
+
+input[type="file"]::before {
+    content: 'Escolher Arquivo';
+    display: inline-block;
+    background: var(--ep-color-purple);
+    color: white;
+    padding: 10px 20px;
+    outline: none;
+    white-space: nowrap;
+    -webkit-user-select: none;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+input[type="file"]:hover::before {
+    background: var(--ep-color-purple-light);
+}
+
+.course-create-section> .course-create-content> .course-create-inputs> .send-form{
+    justify-content: flex-end;
+    display: flex;
+    margin-top: 20px;
+}
+
+.course-create-section> .course-create-content> .course-create-inputs> .send-form> .send-form-btn{
+    padding: 20px 55px;
+    background-color: var(--ep-color-purple);
+    height: 40px;
+    border-radius: 5px;
+    color: var(--ep-color-gray-lighter);
+    font-size: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.add-module{
+    display: grid;
+    grid-template-columns: 80% 20%;
+}
+
+.modules-container{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.module{
+    background-color: rgba(0, 0, 255, 0.193);
+    padding: 20px;
+    
+}
