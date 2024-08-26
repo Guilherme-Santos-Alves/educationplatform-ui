@@ -10,7 +10,7 @@
 //         }
 //     });
 // });
-let moduloDesign = `<input type="text" class="teste" value="" id="course-cover" placeholder="neymar">`;
+// let moduloDesign = `<input type="text" class="teste" value="" id="course-cover" placeholder="neymar">`;
 
 // document.addEventListener('DOMContentLoaded', () => {
 //     const modulos = document.querySelectorAll('.modulo');
@@ -27,39 +27,47 @@ let moduloDesign = `<input type="text" class="teste" value="" id="course-cover" 
 // });
 
 document.addEventListener('DOMContentLoaded', () => {
-    console.log(document.querySelector('#adicionar-modulo'));
-
-    document.querySelector('#adicionar-modulo').addEventListener('click', () => {
+    document.querySelector('#add-module-btn').addEventListener('click', () => {
         const moduleTitleField = document.querySelector('.module-title-field');
-        const group = document.querySelector('.modules-container');
-        const moduleBodyTag = '<module-body></module-body>';
         
-        group.insertAdjacentHTML('beforeend', moduleBodyTag);
-        
-        let lastModule = group.lastElementChild;
-        lastModule.querySelector('.module-title').innerHTML = moduleTitleField.value;
-
-        const addLessonBtn = lastModule.querySelector('.add-lesson-btn');
-        addLessonBtn.addEventListener('click', () => {
-            const lessonName = lastModule.querySelector('.lesson-name');
-            const lessonsGroup = lastModule.querySelector('.lessons-content');
-            const lessonBody = `<li class="lesson"></li>`;
-        
-            lessonsGroup.insertAdjacentHTML('beforeend', lessonBody);
-        
-            let lastLesson = lessonsGroup.lastElementChild;
+        if (moduleTitleField.value !== '') {
+            const group = document.querySelector('.modules-container');
+            const moduleBodyTag = '<module-body></module-body>';
             
-            lastModule.lessonCount = (lastModule.lessonCount || 0) + 1;
-            lastLesson.innerHTML = `Aula ${lastModule.lessonCount}: ${lessonName.value}`;
+            group.insertAdjacentHTML('beforeend', moduleBodyTag);
 
-            const input = lastModule.querySelector('.lesson-name');
-            const inputValue = input.value;
-            const result = extractLinkAndTextLesson(inputValue);
-            if (result) {
-                console.log("Texto:", result.text);
-                console.log("Link:", result.link);
-            }
-        });
+            let lastModule = group.lastElementChild;
+
+            lastModule.querySelector('.module-title').value = moduleTitleField.value;
+
+            deleteModule();
+        
+            const addLessonBtn = lastModule.querySelector('.add-lesson-btn');
+            addLessonBtn.addEventListener('click', () => {
+                const lessonsGroup = lastModule.querySelector('.lessons-content');
+        
+                const lessonBody = `
+                    <div class="lesson-group">
+                        <h1 class="lesson-number">Aula</h1>
+                        <div class="headers">
+                            <label for="">Nome da aula:</label>
+                            <label for="">Link da aula:</label>
+                            <label for="">Descrição da aula:</label>
+                        </div>
+                        <div class="fields">
+                            <input class="video-lesson-name" type="text" placeholder="nome da aula">
+                            <input class="video-lesson-link" type="text" placeholder="link da aula">
+                            <input class="video-lesson-description" type="text" placeholder="descrição da aula">
+                        </div>
+                    </div>`;
+            
+                lessonsGroup.insertAdjacentHTML('beforeend', lessonBody);
+            });
+        } else {
+            alert('Para adicionar um módulo o campo de título não pode estar vazio!')
+        }
+        
+        
     });
 });
 
@@ -68,84 +76,171 @@ class ModuleBody extends HTMLElement {
         this.innerHTML = 
             `<div class="module">
                 <div class="module-content">
-                    <h2 class="module-title"></h2>
+                    <div class="module-header">
+                        <h2 clas="">Modulo: </h2>
+                        <input type="text" class="module-title">
+                        <button class="module-delete-btn">
+                            <i class="fa-solid fa-trash-can"></i>
+                        </button>
+                    </div>
                     <ul class="lessons-content">
 
                     </ul>
                     <div class="add-lesson">
-                        <input class="lesson-name" type="text" placeholder="Digite o nome e o link adicionar uma aula">
                         <button class="add-lesson-btn">adicionar aula</button>
                     </div>
                 </div>
             </div>`;
-        this.lessonCount = 0;
     }
 }
 
 customElements.define('module-body', ModuleBody);
 
-function extractLinkAndTextLesson(inputValue) {
-    const regex = /(.*?)(https?:\/\/\S+)/;
-    const match = inputValue.match(regex);
-    if (match) {
-        return {
-            text: match[1].trim(),
-            link: match[2]
-        };
-    }
-    return null;
-}
-
-
-function extractLinkAndTextLesson(input) {
-    const urlRegex = /https?:\/\/[^\s]+/;
-    const match = input.match(urlRegex);
-
-    if (match) {
-        const link = match[0];
-        const text = input.replace(link, '').trim();
-        return { text, link };
-    } else {
-        console.error('Formato inválido ou URL não encontrada');
-        return null;
-    }
-}
-
-function enviar() {
-    const allModules = document.querySelectorAll('.module');
-    let titleOfModule;
-
-    allModules.forEach(module => {
-        const getTitleOfModule = module.querySelector('.module-title');
-        titleOfModule = getTitleOfModule.textContent;
-    });
-
-    console.log(titleOfModule);
-}
-
-const modulos = [{
-    modulo: 'nome',
-    aulas: {
-        aula1: {
-            nome: 'sei lá',
-            link: 'https://vimeo.com'
-        },
-        aula2: {
-            nome: 'sei lá',
-            link: 'https://vimeo.com'
-        }
-    } 
-}];
-
 document.addEventListener('DOMContentLoaded', () => {
-    const input = document.querySelector('#course-title');
-    input.addEventListener('change', () => {
-        console.log(input.value);
+    document.querySelector('.send-form-btn').addEventListener('click', () => {
+        courseRegisterMonitorado();
     });
-})
+});
+
+function courseRegister() {
+    const tokenJwt = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkZW1hckBlbWFpbC5jb20iLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xlaW1zL3JvbGUiOiJBZG1pbmlzdHJhdG9yIiwiZXhwIjoxNzI0NzIyMDk1LCJpc3MiOiJFZHVjYXRpb24gUGxhdGZvcm0iLCJhdWQiOiJTdHVkZW50LCBBZG1pbmlzdHJhdG9yIn0.zhvA6yz-hwkHWoEtIONQjfIM1aZZl3CaJLLSY_H1stg";
+    
+    const nameOfCourse = document.getElementById('course-title');
+    const descriptionOfCourse = document.getElementById('course-description');
+    const coverOfCourse = "www.youtube.com"; //document.getElementById('course-cover')
+
+    const jsonDataCourse = {
+        subscriptionId: 1,
+        name: nameOfCourse.value,
+        description: descriptionOfCourse.value,
+        cover: coverOfCourse 
+    };
+
+    console.log(jsonDataCourse);
+
+    fetch(`https://localhost:7092/api/courses`, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${tokenJwt}`
+        },
+        body: JSON.stringify(jsonDataCourse)
+    })
+    .then( response => {
+        response.json().then((id) => {
+            const courseId = id;
+            console.log(courseId);
+            moduleRegister(courseId);
+        });
+    })
+    .catch(error => console.log('Erro:', error));
+}
+
+// Função que monitora a execução de outra função
+function monitorarExecucao(func) {
+    return function(...args) {
+        console.log('Iniciando a execução da função.');
+        const resultado = func(...args);
+        console.log('Função executada.');
+        return resultado;
+    }
+}
+
+// Função `courseRegister` monitorada
+const courseRegisterMonitorado = monitorarExecucao(courseRegister);
 
 // window.addEventListener('beforeunload', function (event) {
 //     console.log('A página está prestes a ser recarregada.');
 //     event.preventDefault();
 //     event.returnValue = '';
 // });
+
+// criar uma variavek com array de aulas
+
+// criar um botão de excluir aula fazendo ele subir na cascata e encontar o pai
+
+
+function deleteModule() {
+    const moduleDeleteBtn = document.querySelectorAll('.module-delete-btn');
+
+    moduleDeleteBtn.forEach( deleteBtn => {
+        deleteBtn.addEventListener('click', () => {
+            const parentModule = deleteBtn.closest('.module');
+
+            parentModule.remove();
+        });
+    });
+}
+
+function moduleRegister(courseId) {
+    const tokenJwt = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkZW1hckBlbWFpbC5jb20iLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJBZG1pbmlzdHJhdG9yIiwiZXhwIjoxNzI0NzIyMDk1LCJpc3MiOiJFZHVjYXRpb24gUGxhdGZvcm0iLCJhdWQiOiJTdHVkZW50LCBBZG1pbmlzdHJhdG9yIn0.zhvA6yz-hwkHWoEtIONQjfIM1aZZl3CaJLLSY_H1stg";
+
+    const allModules = document.querySelectorAll('.module');
+
+    allModules.forEach( module => {
+        const moduleName = module.querySelector('.module-title');
+
+        const jsonDataModule = {
+            courseId: courseId,
+            name: moduleName.value,
+            description: 'toma aqui sua desc'
+        }
+        
+        fetch(`https://localhost:7092/api/modules`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${tokenJwt}`
+            },
+            body: JSON.stringify(jsonDataModule)
+        })
+        .then( response => {
+            response.json().then(( moduleId ) => {
+                module.id = 'module-' + moduleId;
+                lessonRegister();
+            });
+        })
+        .catch( error => console.log('Erro:', error));
+    })
+}
+
+function lessonRegister() {
+    const tokenJwt = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkZW1hckBlbWFpbC5jb20iLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJBZG1pbmlzdHJhdG9yIiwiZXhwIjoxNzI0NzIyMDk1LCJpc3MiOiJFZHVjYXRpb24gUGxhdGZvcm0iLCJhdWQiOiJTdHVkZW50LCBBZG1pbmlzdHJhdG9yIn0.zhvA6yz-hwkHWoEtIONQjfIM1aZZl3CaJLLSY_H1stg";
+
+    const allLessons = document.querySelectorAll('.lesson-group');
+
+    allLessons.forEach(lesson => {
+        const lessonName = lesson.querySelector('.video-lesson-name');
+        const lessonLink = lesson.querySelector('.video-lesson-link');
+        const lessonDescription = lesson.querySelector('.video-lesson-description');
+
+        const parentModule = lesson.closest('.module');
+        const moduleId = parentModule.id;
+        const extractModuleIdNumber = parseInt(moduleId.split('-')[1] || null);
+
+        const jsonDataLessons = {
+            name: lessonName.value,
+            description: lessonDescription.value,
+            video: lessonLink.value,
+            moduleId: extractModuleIdNumber
+        };
+
+        console.log(jsonDataLessons);
+
+        fetch(`https://localhost:7092/api/videolessons`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${tokenJwt}`
+            },
+            body: JSON.stringify(jsonDataLessons)
+        })
+        .then(response => {
+            response.json().then((id) => {
+                console.log(id);
+                showToast(id);
+            });
+        })
+        .catch(error => console.log('Erro:', error));
+    });
+}

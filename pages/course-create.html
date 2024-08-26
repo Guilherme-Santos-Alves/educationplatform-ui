@@ -33,11 +33,16 @@
     <script src="../js/components/navbar-home.js"></script>
     <script src="../js/components/sidebar-home.js"></script>
     <script src="../js/scripts/testes.js"></script>
+    <script src="../js/components/toasts.js"></script>
 
 </head></head>
 <body>
+
     <navbar-home class="ep-navbar-home"></navbar-home>
     <ep-sidebar-home class="ep-sidebar open-ep-sidebar" id="ep-sidebar"></ep-sidebar-home>
+    <toast-msg class="toast-msg" style="position: absolute;">
+
+    </toast-msg>
 
     <div class="ep-wrapper-home">
         <div class="course-create-section">
@@ -49,27 +54,17 @@
                     <label for="course-description">Descrição:</label>
                     <textarea name="" id="course-description"></textarea>
                     <label for="course-cover">Selecionar Capa do Curso:</label>
-                    <input type="file" value="" id="course-cover">
+                    <input type="text" id="course-cover">
 
                     <label for="">Adicionar Módulo:</label>
                     <div class="add-module">
                         <input class="module-title-field" type="text" id="" placeholder="Título do Módulo...">
-                        <button id="adicionar-modulo">adicionar</button>
+                        <button id="add-module-btn">adicionar</button>
                     </div>
 
                     <div class="modules-container">
-
                     </div>
-                    <!-- <label for="">adicionar modulo</label>
-                    <input type="text" placeholder="nome">
-                    <button>adiconar</button>
 
-                    <div class="modulo">
-                    
-                    </div>
-                    <div class="modulo"></div>
-                    <div class="modulo"></div>
-                     -->
 
                     
 

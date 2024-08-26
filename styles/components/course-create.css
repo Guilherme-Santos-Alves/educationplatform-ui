@@ -2,6 +2,10 @@
     padding: 50px;
 }
 
+html{
+    color: white;
+}
+
 .course-create-section> .course-create-content{
 
 }
@@ -21,7 +25,7 @@
     margin-top: 50px;
 }
  
-.course-create-section> .course-create-content> .course-create-inputs input[type="text"]{
+.course-create-section> .course-create-content> .course-create-inputs> input[type="text"]{
     width: 100%;
     border: 1px solid var(--ep-color-purple);
     background-color: transparent;
@@ -30,7 +34,6 @@
     padding: 5px;
     font-size: 16px;
     color: var(--ep-color-gray-lighter);
-
 }
 
 .course-create-section> .course-create-content> .course-create-inputs textarea{
@@ -50,39 +53,6 @@
     font-size: 18px;
     font-weight: 400;
     padding: 10px 2px 0px 0px;
-}
-
-input[type="file"] {
-    position: relative;
-    height: 40px;
-    border: 1px solid var(--ep-color-purple);
-    border-radius: 5px;
-    overflow: hidden;
-    cursor: pointer;
-    font-size: 16px;
-    color: var(--ep-color-gray-lighter);
-    padding: 0px;
-}
-
-input[type="file"]::-webkit-file-upload-button {
-    visibility: hidden;
-}
-
-input[type="file"]::before {
-    content: 'Escolher Arquivo';
-    display: inline-block;
-    background: var(--ep-color-purple);
-    color: white;
-    padding: 10px 20px;
-    outline: none;
-    white-space: nowrap;
-    -webkit-user-select: none;
-    cursor: pointer;
-    font-size: 16px;
-}
-
-input[type="file"]:hover::before {
-    background: var(--ep-color-purple-light);
 }
 
 .course-create-section> .course-create-content> .course-create-inputs> .send-form{
@@ -106,16 +76,121 @@ input[type="file"]:hover::before {
 .add-module{
     display: grid;
     grid-template-columns: 80% 20%;
+
+}
+
+.add-module> .module-title-field {
+    width: 95%;
+    border: 1px solid var(--ep-color-purple);
+    background-color: transparent;
+    height: 40px;
+    border-radius: 5px;
+    padding: 5px;
+    font-size: 16px;
+    color: var(--ep-color-gray-lighter);
+}
+
+.add-module> #add-module-btn{
+    background-color: var(--ep-color-purple);
+    border-radius: 5px;
+    color: var(--ep-color-gray-lighter);
+    font-size: 16px;
 }
 
 .modules-container{
     display: flex;
     flex-direction: column;
-    gap: 20px;
 }
 
 .module{
-    background-color: rgba(0, 0, 255, 0.193);
     padding: 20px;
-    
+    margin: 30px 0px 0px 0px;
+    border-radius: 5px;
+    border: 2px solid var(--ep-color-purple);
+}
+
+.module> .module-content> .module-header{
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.module> .module-content> .module-header> .module-title{
+    width: 90%;
+    margin: 0px 20px;
+    border: 1px solid var(--ep-color-purple);
+    background-color: transparent;
+    height: 40px;
+    border-radius: 5px;
+    padding: 5px;
+    font-size: 16px;
+    color: var(--ep-color-gray-lighter);
+}
+
+.module> .module-content> .module-header> .module-delete-btn{
+    display: flex;
+
+}
+
+.module> .module-content> .module-header> .module-delete-btn> i{
+    color: var(--ep-color-gray-lighter);
+    font-size: 26px;
+    background-color: var(--ep-color-dark);
+    cursor: pointer;
+}
+
+.module> .module-content> .add-lesson> .add-lesson-btn{
+    padding: 10px 15px;
+    background-color: var(--ep-color-purple);
+    height: 40px;
+    border-radius: 5px;
+    color: var(--ep-color-gray-lighter);
+    font-size: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    margin-top: 5px;
+}
+
+.lesson-group{
+    display: grid;
+    grid-template-columns: 15% 85%;
+    grid-template-rows: auto;
+    border: 1px solid var(--ep-color-purple);
+    border-radius: 8px;
+    padding: 10px;
+    margin: 7px 0px;
+    width: 100%;
+}
+
+.lesson-group> .headers{
+    display: grid;
+    grid-template-rows: repeat(3, auto);
+    gap: 5px;
+    font-size: 14px;
+}
+
+.lesson-group> .fields{
+    display: grid;
+    grid-template-rows: repeat(3, auto);
+    gap: 5px;
+}
+
+.lesson-number {
+    grid-column: 1 / -1;
+    text-align: start;
+    margin-bottom: 10px;
+    font-size: 22px;
+}
+
+.lesson-group> .fields> input{
+    width: 100%;
+    border: 1px solid var(--ep-color-purple);
+    background-color: transparent;
+    height: 30px;
+    border-radius: 5px;
+    padding: 5px;
+    font-size: 16px;
+    color: var(--ep-color-gray-lighter);
 }

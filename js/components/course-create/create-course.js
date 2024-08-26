@@ -1,25 +1,191 @@
-const tokenJwt = localStorage.getItem("tokenJwt");
+window.addEventListener('beforeunload', function (event) {
+    console.log('A página está prestes a ser recarregada.');
+    event.preventDefault();
+    event.returnValue = '';
+});
 
-function createCourse() {
-    const requestBody = {
-        subscriptionId: 0,
-        name: 'string',
-        description: 'string',
-        cover: 'string',
-        active: true //or false
+document.addEventListener('DOMContentLoaded', () => {
+    document.querySelector('#add-module-btn').addEventListener('click', () => {
+        const moduleTitleField = document.querySelector('.module-title-field');
+        
+        if (moduleTitleField.value !== '') {
+            const group = document.querySelector('.modules-container');
+            const moduleBodyTag = '<module-body></module-body>';
+            
+            group.insertAdjacentHTML('beforeend', moduleBodyTag);
+
+            let lastModule = group.lastElementChild;
+
+            lastModule.querySelector('.module-title').value = moduleTitleField.value;
+
+            deleteModule();
+        
+            const addLessonBtn = lastModule.querySelector('.add-lesson-btn');
+            addLessonBtn.addEventListener('click', () => {
+                const lessonsGroup = lastModule.querySelector('.lessons-content');
+        
+                const lessonBody = `
+                    <div class="lesson-group">
+                        <h1 class="lesson-number">Aula</h1>
+                        <div class="headers">
+                            <label for="">Nome da aula:</label>
+                            <label for="">Link da aula:</label>
+                            <label for="">Descrição da aula:</label>
+                        </div>
+                        <div class="fields">
+                            <input class="video-lesson-name" type="text" placeholder="nome da aula">
+                            <input class="video-lesson-link" type="text" placeholder="link da aula">
+                            <input class="video-lesson-description" type="text" placeholder="descrição da aula">
+                        </div>
+                    </div>`;
+            
+                lessonsGroup.insertAdjacentHTML('beforeend', lessonBody);
+            });
+        } else {
+            alert('Para adicionar um módulo o campo de título não pode estar vazio!')
+        }
+    });
+});
+
+class ModuleBody extends HTMLElement {
+    connectedCallback() {
+        this.innerHTML = 
+            `<div class="module">
+                <div class="module-content">
+                    <div class="module-header">
+                        <h2 clas="">Modulo: </h2>
+                        <input type="text" class="module-title">
+                        <button class="module-delete-btn">
+                            <i class="fa-solid fa-trash-can"></i>
+                        </button>
+                    </div>
+                    <ul class="lessons-content">
+
+                    </ul>
+                    <div class="add-lesson">
+                        <button class="add-lesson-btn">adicionar aula</button>
+                    </div>
+                </div>
+            </div>`;
     }
+}
+
+customElements.define('module-body', ModuleBody);
+
+document.addEventListener('DOMContentLoaded', () => {
+    document.querySelector('.send-form-btn').addEventListener('click', () => {
+        courseRegister();
+    });
+});
+
+function courseRegister() {
+    const tokenJwt = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkZW1hckBlbWFpbC5jb20iLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJBZG1pbmlzdHJhdG9yIiwiZXhwIjoxNzI0NzIyMDk1LCJpc3MiOiJFZHVjYXRpb24gUGxhdGZvcm0iLCJhdWQiOiJTdHVkZW50LCBBZG1pbmlzdHJhdG9yIn0.zhvA6yz-hwkHWoEtIONQjfIM1aZZl3CaJLLSY_H1stg";
     
+    const nameOfCourse = document.getElementById('course-title');
+    const descriptionOfCourse = document.getElementById('course-description');
+    const coverOfCourse = "www.youtube.com"; //document.getElementById('course-cover')
+
+    const jsonDataCourse = {
+        subscriptionId: 1,
+        name: nameOfCourse.value,
+        description: descriptionOfCourse.value,
+        cover: coverOfCourse 
+    }
+
     fetch(`https://localhost:7092/api/courses`, {
-        method: 'GET',
+        method: 'POST',
         headers: {
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${tokenJwt}`
+        },
+        body: JSON.stringify(jsonDataCourse)
+    })
+    .then( response => {
+        response.json().then(( id ) => {
+            const courseId = id;
+            moduleRegister(courseId);
+        });
+    })
+    .catch( error => console.log('Erro:', error));
+}
+
+function deleteModule() {
+    const moduleDeleteBtn = document.querySelectorAll('.module-delete-btn');
+
+    moduleDeleteBtn.forEach( deleteBtn => {
+        deleteBtn.addEventListener('click', () => {
+            const parentModule = deleteBtn.closest('.module');
+            parentModule.remove();
+        });
+    });
+}
+
+function moduleRegister(courseId) {
+    const tokenJwt = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkZW1hckBlbWFpbC5jb20iLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJBZG1pbmlzdHJhdG9yIiwiZXhwIjoxNzI0NzIyMDk1LCJpc3MiOiJFZHVjYXRpb24gUGxhdGZvcm0iLCJhdWQiOiJTdHVkZW50LCBBZG1pbmlzdHJhdG9yIn0.zhvA6yz-hwkHWoEtIONQjfIM1aZZl3CaJLLSY_H1stg";
+
+    const allModules = document.querySelectorAll('.module');
+
+    allModules.forEach( module => {
+        const moduleName = module.querySelector('.module-title');
+
+        const jsonDataModule = {
+            courseId: courseId,
+            name: moduleName.value,
+            description: 'toma aqui sua desc'
+        }
+        
+        fetch(`https://localhost:7092/api/modules`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
-                'Authorization': `Bearer ${token}`
+                'Authorization': `Bearer ${tokenJwt}`
             },
-            body: JSON.stringify(requestBody)
-        },
+            body: JSON.stringify(jsonDataModule)
+        })
+        .then( response => {
+            response.json().then(( moduleId ) => {
+                module.id = 'module-' + moduleId;
+                lessonRegister();
+            });
+        })
+        .catch( error => console.log('Erro:', error));
     })
 }
 
+function lessonRegister() {
+    const tokenJwt = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkZW1hckBlbWFpbC5jb20iLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJBZG1pbmlzdHJhdG9yIiwiZXhwIjoxNzI0NzIyMDk1LCJpc3MiOiJFZHVjYXRpb24gUGxhdGZvcm0iLCJhdWQiOiJTdHVkZW50LCBBZG1pbmlzdHJhdG9yIn0.zhvA6yz-hwkHWoEtIONQjfIM1aZZl3CaJLLSY_H1stg";
 
+    const allLessons = document.querySelectorAll('.lesson-group');
+
+    allLessons.forEach(lesson => {
+        const lessonName = lesson.querySelector('.video-lesson-name');
+        const lessonLink = lesson.querySelector('.video-lesson-link');
+        const lessonDescription = lesson.querySelector('.video-lesson-description');
+
+        const parentModule = lesson.closest('.module');
+        const moduleId = parentModule.id;
+        const extractModuleIdNumber = parseInt(moduleId.split('-')[1] || null);
+
+        const jsonDataLessons = {
+            name: lessonName.value,
+            description: lessonDescription.value,
+            video: lessonLink.value,
+            moduleId: extractModuleIdNumber
+        };
+
+        fetch(`https://localhost:7092/api/videolessons`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${tokenJwt}`
+            },
+            body: JSON.stringify(jsonDataLessons)
+        })
+        .then(response => {
+            response.json().then((id) => {
+                showToast(id); //exemplo
+            });
+        })
+        .catch(error => console.log('Erro:', error));
+    });
+}
