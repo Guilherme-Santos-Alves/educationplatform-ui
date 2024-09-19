@@ -55,9 +55,9 @@ document.addEventListener('DOMContentLoaded', () => {
                             <label for="">Descrição da aula:</label>
                         </div>
                         <div class="fields">
-                            <input class="video-lesson-name" type="text" placeholder="nome da aula">
-                            <input class="video-lesson-link" type="text" placeholder="link da aula">
-                            <input class="video-lesson-description" type="text" placeholder="descrição da aula">
+                            <input class="video-lesson-name" type="text">
+                            <input class="video-lesson-link" type="text">
+                            <input class="video-lesson-description" type="text">
                         </div>
                     </div>`;
             
@@ -103,7 +103,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 function courseRegister() {
-    const tokenJwt = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkZW1hckBlbWFpbC5jb20iLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xlaW1zL3JvbGUiOiJBZG1pbmlzdHJhdG9yIiwiZXhwIjoxNzI0NzIyMDk1LCJpc3MiOiJFZHVjYXRpb24gUGxhdGZvcm0iLCJhdWQiOiJTdHVkZW50LCBBZG1pbmlzdHJhdG9yIn0.zhvA6yz-hwkHWoEtIONQjfIM1aZZl3CaJLLSY_H1stg";
+    const tokenJwt = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkZW1hckBlbWFpbC5jb20iLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJBZG1pbmlzdHJhdG9yIiwiZXhwIjoxNzI0ODg1NDgzLCJpc3MiOiJFZHVjYXRpb24gUGxhdGZvcm0iLCJhdWQiOiJTdHVkZW50LCBBZG1pbmlzdHJhdG9yIn0.4zjH3kBB3MsJWPrJZd008cyGFosX1w1rzTh2-TNAcsI";
     
     const nameOfCourse = document.getElementById('course-title');
     const descriptionOfCourse = document.getElementById('course-description');
@@ -173,7 +173,7 @@ function deleteModule() {
 }
 
 function moduleRegister(courseId) {
-    const tokenJwt = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkZW1hckBlbWFpbC5jb20iLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJBZG1pbmlzdHJhdG9yIiwiZXhwIjoxNzI0NzIyMDk1LCJpc3MiOiJFZHVjYXRpb24gUGxhdGZvcm0iLCJhdWQiOiJTdHVkZW50LCBBZG1pbmlzdHJhdG9yIn0.zhvA6yz-hwkHWoEtIONQjfIM1aZZl3CaJLLSY_H1stg";
+    const tokenJwt = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkZW1hckBlbWFpbC5jb20iLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJBZG1pbmlzdHJhdG9yIiwiZXhwIjoxNzI0ODg1NDgzLCJpc3MiOiJFZHVjYXRpb24gUGxhdGZvcm0iLCJhdWQiOiJTdHVkZW50LCBBZG1pbmlzdHJhdG9yIn0.4zjH3kBB3MsJWPrJZd008cyGFosX1w1rzTh2-TNAcsI";
 
     const allModules = document.querySelectorAll('.module');
 
@@ -205,7 +205,7 @@ function moduleRegister(courseId) {
 }
 
 function lessonRegister() {
-    const tokenJwt = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkZW1hckBlbWFpbC5jb20iLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJBZG1pbmlzdHJhdG9yIiwiZXhwIjoxNzI0NzIyMDk1LCJpc3MiOiJFZHVjYXRpb24gUGxhdGZvcm0iLCJhdWQiOiJTdHVkZW50LCBBZG1pbmlzdHJhdG9yIn0.zhvA6yz-hwkHWoEtIONQjfIM1aZZl3CaJLLSY_H1stg";
+    const tokenJwt = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkZW1hckBlbWFpbC5jb20iLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJBZG1pbmlzdHJhdG9yIiwiZXhwIjoxNzI0ODg1NDgzLCJpc3MiOiJFZHVjYXRpb24gUGxhdGZvcm0iLCJhdWQiOiJTdHVkZW50LCBBZG1pbmlzdHJhdG9yIn0.4zjH3kBB3MsJWPrJZd008cyGFosX1w1rzTh2-TNAcsI";
 
     const allLessons = document.querySelectorAll('.lesson-group');
 

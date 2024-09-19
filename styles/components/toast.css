@@ -1,0 +1,66 @@
+#toast-box{
+    margin-top: 50px;
+    position: absolute;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    top: 30px;
+    right: 30px;
+    padding: 20px;
+}
+
+/* .cl-toast-box{
+    width: 400px;
+    height: 80px;
+    background: #fff;
+    font-weight: 500;
+    margin: 15px 0;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    z-index: 1;
+} */
+
+.toast{
+    position: relative; /* Adicionando esta linha */
+    width: 400px;
+    height: 80px;
+    background: #fff;
+    font-weight: 500;
+    margin: 15px 0;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    z-index: 1;
+    display: flex;
+    align-items: center;
+}
+
+
+.toast> span{
+    justify-content: center;
+    margin: 0px 20px;
+    color: green;
+}
+
+.toast.error > span {
+    color: red;
+}
+
+.toast::after{
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 5px;
+    background: green;
+    animation: anim 6s linear forwards;
+}
+
+.toast.error::after{
+    background: red;
+}
+
+@keyframes anim{
+    100%{
+        width: 0;
+    }
+}

@@ -32,8 +32,12 @@
     
     <script src="../js/components/navbar-home.js"></script>
     <script src="../js/components/sidebar-home.js"></script>
-    <script src="../js/scripts/testes.js"></script>
-    <script src="../js/components/toasts.js"></script>
+    <script src="../js/components/course-create/module-body.js"></script>
+
+    <script src="../js/course-create/course-create.js"></script>
+
+    <script src="../js/components/toasts-msg.js"></script>
+    <link rel="stylesheet" href="../styles/components/toast.css">
 
 </head></head>
 <body>
@@ -45,21 +49,22 @@
     </toast-msg>
 
     <div class="ep-wrapper-home">
+        <div class="cl-toast-box" id="toast-box"></div>
         <div class="course-create-section">
             <div class="course-create-content">
                 <h1 class="title">Cadastrar Curso</h1>
                 <form class="course-create-inputs" action="javascript:void(0)">
                     <label for="course-title">Título do Curso:</label>
-                    <input type="text" id="course-title">
+                    <input type="text" id="course-title" required>
                     <label for="course-description">Descrição:</label>
-                    <textarea name="" id="course-description"></textarea>
+                    <textarea name="" id="course-description" required></textarea>
                     <label for="course-cover">Selecionar Capa do Curso:</label>
-                    <input type="text" id="course-cover">
+                    <input type="url" id="course-cover" required>
 
                     <label for="">Adicionar Módulo:</label>
                     <div class="add-module">
                         <input class="module-title-field" type="text" id="" placeholder="Título do Módulo...">
-                        <button id="add-module-btn">adicionar</button>
+                        <button type="button" id="add-module-btn">adicionar</button>
                     </div>
 
                     <div class="modules-container">

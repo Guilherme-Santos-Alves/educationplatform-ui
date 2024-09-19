@@ -25,7 +25,8 @@ html{
     margin-top: 50px;
 }
  
-.course-create-section> .course-create-content> .course-create-inputs> input[type="text"]{
+.course-create-section> .course-create-content> .course-create-inputs> input[type="text"], 
+.course-create-section> .course-create-content> .course-create-inputs> input[type="url"]{
     width: 100%;
     border: 1px solid var(--ep-color-purple);
     background-color: transparent;
@@ -71,6 +72,13 @@ html{
     display: flex;
     justify-content: center;
     align-items: center;
+    cursor: pointer;
+    transition: all 0.4s ease;
+}
+
+.course-create-section> .course-create-content> .course-create-inputs> .send-form> .send-form-btn:hover, 
+.add-module> #add-module-btn:hover{
+    background-color: var(--ep-color-purple-light);
 }
 
 .add-module{
@@ -95,6 +103,8 @@ html{
     border-radius: 5px;
     color: var(--ep-color-gray-lighter);
     font-size: 16px;
+    cursor: pointer;
+    transition: all 0.4s ease;
 }
 
 .modules-container{
@@ -164,7 +174,29 @@ html{
     width: 100%;
 }
 
-.lesson-group> .headers{
+.lesson-header{
+    display: flex;
+    grid-column: 1 / -1;
+    text-align: start;
+    margin-bottom: 10px;
+    justify-content: space-between;
+}
+
+.lesson-header> h1{
+    font-size: 18px;
+}
+
+.lesson-header> .lesson-delete-btn{
+    background-color: var(--ep-color-gray-dark);
+    color: var(--ep-color-gray-lighter);
+    cursor: pointer;
+}
+
+.lesson-header> .lesson-delete-btn> i{
+    font-size: 16px;
+}
+
+.lesson-group> .input-labels{
     display: grid;
     grid-template-rows: repeat(3, auto);
     gap: 5px;
@@ -175,13 +207,6 @@ html{
     display: grid;
     grid-template-rows: repeat(3, auto);
     gap: 5px;
-}
-
-.lesson-number {
-    grid-column: 1 / -1;
-    text-align: start;
-    margin-bottom: 10px;
-    font-size: 22px;
 }
 
 .lesson-group> .fields> input{
