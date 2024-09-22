@@ -1,6 +1,6 @@
 #toast-box{
     margin-top: 50px;
-    position: absolute;
+    position: fixed;
     overflow: hidden;
     display: flex;
     flex-direction: column;
@@ -10,21 +10,11 @@
     padding: 20px;
 }
 
-/* .cl-toast-box{
+.ep-toast{
+    position: relative;
     width: 400px;
     height: 80px;
-    background: #fff;
-    font-weight: 500;
-    margin: 15px 0;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
-    z-index: 1;
-} */
-
-.toast{
-    position: relative; /* Adicionando esta linha */
-    width: 400px;
-    height: 80px;
-    background: #fff;
+    background: var(--ep-color-dark);
     font-weight: 500;
     margin: 15px 0;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
@@ -33,30 +23,81 @@
     align-items: center;
 }
 
-
-.toast> span{
+.ep-toast> span{
     justify-content: center;
     margin: 0px 20px;
-    color: green;
+    color: var(--ep-color-purple);
 }
 
-.toast.error > span {
-    color: red;
+.ep-toast-error > span {
+    color: var(--ep-color-danger);
+    justify-content: center;
+    margin: 0px 20px;
 }
 
-.toast::after{
+.ep-toast-error{
+    position: relative;
+    width: 400px;
+    height: 80px;
+    background: var(--ep-color-dark);
+    font-weight: 500;
+    margin: 15px 0;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    z-index: 1;
+    display: flex;
+    align-items: center;
+}
+
+.ep-toast-alert > span {
+    color: var(--ep-color-alert);
+    justify-content: center;
+    margin: 0px 20px;
+}
+
+.ep-toast-alert{
+    position: relative;
+    width: 400px;
+    height: 80px;
+    background: var(--ep-color-dark);
+    font-weight: 500;
+    margin: 15px 0;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    z-index: 1;
+    display: flex;
+    align-items: center;
+}
+
+.ep-toast::after{
     content: '';
     position: absolute;
     left: 0;
     bottom: 0;
     width: 100%;
     height: 5px;
-    background: green;
+    background: var(--ep-color-purple);
     animation: anim 6s linear forwards;
 }
 
-.toast.error::after{
-    background: red;
+.ep-toast-error::after{
+    background: var(--ep-color-danger);
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 5px;
+    animation: anim 6s linear forwards;
+}
+
+.ep-toast-alert::after{
+    background: var(--ep-color-alert);
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 5px;
+    animation: anim 6s linear forwards;
 }
 
 @keyframes anim{

@@ -29,6 +29,7 @@
     <link rel="stylesheet" href="../styles/components/ep-scrollbar.css">
     <link rel="stylesheet" href="../styles/components/ep-sidebar.css">
     <link rel="stylesheet" href="../styles/components/course-create.css">
+    <link rel="stylesheet" href="../styles/components/toast.css">
     
     <script src="../js/components/navbar-home.js"></script>
     <script src="../js/components/sidebar-home.js"></script>
@@ -37,7 +38,6 @@
     <script src="../js/course-create/course-create.js"></script>
 
     <script src="../js/components/toasts-msg.js"></script>
-    <link rel="stylesheet" href="../styles/components/toast.css">
 
 </head></head>
 <body>
@@ -47,9 +47,9 @@
     <toast-msg class="toast-msg" style="position: absolute;">
 
     </toast-msg>
-
+    <div class="cl-toast-box" id="toast-box"></div>
     <div class="ep-wrapper-home">
-        <div class="cl-toast-box" id="toast-box"></div>
+
         <div class="course-create-section">
             <div class="course-create-content">
                 <h1 class="title">Cadastrar Curso</h1>
@@ -59,7 +59,7 @@
                     <label for="course-description">Descrição:</label>
                     <textarea name="" id="course-description" required></textarea>
                     <label for="course-cover">Selecionar Capa do Curso:</label>
-                    <input type="url" id="course-cover" required>
+                    <input type="text" id="course-cover" required>
 
                     <label for="">Adicionar Módulo:</label>
                     <div class="add-module">

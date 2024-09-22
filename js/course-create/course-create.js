@@ -1,17 +1,15 @@
 // window.addEventListener('beforeunload', function (event) {
-//     console.log('A página está prestes a ser recarregada.');
 //     event.preventDefault();
 //     event.returnValue = '';
 // });
-
 document.addEventListener('DOMContentLoaded', () => {
-    document.querySelector('.send-form-btn').addEventListener('click', () => {
+    document.querySelector('.course-create-inputs').addEventListener('submit', () => {
         courseRegister();
     });
 });
 
 function courseRegister() {
-    const tokenJwt = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkZW1hckBlbWFpbC5jb20iLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJBZG1pbmlzdHJhdG9yIiwiZXhwIjoxNzI0OTY3NDE0LCJpc3MiOiJFZHVjYXRpb24gUGxhdGZvcm0iLCJhdWQiOiJTdHVkZW50LCBBZG1pbmlzdHJhdG9yIn0.8T4I_VD7mNIQtyOwg6fWg7uGSRMQcE7FHdKbwzH_oQA";
+    const tokenJwt = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkZW1hckBlbWFpbC5jb20iLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJBZG1pbmlzdHJhdG9yIiwiZXhwIjoxNzI2OTk1MzIwLCJpc3MiOiJFZHVjYXRpb24gUGxhdGZvcm0iLCJhdWQiOiJTdHVkZW50LCBBZG1pbmlzdHJhdG9yIn0.sFjOkxtk7reNFbNd4QyNS1ZvjPiSEp0HvryZ9rbXdk0";
     
     const nameOfCourse = document.getElementById('course-title');
     const descriptionOfCourse = document.getElementById('course-description');
@@ -24,6 +22,8 @@ function courseRegister() {
         cover: coverOfCourse.value
     }
 
+    console.log('curso' + JSON.stringify(jsonDataCourse));
+
     fetch(`https://localhost:7092/api/courses`, {
         method: 'POST',
         headers: {
@@ -31,14 +31,16 @@ function courseRegister() {
             'Authorization': `Bearer ${tokenJwt}`
         },
         body: JSON.stringify(jsonDataCourse)
+        
     })
     .then( response => {
         response.json().then(( id ) => {
             const courseId = id;
             moduleAndLessonRegister(courseId);
+            showToast('Curso cadastrado com sucesso', 'success'); //exemplo
         });
     })
-    .catch( error => console.log('Erro:', error));
+    .catch( error => showToast(error, 'error'));
 }
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -85,7 +87,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 deleteLesson();
             });
         } else {
-            alert('Para adicionar um módulo o campo do título não pode estar vazio!'); //toast no lugar do alert
+            showToast('Para adicionar um módulo o campo do título não pode estar vazio!', 'alert');
         }
     });
 });
@@ -102,13 +104,10 @@ function deleteModule() {
 }
 
 function deleteLesson() {
-    console.log("chegou");
     const lessonDeleteBtn = document.querySelectorAll('.lesson-delete-btn');
-    console.log(lessonDeleteBtn);
 
     lessonDeleteBtn.forEach( deleteBtn => {
         deleteBtn.addEventListener('click', () => {
-            console.log('clicou');
             const parentModule = deleteBtn.closest('.lesson-group');
             parentModule.remove();
         });
@@ -116,7 +115,7 @@ function deleteLesson() {
 }
 
 function moduleAndLessonRegister(courseId) {
-    const tokenJwt = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkZW1hckBlbWFpbC5jb20iLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJBZG1pbmlzdHJhdG9yIiwiZXhwIjoxNzI0OTY3NDE0LCJpc3MiOiJFZHVjYXRpb24gUGxhdGZvcm0iLCJhdWQiOiJTdHVkZW50LCBBZG1pbmlzdHJhdG9yIn0.8T4I_VD7mNIQtyOwg6fWg7uGSRMQcE7FHdKbwzH_oQA";
+    const tokenJwt = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkZW1hckBlbWFpbC5jb20iLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJBZG1pbmlzdHJhdG9yIiwiZXhwIjoxNzI2OTk1MzIwLCJpc3MiOiJFZHVjYXRpb24gUGxhdGZvcm0iLCJhdWQiOiJTdHVkZW50LCBBZG1pbmlzdHJhdG9yIn0.sFjOkxtk7reNFbNd4QyNS1ZvjPiSEp0HvryZ9rbXdk0";
 
     const allModules = document.querySelectorAll('.module');
 
@@ -126,8 +125,10 @@ function moduleAndLessonRegister(courseId) {
         const jsonDataModule = {
             courseId: courseId,
             name: moduleName.value,
-            description: ''
+            description: 'teste'
         }
+
+        console.log('modulo' + JSON.stringify(jsonDataModule));
         
         fetch(`https://localhost:7092/api/modules`, {
             method: 'POST',
@@ -146,10 +147,9 @@ function moduleAndLessonRegister(courseId) {
             return response.json();
         })
         .then(moduleId => {
-            // cadastrar lição
+            // cadastrar aula
 
             const allLessons = module.querySelectorAll('.lesson-group');
-            console.log(allLessons);
 
             allLessons.forEach(lesson => {
                 const lessonName = lesson.querySelector('.video-lesson-name');
@@ -160,8 +160,10 @@ function moduleAndLessonRegister(courseId) {
                     name: lessonName.value,
                     description: lessonDescription.value,
                     video: lessonLink.value,
-                    moduleId: module.id
+                    moduleId: moduleId
                 };
+
+                console.log('aula' + JSON.stringify(jsonDataLessons));
 
                 fetch(`https://localhost:7092/api/videolessons`, {
                     method: 'POST',
@@ -172,11 +174,22 @@ function moduleAndLessonRegister(courseId) {
                     body: JSON.stringify(jsonDataLessons)
                 })
                 .then(response => {
-                    response.json().then((id) => {
-                        showToast(id); //exemplo
-                    });
+                    if (response.ok) {
+                        showToast('sucesso aula', 'success');
+                    }
+
+                    if (!response.ok) {
+                        // Se o status da resposta não for 2xx, lançar um erro
+                         // exemplo de sucesso
+                        throw new Error(`HTTP error! status: ${response.status}`);
+                    }
+                    return response.json(); // converter para JSON
                 })
-                .catch(error => console.log('Erro:', error));
+                .catch(error => {
+                    console.log(error); // Logar o erro para depuração
+                    showToast('Uma ou mais aulas não cadastradas: ' + error, 'error');  // Exibir toast de erro
+                });
+                
             });
         })
         .catch(error => {
@@ -188,8 +201,11 @@ function moduleAndLessonRegister(courseId) {
             for (let field in error.errors) {
                 if (error.errors.hasOwnProperty(field)) {
                     error.errors[field].forEach((errorMessage) => {
-                        showToast(errorMessage);
-                        showToastError(`${errorMessage}`);
+                        showToast(errorMessage, 'error');
+                        
+                        
+                        
+                        
                     });
                 }
             }
@@ -204,3 +220,4 @@ function moduleAndLessonRegister(courseId) {
 // required de aula -- ok
 // clear formdata apos fetch ..pending
 // toast de erro nao possivel dadastrar uma ou mais aulas ..pending
+// arrumar nome do form
