@@ -1,16 +1,17 @@
-// window.addEventListener('beforeunload', function (event) {
-//     event.preventDefault();
-//     event.returnValue = '';
-// });
+window.addEventListener('beforeunload', function (event) {
+    event.preventDefault();
+    event.returnValue = '';
+});
+
 document.addEventListener('DOMContentLoaded', () => {
-    document.querySelector('.course-create-inputs').addEventListener('submit', () => {
+    document.querySelector('#course-register-form').addEventListener('submit', () => {
         courseRegister();
     });
 });
 
+const tokenJwt = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkZW1hckBlbWFpbC5jb20iLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJBZG1pbmlzdHJhdG9yIiwiZXhwIjoxNzI3MjE0NTg2LCJpc3MiOiJFZHVjYXRpb24gUGxhdGZvcm0iLCJhdWQiOiJTdHVkZW50LCBBZG1pbmlzdHJhdG9yIn0.MugbPwDXEgTTPd3VzeX1PL2EDMJmiwF6gw4f9V7uVzU";
+
 function courseRegister() {
-    const tokenJwt = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkZW1hckBlbWFpbC5jb20iLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJBZG1pbmlzdHJhdG9yIiwiZXhwIjoxNzI2OTk1MzIwLCJpc3MiOiJFZHVjYXRpb24gUGxhdGZvcm0iLCJhdWQiOiJTdHVkZW50LCBBZG1pbmlzdHJhdG9yIn0.sFjOkxtk7reNFbNd4QyNS1ZvjPiSEp0HvryZ9rbXdk0";
-    
     const nameOfCourse = document.getElementById('course-title');
     const descriptionOfCourse = document.getElementById('course-description');
     const coverOfCourse = document.getElementById('course-cover');
@@ -31,16 +32,34 @@ function courseRegister() {
             'Authorization': `Bearer ${tokenJwt}`
         },
         body: JSON.stringify(jsonDataCourse)
-        
     })
     .then( response => {
-        response.json().then(( id ) => {
-            const courseId = id;
-            moduleAndLessonRegister(courseId);
-            showToast('Curso cadastrado com sucesso', 'success'); //exemplo
-        });
+        if (!response.ok) {
+            return response.json().then(error => {
+                throw error;
+            });
+        }
+
+        if (response.ok) {
+            response.json().then(( id ) => {
+                const courseId = id;
+                moduleAndLessonRegister(courseId);
+                showToast('Curso cadastrado com sucesso! <br> Você pode editar os cursos que criou na seção "Meus cursos".', 'success');
+                if (!document.querySelector('.module-body')){
+                    clearFormData();
+                }
+            });
+        }
     })
-    .catch( error => showToast(error, 'error'));
+    .catch( error => {
+        for (let field in error.errors) {
+            if (error.errors.hasOwnProperty(field)) {
+                error.errors[field].forEach((errorMessage) => {
+                    showToast('Não foi possível cadastrar o curso: ' + errorMessage, 'error');
+                });
+            }
+        }
+    });
 }
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -57,6 +76,7 @@ document.addEventListener('DOMContentLoaded', () => {
             lastModule.querySelector('.module-title').value = moduleTitleField.value;
 
             deleteModule();
+            moduleTitleField.value = '';
 
             const addLessonBtn = lastModule.querySelector('.add-lesson-btn');
             addLessonBtn.addEventListener('click', () => {
@@ -115,8 +135,6 @@ function deleteLesson() {
 }
 
 function moduleAndLessonRegister(courseId) {
-    const tokenJwt = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkZW1hckBlbWFpbC5jb20iLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJBZG1pbmlzdHJhdG9yIiwiZXhwIjoxNzI2OTk1MzIwLCJpc3MiOiJFZHVjYXRpb24gUGxhdGZvcm0iLCJhdWQiOiJTdHVkZW50LCBBZG1pbmlzdHJhdG9yIn0.sFjOkxtk7reNFbNd4QyNS1ZvjPiSEp0HvryZ9rbXdk0";
-
     const allModules = document.querySelectorAll('.module');
 
     allModules.forEach( module => {
@@ -141,13 +159,15 @@ function moduleAndLessonRegister(courseId) {
         .then(response => {
             if (!response.ok) {
                 return response.json().then(error => {
-                    throw error; // Lança o erro para ser capturado no catch
+                    throw error;
                 });
             }
             return response.json();
         })
         .then(moduleId => {
-            // cadastrar aula
+            if (!document.querySelector('.lesson-group')){
+                clearFormData();
+            }
 
             const allLessons = module.querySelectorAll('.lesson-group');
 
@@ -175,49 +195,71 @@ function moduleAndLessonRegister(courseId) {
                 })
                 .then(response => {
                     if (response.ok) {
-                        showToast('sucesso aula', 'success');
+                        showToast('Aula cadastrada com sucesso!', 'success');
+                    } else {
+                        return response.json().then(error => {
+                            throw error;
+                        });
                     }
-
-                    if (!response.ok) {
-                        // Se o status da resposta não for 2xx, lançar um erro
-                         // exemplo de sucesso
-                        throw new Error(`HTTP error! status: ${response.status}`);
-                    }
-                    return response.json(); // converter para JSON
                 })
                 .catch(error => {
-                    console.log(error); // Logar o erro para depuração
-                    showToast('Uma ou mais aulas não cadastradas: ' + error, 'error');  // Exibir toast de erro
-                });
+                    console.log('deu ruim na aula', error);
                 
+                    if (error.errors) {
+                        for (let field in error.errors) {
+                            if (error.errors.hasOwnProperty(field)) {
+                                error.errors[field].forEach(errorMessage => {
+                                    console.log('chama o toast');
+                                    showToast('Não foi possível cadastrar uma ou mais aulas: ' + errorMessage, 'error');
+                                });
+                            }
+                        }
+                    } else {
+                        console.log('Estrutura de erro inesperada');
+                        showToast('Não foi possível cadastrar uma ou mais aulas.', 'error');
+                    }
+                });
             });
         })
         .catch(error => {
-            console.error('Erro:', error.title); // "One or more validation errors occurred."
-            console.error('Status:', error.status); // 400
-            console.error('Trace ID:', error.traceId); 
-        
+            console.error('Erro no módulo:', error.title);
+            console.error('Status:', error.status);
+            console.error('Trace ID:', error.traceId);
 
             for (let field in error.errors) {
                 if (error.errors.hasOwnProperty(field)) {
-                    error.errors[field].forEach((errorMessage) => {
-                        showToast(errorMessage, 'error');
-                        
-                        
-                        
-                        
+                    error.errors[field].forEach(errorMessage => {
+                        showToast('Não foi possível cadastrar um ou mais módulos: ' + errorMessage, 'error');
                     });
                 }
             }
         });
-        
-    })
+    });
 }
 
+function clearFormData() {
+    const fieldsOfForm = ['input', 'textarea'];
+
+    if (document.querySelectorAll('.module-body')){
+        const allModules = document.querySelectorAll('.module-body');
+        
+        allModules.forEach( moduleBody => {
+            moduleBody.remove();
+        });
+    }
+    
+    fieldsOfForm.forEach(field => {
+        const clearField = document.querySelectorAll(field);
+        
+        clearField.forEach(el => {
+            el.value = '';
+        });
+    });
+}
 
 // adicionar btn de remover aula -- ok
 // cadastrar modulo junto com aula -- ok
 // required de aula -- ok
-// clear formdata apos fetch ..pending
-// toast de erro nao possivel dadastrar uma ou mais aulas ..pending
-// arrumar nome do form
+// clear formdata apos fetch --ok
+// toast de erro nao possivel dadastrar uma ou mais aulas --ok
+// arrumar nome do form --ok

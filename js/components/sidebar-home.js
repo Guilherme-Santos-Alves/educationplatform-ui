@@ -4,7 +4,7 @@ class SidebarHome extends HTMLElement {
             <div class="ep-sidebar-content">
                 <ul id="side-itens">
                     <li class="side-item">
-                        <a href="">
+                        <a href="main-home.html">
                             <i class="fa-solid fa-house"></i>
                             <span class="item-description">
                                 Início
@@ -12,7 +12,7 @@ class SidebarHome extends HTMLElement {
                         </a>
                     </li>
                     <li class="side-item">
-                        <a href="">
+                        <a href="user-account.html">
                             <i class="fa-regular fa-user"></i>
                             <span class="item-description">
                                 Perfil
@@ -28,7 +28,7 @@ class SidebarHome extends HTMLElement {
                         </a>
                     </li>
                     <li class="side-item">
-                        <a href="">
+                        <a href="course-certificates.html">
                             <i class="fa-solid fa-medal"></i>
                             <span class="item-description">
                                 Certificados

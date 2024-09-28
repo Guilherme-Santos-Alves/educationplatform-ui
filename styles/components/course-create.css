@@ -3,11 +3,7 @@
 }
 
 html{
-    color: white;
-}
-
-.course-create-section> .course-create-content{
-
+    color: var(--ep-color-gray-lighter);
 }
 
 .course-create-section> .course-create-content> .title{
@@ -18,15 +14,15 @@ html{
     font-weight: 600;
 }
 
-.course-create-section> .course-create-content> .course-create-inputs{
+.course-create-section> .course-create-content> .course-create-form{
     display: flex;
     flex-direction: column;
     gap: 5px;
     margin-top: 50px;
 }
  
-.course-create-section> .course-create-content> .course-create-inputs> input[type="text"], 
-.course-create-section> .course-create-content> .course-create-inputs> input[type="url"]{
+.course-create-section> .course-create-content> .course-create-form> input[type="text"], 
+.course-create-section> .course-create-content> .course-create-form> input[type="url"]{
     width: 100%;
     border: 1px solid var(--ep-color-purple);
     background-color: transparent;
@@ -37,7 +33,7 @@ html{
     color: var(--ep-color-gray-lighter);
 }
 
-.course-create-section> .course-create-content> .course-create-inputs textarea{
+.course-create-section> .course-create-content> .course-create-form textarea{
     max-width: 100%;
     border: 1px solid var(--ep-color-purple);
     background-color: transparent;
@@ -49,20 +45,20 @@ html{
     font-family: var(--ep-primary-font);
 }
 
-.course-create-section> .course-create-content> .course-create-inputs label{
+.course-create-section> .course-create-content> .course-create-form label{
     color: var(--ep-color-gray-lighter);
     font-size: 18px;
     font-weight: 400;
     padding: 10px 2px 0px 0px;
 }
 
-.course-create-section> .course-create-content> .course-create-inputs> .send-form{
+.course-create-section> .course-create-content> .course-create-form> .send-form{
     justify-content: flex-end;
     display: flex;
     margin-top: 20px;
 }
 
-.course-create-section> .course-create-content> .course-create-inputs> .send-form> .send-form-btn{
+.course-create-section> .course-create-content> .course-create-form> .send-form> .send-form-btn{
     padding: 20px 55px;
     background-color: var(--ep-color-purple);
     height: 40px;
@@ -76,7 +72,7 @@ html{
     transition: all 0.4s ease;
 }
 
-.course-create-section> .course-create-content> .course-create-inputs> .send-form> .send-form-btn:hover, 
+.course-create-section> .course-create-content> .course-create-form> .send-form> .send-form-btn:hover, 
 .add-module> #add-module-btn:hover{
     background-color: var(--ep-color-purple-light);
 }
