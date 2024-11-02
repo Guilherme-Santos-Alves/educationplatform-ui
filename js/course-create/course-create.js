@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
-const tokenJwt = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkZW1hckBlbWFpbC5jb20iLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJBZG1pbmlzdHJhdG9yIiwiZXhwIjoxNzI3MjE0NTg2LCJpc3MiOiJFZHVjYXRpb24gUGxhdGZvcm0iLCJhdWQiOiJTdHVkZW50LCBBZG1pbmlzdHJhdG9yIn0.MugbPwDXEgTTPd3VzeX1PL2EDMJmiwF6gw4f9V7uVzU";
+const tokenJwt = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkZW1hckBlbWFpbC5jb20iLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJBZG1pbmlzdHJhdG9yIiwiZXhwIjoxNzI4MTkxMTUzLCJpc3MiOiJFZHVjYXRpb24gUGxhdGZvcm0iLCJhdWQiOiJTdHVkZW50LCBBZG1pbmlzdHJhdG9yIn0.h3rmbtICcdAwWRwhG_K_dZSJUpkBfXLH8GGXXcwzNhs";
 
 function courseRegister() {
     const nameOfCourse = document.getElementById('course-title');
@@ -34,12 +34,6 @@ function courseRegister() {
         body: JSON.stringify(jsonDataCourse)
     })
     .then( response => {
-        if (!response.ok) {
-            return response.json().then(error => {
-                throw error;
-            });
-        }
-
         if (response.ok) {
             response.json().then(( id ) => {
                 const courseId = id;
@@ -48,6 +42,10 @@ function courseRegister() {
                 if (!document.querySelector('.module-body')){
                     clearFormData();
                 }
+            });
+        } else {
+            return response.json().then(error => {
+                throw error;
             });
         }
     })
@@ -68,9 +66,9 @@ document.addEventListener('DOMContentLoaded', () => {
         
         if (moduleTitleField.value !== '') {
             const group = document.querySelector('.modules-container');
-            const moduleBodyTag = '<module-body></module-body>';
+            const moduleBodyComp = '<module-body></module-body>';
             
-            group.insertAdjacentHTML('beforeend', moduleBodyTag);
+            group.insertAdjacentHTML('beforeend', moduleBodyComp);
 
             let lastModule = group.lastElementChild;
             lastModule.querySelector('.module-title').value = moduleTitleField.value;
@@ -81,28 +79,9 @@ document.addEventListener('DOMContentLoaded', () => {
             const addLessonBtn = lastModule.querySelector('.add-lesson-btn');
             addLessonBtn.addEventListener('click', () => {
                 const lessonsGroup = lastModule.querySelector('.lessons-content');
-        
-                const lessonBody = `
-                    <div class="lesson-group">
-                        <div class="lesson-header">
-                            <h1>Aula</h1>
-                            <button class="lesson-delete-btn" type="button">
-                                <i class="fa-solid fa-trash-can"></i>
-                            </button>
-                        </div>
-                        <div class="input-labels">
-                            <label for="">Nome da aula:</label>
-                            <label for="">Link da aula:</label>
-                            <label for="">Descrição da aula:</label>
-                        </div>
-                        <div class="fields">
-                            <input class="video-lesson-name" type="text" required>
-                            <input class="video-lesson-link" type="text" required>
-                            <input class="video-lesson-description" type="text" required>
-                        </div>
-                    </div>`;
-            
-                lessonsGroup.insertAdjacentHTML('beforeend', lessonBody);
+                const lessonBodyComp = '<lesson-body></lesson-body>';
+                    
+                lessonsGroup.insertAdjacentHTML('beforeend', lessonBodyComp);
 
                 deleteLesson();
             });
@@ -197,10 +176,12 @@ function moduleAndLessonRegister(courseId) {
                     if (response.ok) {
                         showToast('Aula cadastrada com sucesso!', 'success');
                     } else {
+
                         return response.json().then(error => {
                             throw error;
                         });
                     }
+                    clearFormData();
                 })
                 .catch(error => {
                     console.log('deu ruim na aula', error);
@@ -210,7 +191,7 @@ function moduleAndLessonRegister(courseId) {
                             if (error.errors.hasOwnProperty(field)) {
                                 error.errors[field].forEach(errorMessage => {
                                     console.log('chama o toast');
-                                    showToast('Não foi possível cadastrar uma ou mais aulas: ' + errorMessage, 'error');
+                                   showToast('Não foi possível cadastrar uma ou mais aulas: ' + errorMessage, 'error');
                                 });
                             }
                         }
@@ -222,10 +203,6 @@ function moduleAndLessonRegister(courseId) {
             });
         })
         .catch(error => {
-            console.error('Erro no módulo:', error.title);
-            console.error('Status:', error.status);
-            console.error('Trace ID:', error.traceId);
-
             for (let field in error.errors) {
                 if (error.errors.hasOwnProperty(field)) {
                     error.errors[field].forEach(errorMessage => {
