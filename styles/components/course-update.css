@@ -1,0 +1,49 @@
+.course-update {
+    width: 100%;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.course-update > .course-update-content {
+    width: 90%;
+}
+
+.course-update > .course-update-content > .section-edit {
+    display: grid;
+    margin: 20px 0;
+    border-radius: 15px;
+    padding: 20px;
+    width: 100%;
+    color: var(--ep-color-gray-lighter);
+    border: 1px solid var(--ep-color-purple);
+}
+
+.course-update > .course-update-content > .section-edit {
+    display: grid;
+    margin: 20px 0;
+    border-radius: 15px;
+    padding: 20px;
+    width: 100%;
+    color: var(--ep-color-gray-lighter);
+    border: 1px solid var(--ep-color-purple);
+}
+
+.course-update > .course-update-content > .section-edit .send-form{
+    display: flex;
+    justify-content: flex-end;
+    margin: 10px 0px 0px 0px;
+}
+
+.course-update > .course-update-content > .section-edit  .send-form-btn{
+    width: 150px;
+    height: 30px;
+    background-color: var(--ep-color-purple);
+}
+
+
+.course-update > .course-update-content > .section-edit form{
+    display: grid;
+}

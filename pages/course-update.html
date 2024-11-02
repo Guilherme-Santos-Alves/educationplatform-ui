@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Education Platform</title>
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="stylesheet" href="../styles/pages/video-home.css">
+    
+    <link rel="stylesheet" href="../styles/settings/video-player.css">
+    <link rel="stylesheet" href="../styles/settings/color.css">
+    <link rel="stylesheet" href="../styles/settings/text.css">
+    <link rel="stylesheet" href="../styles/settings/navbar-home.css">
+    <link rel="stylesheet" href="../styles/settings/sidebar-home.css">
+
+    <link rel="stylesheet" href="../styles/generic/reset.css">
+    <link rel="stylesheet" href="../styles/generic/box-sizing.css">
+    <link rel="stylesheet" href="../styles/generic/auto-complete-input.css">
+
+    <link rel="stylesheet" href="../styles/base/html.css">
+
+    <link rel="stylesheet" href="../styles/objects/ep-wrapper-home.css">
+
+    <link rel="stylesheet" href="../styles/components/ep-navbar-home.css">
+    <link rel="stylesheet" href="../styles/components/ep-scrollbar.css">
+    <link rel="stylesheet" href="../styles/components/ep-sidebar.css">
+    <link rel="stylesheet" href="../styles/components/toast.css">
+    <link rel="stylesheet" href="../styles/components/course-update.css">
+    
+    <script src="../js/components/navbar-home.js"></script>
+    <script src="../js/components/sidebar-home.js"></script>
+
+    <script src="../js/components/toasts-msg.js"></script>
+
+</head></head>
+<body>
+
+    <navbar-home class="ep-navbar-home"></navbar-home>
+    <ep-sidebar-home class="ep-sidebar open-ep-sidebar" id="ep-sidebar"></ep-sidebar-home>
+    <toast-msg class="toast-msg" style="position: absolute;">
+
+    </toast-msg>
+    <div class="cl-toast-box" id="toast-box"></div>
+    <div class="ep-wrapper-home">
+        <main class="course-update">
+            <div class="course-update-content">
+                <section class="section-edit">
+                    <form action="">
+                        <h2>Curso</h2>
+                        <div class="name">
+                            <label for="nome">Nome:</label>
+                            <input type="text" id="cs-name" required>
+                            <div class="edit-btns">
+                                <button type="button">editar</button>
+                                <button type="button">excluir</button>
+                            </div>
+                        </div>
+                        
+                        <div class="description">
+                            <label for="email">Descrição:</label>
+                            <input type="text" id="cs-desc" required>
+                            <div class="edit-btns">
+                                <button type="button">editar</button>
+                                <button type="button">excluir</button>
+                            </div>
+                        </div>
+
+                        <div class="cover">
+                            <label for="email">Capa:</label>
+                            <input type="text" id="cs-cover" required>
+                            <div class="edit-btns">
+                                <button type="button">editar</button>
+                                <button type="button">excluir</button>
+                            </div>
+                        </div>
+
+                        <div class="send-form">
+                            <button class="send-form-btn" type="submit">Salvar</button>
+                        </div>
+                    </form>
+                </section>
+    
+                <section class="section-edit">
+                    <form action="">
+                        <h2>Módulos</h2>
+                        <div class="module">
+                            <input type="text" required disabled value="nome do modulo">
+                            <div class="edit-btns">
+                                <button type="button">editar</button>
+                                <button type="button">excluir</button>
+                            </div>
+                        </div>
+                        <div class="module">
+                            <input type="text" required disabled value="nome do modulo">
+                            <div class="edit-btns">
+                                <button type="button">editar</button>
+                                <button type="button">excluir</button>
+                            </div>
+                        </div>
+                        <div class="send-form">
+                            <button class="send-form-btn" type="submit">Salvar</button>
+                        </div>
+                    </form>
+                </section>
+    
+                <section class="section-edit">
+                    <form action="">
+                        <h2>Aulas</h2>
+                        <label for="nome">Nome:</label>
+                        <select name="" id="">
+                            <option value="">Introdução</option>
+                            <option value="">C# Intermediário</option>
+                        </select>
+                        <div class="lessons">
+                            <div class="lesson">
+                                <input class="lesson-name" type="text" disabled>
+                                <div class="edit-btns">
+                                    <button>editar</button>
+                                    <button type="button">excluir</button>
+                                </div>
+                            </div>
+                            <div class="lesson">
+                                <input class="lesson-name" type="text" disabled>
+                                <div class="edit-btns">
+                                    <button>editar</button>
+                                    <button type="button">excluir</button>
+                                </div>
+                            </div>
+                        </div>
+                
+                        <div class="send-form">
+                            <button class="send-form-btn" type="submit">Salvar</button>
+                        </div>
+                    </form>
+                </section>
+            </div>
+        </main>
+    </div>
+</body>
+</html>
