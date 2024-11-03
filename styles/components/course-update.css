@@ -1,6 +1,6 @@
 .course-update {
     width: 100%;
-    padding: 20px;
+    padding: 50px 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -9,6 +9,14 @@
 
 .course-update > .course-update-content {
     width: 90%;
+}
+
+.course-update > .course-update-content > .title{
+    color: var(--ep-color-gray-lighter);
+    font-size: 24px;
+    border-left: 8px solid var(--ep-color-purple);
+    padding-left: 5px;
+    font-weight: 600;
 }
 
 .course-update > .course-update-content > .section-edit {
@@ -60,7 +68,6 @@
     width: 100%;
     display: flex;
     align-items: center;
-    margin: 5px 0px;
 }
 
 .course-update > .course-update-content > .section-edit .send-form{
@@ -69,18 +76,18 @@
     margin: 10px 0px 0px 0px;
 }
 
-.edit-btns{
+.course-update > .course-update-content > .section-edit .edit-btns{
     display: flex;
     gap: 8px;
 }
 
-.edit-btns button{
+.course-update > .course-update-content > .section-edit .edit-btns button{
     width: 40px;
     height: 40px;
     background-color: transparent;
 }
 
-.edit-btns i{
+.course-update > .course-update-content > .section-edit .edit-btns i{
     font-size: 25px;
     color: var(--ep-color-gray-lighter);
     cursor: pointer;
@@ -98,15 +105,18 @@
 
 .course-update > .course-update-content > .section-edit form{
     display: grid;
+    gap: 10px;
 }
 
-.section-edit .module{
+.course-update > .course-update-content > .section-edit .module, 
+.course-update > .course-update-content > .section-edit .lesson{
     display: flex;
     align-items: center;
     gap: 10px;
 }
 
-.section-edit .module input{
+.course-update > .course-update-content > .section-edit .module input, 
+.course-update > .course-update-content > .section-edit .lesson input{
     flex: 1;
     border: 2px solid var(--ep-color-purple-light);
     height: 40px;
@@ -118,5 +128,23 @@
     width: 100%;
     display: flex;
     align-items: center;
-    margin: 5px 0px;
+}
+
+.course-update > .course-update-content > .section-edit .lesson input{
+    margin: 4px 0px;
+}
+
+.course-update > .course-update-content > .section-edit select{
+    border: 2px solid var(--ep-color-purple-light);
+    height: 40px;
+    border-radius: 5px;
+    background-color: transparent;
+    color: var(--ep-color-gray-lighter);
+    padding: 5px;
+    font-size: 16px;
+    width: 100%;
+}
+
+.course-update > .course-update-content > .section-edit select > option{
+    background-color: var(--ep-color-gray-dark);
 }
