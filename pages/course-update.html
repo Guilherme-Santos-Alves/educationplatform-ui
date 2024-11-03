@@ -32,8 +32,9 @@
     
     <script src="../js/components/navbar-home.js"></script>
     <script src="../js/components/sidebar-home.js"></script>
-
     <script src="../js/components/toasts-msg.js"></script>
+
+    <script src="../js/course-update/course-update.js"></script>
 
 </head></head>
 <body>
@@ -54,7 +55,7 @@
                         <h2>Curso</h2>
                         <div class="name">
                             <label for="nome">Nome:</label>
-                            <input type="text" disabled id="cs-name" required>
+                            <input type="text" disabled id="cs-name" required value="Nome do curso">
                             <div class="edit-btns">
                                 <button type="button" class="edit"><i class="fa-solid fa-pen-to-square"></i></button>
                                 <button type="button" class="delete"><i class="fa-regular fa-trash-can"></i></button>
@@ -63,7 +64,7 @@
                         
                         <div class="description">
                             <label for="email">Descrição:</label>
-                            <input type="text" disabled id="cs-desc" required>
+                            <input type="text" disabled id="cs-desc" required value="Descrição do curso">
                             <div class="edit-btns">
                                 <button type="button" class="edit"><i class="fa-solid fa-pen-to-square"></i></button>
                                 <button type="button" class="delete"><i class="fa-regular fa-trash-can"></i></button>
@@ -72,7 +73,16 @@
 
                         <div class="cover">
                             <label for="email">Capa:</label>
-                            <input type="text" disabled id="cs-cover" required>
+                            <input type="text" disabled id="cs-cover" required value="Capa do curso">
+                            <div class="edit-btns">
+                                <button type="button" class="edit"><i class="fa-solid fa-pen-to-square"></i></button>
+                                <button type="button" class="delete"><i class="fa-regular fa-trash-can"></i></button>
+                            </div>
+                        </div>
+
+                        <div class="signature">
+                            <label for="email">Assinatura:</label>
+                            <input type="text" disabled id="cs-cover" required value="Capa do curso">
                             <div class="edit-btns">
                                 <button type="button" class="edit"><i class="fa-solid fa-pen-to-square"></i></button>
                                 <button type="button" class="delete"><i class="fa-regular fa-trash-can"></i></button>
@@ -89,14 +99,14 @@
                     <form action="">
                         <h2>Módulos</h2>
                         <div class="module">
-                            <input type="text" required disabled value="nome do modulo">
+                            <input class="md-name" type="text" required disabled value="Nome do modulo">
                             <div class="edit-btns">
                                 <button type="button" class="edit"><i class="fa-solid fa-pen-to-square"></i></button>
                                 <button type="button" class="delete"><i class="fa-regular fa-trash-can"></i></button>
                             </div>
                         </div>
                         <div class="module">
-                            <input type="text" required disabled value="nome do modulo">
+                            <input class="md-name" type="text" required disabled value="Nome do modulo">
                             <div class="edit-btns">
                                 <button type="button" class="edit"><i class="fa-solid fa-pen-to-square"></i></button>
                                 <button type="button" class="delete"><i class="fa-regular fa-trash-can"></i></button>
@@ -118,14 +128,14 @@
                         </select>
                         <div class="lessons">
                             <div class="lesson">
-                                <input class="lesson-name" type="text" disabled required>
+                                <input class="ls-name" type="text" disabled required value="Nome da aula">
                                 <div class="edit-btns">
                                     <button type="button" class="edit"><i class="fa-solid fa-pen-to-square"></i></button>
                                     <button type="button" class="delete"><i class="fa-regular fa-trash-can"></i></button>
                                 </div>
                             </div>
                             <div class="lesson">
-                                <input class="lesson-name" type="text" disabled required>
+                                <input class="ls-name" type="text" disabled required value="Nome da aula">
                                 <div class="edit-btns">
                                     <button type="button" class="edit"><i class="fa-solid fa-pen-to-square"></i></button>
                                     <button type="button" class="delete"><i class="fa-regular fa-trash-can"></i></button>

@@ -148,3 +148,7 @@
 .course-update > .course-update-content > .section-edit select > option{
     background-color: var(--ep-color-gray-dark);
 }
+
+input:disabled {
+    opacity: 0.3;
+}
