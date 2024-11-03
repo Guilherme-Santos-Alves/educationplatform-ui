@@ -26,9 +26,41 @@
     margin: 20px 0;
     border-radius: 15px;
     padding: 20px;
-    width: 100%;
+    max-width: 100%;
     color: var(--ep-color-gray-lighter);
     border: 1px solid var(--ep-color-purple);
+}
+
+.course-update > .course-update-content > .section-edit .name, 
+.course-update > .course-update-content > .section-edit .description, 
+.course-update > .course-update-content > .section-edit .cover{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.course-update > .course-update-content > .section-edit .name label, 
+.course-update > .course-update-content > .section-edit .description label, 
+.course-update > .course-update-content > .section-edit .cover label{
+    width: 80px;
+    font-size: 18px;
+}
+
+.course-update > .course-update-content > .section-edit .name input, 
+.course-update > .course-update-content > .section-edit .description input, 
+.course-update > .course-update-content > .section-edit .cover input{
+    flex: 1;
+    border: 2px solid var(--ep-color-purple-light);
+    height: 40px;
+    border-radius: 5px;
+    background-color: transparent;
+    color: var(--ep-color-gray-lighter);
+    padding: 5px;
+    font-size: 16px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    margin: 5px 0px;
 }
 
 .course-update > .course-update-content > .section-edit .send-form{
@@ -37,13 +69,54 @@
     margin: 10px 0px 0px 0px;
 }
 
+.edit-btns{
+    display: flex;
+    gap: 8px;
+}
+
+.edit-btns button{
+    width: 40px;
+    height: 40px;
+    background-color: transparent;
+}
+
+.edit-btns i{
+    font-size: 25px;
+    color: var(--ep-color-gray-lighter);
+    cursor: pointer;
+}
+
 .course-update > .course-update-content > .section-edit  .send-form-btn{
     width: 150px;
     height: 30px;
     background-color: var(--ep-color-purple);
+    color: var(--ep-color-gray-lighter);
+    border-radius: 5px;
+    font-weight: 400;
+    font-size: 14px;
 }
-
 
 .course-update > .course-update-content > .section-edit form{
     display: grid;
+}
+
+.section-edit .module{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.section-edit .module input{
+    flex: 1;
+    border: 2px solid var(--ep-color-purple-light);
+    height: 40px;
+    border-radius: 5px;
+    background-color: transparent;
+    color: var(--ep-color-gray-lighter);
+    padding: 5px;
+    font-size: 16px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    margin: 5px 0px;
 }
