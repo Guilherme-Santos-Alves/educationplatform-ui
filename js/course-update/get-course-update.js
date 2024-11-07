@@ -1,14 +1,17 @@
-const tokenJwt = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkZW1hckBlbWFpbC5jb20iLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJBZG1pbmlzdHJhdG9yIiwiZXhwIjoxNzMwOTMwMDUxLCJpc3MiOiJFZHVjYXRpb24gUGxhdGZvcm0iLCJhdWQiOiJTdHVkZW50LCBBZG1pbmlzdHJhdG9yIn0.kIb3O8acmsSaURZKF5QkiZBxlM4eCytHJfKgPVr-_3U';
-
-
+const tokenJwt = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkZW1hckBlbWFpbC5jb20iLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJBZG1pbmlzdHJhdG9yIiwiZXhwIjoxNzMxMDE2ODUyLCJpc3MiOiJFZHVjYXRpb24gUGxhdGZvcm0iLCJhdWQiOiJTdHVkZW50LCBBZG1pbmlzdHJhdG9yIn0.ojhQbmSP_n8LzKe3VtCt3-rY4mhbGBJ-yLHGacrWXzA';
 
 document.addEventListener('DOMContentLoaded', () => {
-    getCourseUpdate(1);
-
     let inputName = document.getElementById('cs-name');
     let inputDesc = document.getElementById('cs-desc');
     let inputCover = document.getElementById('cs-cover');
     let selectSignature = document.getElementById('cs-signature');
+
+    const courseId = sessionStorage.getItem('courseId');
+    getCourseUpdate(courseId);
+
+    //     Usar na pagina de selecionar o curso a ser editado
+    //     const courseId = 2;
+    //     sessionStorage.setItem('courseId', courseId);
 
     function getCourseUpdate(courseId) {
         fetch(`https://localhost:7092/api/courses/${courseId}`, {
@@ -47,10 +50,6 @@ document.addEventListener('DOMContentLoaded', () => {
                         
                     });
                 });
-
-                
-
-                
             });
         });
     };
