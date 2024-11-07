@@ -3,9 +3,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
     editButtons.forEach(button => {
         button.addEventListener('click', function() {
-            const parentWithCsName  = button.closest('.name');
-            const parentWithCsDesc  = button.closest('.description');
-            const parentWithCsCover = button.closest('.cover');
+            const parentWithCsName      = button.closest('.name');
+            const parentWithCsDesc      = button.closest('.description');
+            const parentWithCsCover     = button.closest('.cover');
+            const parentWithCsSignature = button.closest('.signature');
             if (parentWithCsName) {
                 const inputName = parentWithCsName.querySelector('#cs-name');
                 inputName.disabled = !inputName.disabled;
@@ -15,6 +16,9 @@ document.addEventListener('DOMContentLoaded', () => {
             } else if (parentWithCsCover) {
                 const inputCover = parentWithCsCover.querySelector('#cs-cover');
                 inputCover.disabled = !inputCover.disabled;
+            } else if (parentWithCsSignature) {
+                const inputSignature = parentWithCsSignature.querySelector('#cs-signature');
+                inputSignature.disabled = !inputSignature.disabled;
             }
 
             const parentWithMdName = button.closest('.module');
@@ -30,4 +34,31 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+    const formCurso = document.querySelector('#form-course-edit');
+    console.log(formCurso);
+    const inputName = formCurso.querySelector('#cs-name');
+    const inputDesc = formCurso.querySelector('#cs-desc');
+
+    formCurso.addEventListener('submit', (event) => {
+        event.preventDefault();
+
+        if (!inputName.disabled){
+            Atualizar(inputName.value);
+        }
+
+        if (!inputDesc.disabled){
+            Atualizar(inputDesc.value);
+        }
+        
+    });
+
+    function Atualizar(input) {
+
+        console.log(input);
+
+        
+    };
 });

@@ -35,10 +35,11 @@
     <script src="../js/components/toasts-msg.js"></script>
 
     <script src="../js/course-update/course-update.js"></script>
+    <script src="../js/course-update/get-course-update.js"></script>
+    <script src="../js/course-update/get-subscriptions.js"></script>
+</head>
 
-</head></head>
 <body>
-
     <navbar-home class="ep-navbar-home"></navbar-home>
     <ep-sidebar-home class="ep-sidebar open-ep-sidebar" id="ep-sidebar"></ep-sidebar-home>
     <toast-msg class="toast-msg" style="position: absolute;">
@@ -51,7 +52,7 @@
                 <h1 class="title">Editar Curso</h1>
                 <section class="section-edit">
 
-                    <form action="">
+                    <form action="" id="form-course-edit">
                         <h2>Curso</h2>
                         <div class="name">
                             <label for="nome">Nome:</label>
@@ -82,7 +83,9 @@
 
                         <div class="signature">
                             <label for="email">Assinatura:</label>
-                            <input type="text" disabled id="cs-cover" required value="Capa do curso">
+                            <select name="" id="cs-signature" disabled>
+
+                            </select>
                             <div class="edit-btns">
                                 <button type="button" class="edit"><i class="fa-solid fa-pen-to-square"></i></button>
                                 <button type="button" class="delete"><i class="fa-regular fa-trash-can"></i></button>
@@ -96,7 +99,7 @@
                 </section>
     
                 <section class="section-edit">
-                    <form action="">
+                    <form action="" id="">
                         <h2>Módulos</h2>
                         <div class="module">
                             <input class="md-name" type="text" required disabled value="Nome do modulo">
@@ -121,7 +124,7 @@
                 <section class="section-edit">
                     <form action="">
                         <h2>Aulas</h2>
-                        <label for="nome">Nome:</label>
+                        <label for="nome">Módulo:</label>
                         <select name="" id="">
                             <option value="">Introdução</option>
                             <option value="">C# Intermediário</option>

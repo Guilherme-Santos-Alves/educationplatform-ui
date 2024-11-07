@@ -41,7 +41,8 @@
 
 .course-update > .course-update-content > .section-edit .name, 
 .course-update > .course-update-content > .section-edit .description, 
-.course-update > .course-update-content > .section-edit .cover{
+.course-update > .course-update-content > .section-edit .cover, 
+.course-update > .course-update-content > .section-edit .signature{
     display: flex;
     align-items: center;
     gap: 10px;
@@ -49,14 +50,16 @@
 
 .course-update > .course-update-content > .section-edit .name label, 
 .course-update > .course-update-content > .section-edit .description label, 
-.course-update > .course-update-content > .section-edit .cover label{
-    width: 80px;
-    font-size: 18px;
+.course-update > .course-update-content > .section-edit .cover label, 
+.course-update > .course-update-content > .section-edit .signature label{
+    width: 90px;
+    font-size: 16px;
 }
 
 .course-update > .course-update-content > .section-edit .name input, 
 .course-update > .course-update-content > .section-edit .description input, 
-.course-update > .course-update-content > .section-edit .cover input{
+.course-update > .course-update-content > .section-edit .cover input, 
+.course-update > .course-update-content > .section-edit .signature select{
     flex: 1;
     border: 2px solid var(--ep-color-purple-light);
     height: 40px;
@@ -149,6 +152,7 @@
     background-color: var(--ep-color-gray-dark);
 }
 
-input:disabled {
+input:disabled,
+select:disabled {
     opacity: 0.3;
 }
