@@ -1,4 +1,4 @@
-const tokenJwt = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkZW1hckBlbWFpbC5jb20iLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJBZG1pbmlzdHJhdG9yIiwiZXhwIjoxNzMxMDE2ODUyLCJpc3MiOiJFZHVjYXRpb24gUGxhdGZvcm0iLCJhdWQiOiJTdHVkZW50LCBBZG1pbmlzdHJhdG9yIn0.ojhQbmSP_n8LzKe3VtCt3-rY4mhbGBJ-yLHGacrWXzA';
+const tokenJwt = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkZW1hckBlbWFpbC5jb20iLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJBZG1pbmlzdHJhdG9yIiwiZXhwIjoxNzMxMTM5NjUxLCJpc3MiOiJFZHVjYXRpb24gUGxhdGZvcm0iLCJhdWQiOiJTdHVkZW50LCBBZG1pbmlzdHJhdG9yIn0.A8TJDuOmyQRbUiGKw59_K2qAJn_JdGjueg3We_gmK94';
 
 document.addEventListener('DOMContentLoaded', () => {
     let inputName = document.getElementById('cs-name');
@@ -7,7 +7,12 @@ document.addEventListener('DOMContentLoaded', () => {
     let selectSignature = document.getElementById('cs-signature');
 
     const courseId = sessionStorage.getItem('courseId');
-    getCourseUpdate(courseId);
+    //getCourseUpdate(courseId);
+   // getModuleUpdate(courseId);
+
+    //testes
+    getCourseUpdate(2);
+    getModuleUpdate(2);
 
     //     Usar na pagina de selecionar o curso a ser editado
     //     const courseId = 2;

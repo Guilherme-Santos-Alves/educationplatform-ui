@@ -104,6 +104,7 @@
     border-radius: 5px;
     font-weight: 400;
     font-size: 14px;
+    cursor: pointer;
 }
 
 .course-update > .course-update-content > .section-edit form{
@@ -155,4 +156,5 @@
 input:disabled,
 select:disabled {
     opacity: 0.3;
+    cursor: not-allowed;
 }
