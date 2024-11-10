@@ -9,8 +9,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
-const tokenJwt = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkZW1hckBlbWFpbC5jb20iLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJBZG1pbmlzdHJhdG9yIiwiZXhwIjoxNzMxMjc4OTg0LCJpc3MiOiJFZHVjYXRpb24gUGxhdGZvcm0iLCJhdWQiOiJTdHVkZW50LCBBZG1pbmlzdHJhdG9yIn0.aw6TieGdzZPMqzYQAZrUM6mFQUZYuWwiPn4hLPb_fpo";
-
 function courseRegister() {
     const nameOfCourse = document.getElementById('course-title');
     const descriptionOfCourse = document.getElementById('course-description');
@@ -240,3 +238,4 @@ function clearFormData() {
 // clear formdata apos fetch --ok
 // toast de erro nao possivel dadastrar uma ou mais aulas --ok
 // arrumar nome do form --ok
+// adicionar o subscription pending...

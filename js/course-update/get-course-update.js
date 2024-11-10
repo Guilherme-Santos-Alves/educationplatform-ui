@@ -1,5 +1,3 @@
-const tokenJwt = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkZW1hckBlbWFpbC5jb20iLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJBZG1pbmlzdHJhdG9yIiwiZXhwIjoxNzMxMjc4OTg0LCJpc3MiOiJFZHVjYXRpb24gUGxhdGZvcm0iLCJhdWQiOiJTdHVkZW50LCBBZG1pbmlzdHJhdG9yIn0.aw6TieGdzZPMqzYQAZrUM6mFQUZYuWwiPn4hLPb_fpo';
-
 document.addEventListener('DOMContentLoaded', () => {
     let inputName = document.getElementById('cs-name');
     let inputDesc = document.getElementById('cs-desc');
@@ -34,7 +32,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 inputName.value = courseData.name;
                 inputDesc.value = courseData.description;
                 inputCover.value = courseData.cover;
-                selectSignature.sel
 
                 getSubscriptions().then( subscriptions => {
 
@@ -52,7 +49,6 @@ document.addEventListener('DOMContentLoaded', () => {
                             optionSubscription.selected = true;
                             console.log(courseData.subscriptionId);
                         }
-                        
                     });
                 });
             });
