@@ -1,26 +1,29 @@
 function getModuleUpdate(courseId) {
-    console.log('chegou' + courseId);
+    fetch(`https://localhost:7092/api/modules/course/${courseId}`, {
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${tokenJwt}`
+        },
+    })
+    .then(response => {
+        if (response.ok) {
+            response.json().then(modules => {
+                modules.data.forEach(module => {
+                    const inputModule = `
+                        <div class="module">
+                            <input class="md-name" type="text" required disabled value="${module.name}" data-module-id="${module.id}">
+                            <div class="edit-btns">
+                                <button type="button" class="edit"><i class="fa-solid fa-pen-to-square"></i></button>
+                                <button type="button" class="delete"><i class="fa-regular fa-trash-can"></i></button>
+                            </div>
+                        </div>`;
 
-    const allModuleNames = document.querySelectorAll('.md-name');
-    console.log(allModuleNames);
-
-    for (let count=0; count < allModuleNames.length; count++){
-        console.log('quantidade de inputs: ' + count);
-    }
-
-
-    const moduleMap = new Map();
-
-    allModuleNames.forEach(module => {
-        //        moduleMap.set(module,  moduleId)
-        moduleMap.set(module, 1);
-        console.log( moduleMap.get(module));
+                    const formModule = document.querySelector('#form-module-edit');
+                    formModule.querySelector('.modules').insertAdjacentHTML('beforeend', inputModule);
+                });
+                editFields();
+            });
+        }
     });
-
-    // Função vai receber todos os modules id
-    // apos isso vai mapear cada modulo com seu id
-    // apos o submit ele vai adicionar ao local storage e enviar sua variavel
-    // e seu id sera resgatado com o get do map
-
-
 };

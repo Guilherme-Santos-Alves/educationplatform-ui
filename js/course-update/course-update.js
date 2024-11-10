@@ -1,5 +1,6 @@
-document.addEventListener('DOMContentLoaded', () => {
-    const editButtons = document.querySelectorAll('.edit');
+function editFields () {
+
+    let editButtons = document.querySelectorAll('.edit');
 
     editButtons.forEach(button => {
         button.addEventListener('click', function() {
@@ -34,7 +35,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
-});
+}
 
 document.addEventListener('DOMContentLoaded', () => {
     const formCurso = document.querySelector('#form-course-edit');
@@ -56,9 +57,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     function Atualizar(input) {
-
         console.log(input);
-
-        
     };
 });
