@@ -44,14 +44,10 @@ function editFields () {
                 name: module.value
             };
 
-            console.log(moduleData);
-
             let changedModules = [];
 
             if (sessionStorage.hasOwnProperty('changedModules')){
                 changedModules = JSON.parse(sessionStorage.getItem('changedModules'));
-
-                console.log(changedModules);
             }
 
             const existingModuleIndex = changedModules.findIndex(item => item.id === moduleData.id);
@@ -62,10 +58,9 @@ function editFields () {
             }
 
             sessionStorage.setItem('changedModules', JSON.stringify(changedModules));
-            console.log(JSON.parse(sessionStorage.getItem('changedModules')));
         });
     });
-};
+}
 
 document.addEventListener('DOMContentLoaded', () => {
     const formCurso = document.querySelector('#form-module-edit');
