@@ -35,28 +35,44 @@ function editFields () {
             }
         });
     });
-}
+
+    const allModules = document.querySelectorAll('.md-name');
+    allModules.forEach( module => {
+        module.addEventListener('change', () => {
+            const moduleData = {
+                id: module.dataset.moduleId,
+                name: module.value
+            };
+
+            console.log(moduleData);
+
+            let changedModules = [];
+
+            if (sessionStorage.hasOwnProperty('changedModules')){
+                changedModules = JSON.parse(sessionStorage.getItem('changedModules'));
+
+                console.log(changedModules);
+            }
+
+            const existingModuleIndex = changedModules.findIndex(item => item.id === moduleData.id);
+            if (existingModuleIndex !== -1) {
+                changedModules[existingModuleIndex].name = moduleData.name;
+            } else {
+                changedModules.push(moduleData);
+            }
+
+            sessionStorage.setItem('changedModules', JSON.stringify(changedModules));
+            console.log(JSON.parse(sessionStorage.getItem('changedModules')));
+        });
+    });
+};
 
 document.addEventListener('DOMContentLoaded', () => {
-    const formCurso = document.querySelector('#form-course-edit');
-    console.log(formCurso);
-    const inputName = formCurso.querySelector('#cs-name');
-    const inputDesc = formCurso.querySelector('#cs-desc');
+    const formCurso = document.querySelector('#form-module-edit');
 
-    formCurso.addEventListener('submit', (event) => {
-        event.preventDefault();
-
-        if (!inputName.disabled){
-            Atualizar(inputName.value);
-        }
-
-        if (!inputDesc.disabled){
-            Atualizar(inputDesc.value);
-        }
-        
+    formCurso.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const changedModules = JSON.parse(sessionStorage.getItem('changedModules'));
+        putModuleUpdate(changedModules);
     });
-
-    function Atualizar(input) {
-        console.log(input);
-    };
 });

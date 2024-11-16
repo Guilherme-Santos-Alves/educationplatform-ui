@@ -27,3 +27,4 @@ function getModuleUpdate(courseId) {
         }
     });
 };
+
