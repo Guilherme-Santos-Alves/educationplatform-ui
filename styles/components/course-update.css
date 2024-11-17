@@ -42,7 +42,7 @@
 .course-update > .course-update-content > .section-edit .name, 
 .course-update > .course-update-content > .section-edit .description, 
 .course-update > .course-update-content > .section-edit .cover, 
-.course-update > .course-update-content > .section-edit .signature{
+.course-update > .course-update-content > .section-edit .subscription{
     display: flex;
     align-items: center;
     gap: 10px;
@@ -51,7 +51,7 @@
 .course-update > .course-update-content > .section-edit .name label, 
 .course-update > .course-update-content > .section-edit .description label, 
 .course-update > .course-update-content > .section-edit .cover label, 
-.course-update > .course-update-content > .section-edit .signature label{
+.course-update > .course-update-content > .section-edit .subscription label{
     width: 90px;
     font-size: 16px;
 }
@@ -59,7 +59,7 @@
 .course-update > .course-update-content > .section-edit .name input, 
 .course-update > .course-update-content > .section-edit .description input, 
 .course-update > .course-update-content > .section-edit .cover input, 
-.course-update > .course-update-content > .section-edit .signature select{
+.course-update > .course-update-content > .section-edit .subscription select{
     flex: 1;
     border: 2px solid var(--ep-color-purple-light);
     height: 40px;

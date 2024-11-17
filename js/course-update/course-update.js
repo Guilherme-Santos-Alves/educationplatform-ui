@@ -7,7 +7,7 @@ function editFields () {
             const parentWithCsName      = button.closest('.name');
             const parentWithCsDesc      = button.closest('.description');
             const parentWithCsCover     = button.closest('.cover');
-            const parentWithCsSignature = button.closest('.signature');
+            const parentWithCsSubscription = button.closest('.subscription');
             if (parentWithCsName) {
                 const inputName = parentWithCsName.querySelector('#cs-name');
                 inputName.disabled = !inputName.disabled;
@@ -17,8 +17,8 @@ function editFields () {
             } else if (parentWithCsCover) {
                 const inputCover = parentWithCsCover.querySelector('#cs-cover');
                 inputCover.disabled = !inputCover.disabled;
-            } else if (parentWithCsSignature) {
-                const inputSignature = parentWithCsSignature.querySelector('#cs-signature');
+            } else if (parentWithCsSubscription) {
+                const inputSignature = parentWithCsSubscription.querySelector('#cs-subscription');
                 inputSignature.disabled = !inputSignature.disabled;
             }
 
@@ -36,6 +36,27 @@ function editFields () {
         });
     });
 
+    const courseData = {
+        name: document.querySelector('#cs-name'),
+        description: document.querySelector('#cs-desc'),
+        cover: document.querySelector('#cs-cover'),
+        subscription: document.querySelector('#cs-subscription')
+    };
+    
+    Object.keys(courseData).forEach(key => {
+        courseData[key].addEventListener('change', () => {
+            const courseValues = {
+                //id: sessionStorage.getItem('courseId'),
+                name: courseData.name.value,
+                description: courseData.description.value,
+                cover: courseData.cover.value,
+                subscription: courseData.subscription.value
+            };
+    
+            sessionStorage.setItem('courseData', JSON.stringify(courseValues));
+        });
+    });
+    
     const allModules = document.querySelectorAll('.md-name');
     allModules.forEach( module => {
         module.addEventListener('change', () => {
@@ -71,3 +92,5 @@ document.addEventListener('DOMContentLoaded', () => {
         putModuleUpdate(changedModules);
     });
 });
+
+

@@ -232,10 +232,4 @@ function clearFormData() {
     });
 }
 
-// adicionar btn de remover aula -- ok
-// cadastrar modulo junto com aula -- ok
-// required de aula -- ok
-// clear formdata apos fetch --ok
-// toast de erro nao possivel dadastrar uma ou mais aulas --ok
-// arrumar nome do form --ok
 // adicionar o subscription pending...

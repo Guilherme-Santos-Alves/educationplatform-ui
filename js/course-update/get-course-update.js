@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let inputName = document.getElementById('cs-name');
     let inputDesc = document.getElementById('cs-desc');
     let inputCover = document.getElementById('cs-cover');
-    let selectSignature = document.getElementById('cs-signature');
+    let selectSubscription = document.getElementById('cs-subscription');
 
     const courseId = sessionStorage.getItem('courseId');
     //getCourseUpdate(courseId);
@@ -43,7 +43,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         optionSubscription.value = subscription.id;
                         
                         optionSubscription.textContent = subscription.name;
-                        selectSignature.appendChild(optionSubscription);
+                        selectSubscription.appendChild(optionSubscription);
 
                         if (courseData.subscriptionId == optionSubscription.value) {
                             optionSubscription.selected = true;

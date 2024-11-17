@@ -15,6 +15,20 @@ function putModuleUpdate(changedModules) {
                 'Authorization': `Bearer ${tokenJwt}`
             },
             body: JSON.stringify(moduleData)
+        })
+        .then(response => {
+            if (!response.ok) {
+                return response.json().then(error => {
+                    throw new Error(`Erro: ${error.message || 'Falha desconhecida'}`);
+                });
+            }
+            return response.json();
+        })
+        .then(data => {
+            console.log("Resposta da API:", data);
+        })
+        .catch(error => {
+            console.error("Erro na requisição:", error.message || error);
         });
     });
 }
