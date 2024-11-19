@@ -47,10 +47,11 @@ function editFields () {
         courseData[key].addEventListener('change', () => {
             const courseValues = {
                 //id: sessionStorage.getItem('courseId'),
+                id: 2,
                 name: courseData.name.value,
                 description: courseData.description.value,
                 cover: courseData.cover.value,
-                subscription: courseData.subscription.value
+                //subscription: courseData.subscription.value
             };
     
             sessionStorage.setItem('courseData', JSON.stringify(courseValues));
@@ -84,13 +85,25 @@ function editFields () {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
+    const formCurso = document.querySelector('#form-course-edit');
+
+    formCurso.addEventListener('submit', (e) => {
+        e.preventDefault();
+        if (sessionStorage.getItem('courseData')){
+            const courseData = JSON.parse(sessionStorage.getItem('courseData'));
+            putCourseUpdate(courseData);
+        }
+    });
+});
+
+document.addEventListener('DOMContentLoaded', () => {
     const formCurso = document.querySelector('#form-module-edit');
 
     formCurso.addEventListener('submit', (e) => {
         e.preventDefault();
-        const changedModules = JSON.parse(sessionStorage.getItem('changedModules'));
-        putModuleUpdate(changedModules);
+        if (sessionStorage.getItem('changedModules')){
+            const changedModules = JSON.parse(sessionStorage.getItem('changedModules'));
+            putModuleUpdate(changedModules);
+        }
     });
 });
-
-
