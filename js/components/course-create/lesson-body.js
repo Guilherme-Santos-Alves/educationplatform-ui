@@ -20,8 +20,8 @@ class LessonBody extends HTMLElement {
             </div>
             <div class="fields">
                 <input class="video-lesson-name" type="text" required>
-                <input class="video-lesson-link" type="text" required>
                 <input class="video-lesson-description" type="text" required>
+                <input class="video-lesson-link" type="text" required>
             </div>`;
     }
 }

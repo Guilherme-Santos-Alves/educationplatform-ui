@@ -23,6 +23,7 @@ function getModuleUpdate(courseId) {
                     formModule.querySelector('.modules').insertAdjacentHTML('beforeend', inputModule);
                 });
                 editFields();
+                getLessonUpdate(modules.data);
             });
         }
     });
