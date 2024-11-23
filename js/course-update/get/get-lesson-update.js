@@ -36,10 +36,8 @@ function getLessonUpdate(modules) {
                         const formLesson = document.querySelector('#form-lesson-edit');
                         formLesson.querySelector('.lessons').insertAdjacentHTML('beforeend', inputModule);
                     });
-                    editFields();
                 });
             }
         });
     });
-    
 };

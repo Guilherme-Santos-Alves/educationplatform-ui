@@ -1,6 +1,19 @@
 function editFields () {
+    console.log('chamou');
 
     let editButtons = document.querySelectorAll('.edit');
+
+    document.querySelector('#form-lesson-edit').addEventListener('click', (event) => {
+    if (event.target.closest('.edit')) {
+        const button = event.target.closest('.edit');
+        const parentWithLsName = button.closest('.lesson');
+        if (parentWithLsName) {
+            const inputLsName = parentWithLsName.querySelector('.ls-name');
+            inputLsName.disabled = !inputLsName.disabled;
+        }
+    }
+});
+
 
     editButtons.forEach(button => {
         button.addEventListener('click', function() {
@@ -8,8 +21,10 @@ function editFields () {
             const parentWithCsDesc      = button.closest('.description');
             const parentWithCsCover     = button.closest('.cover');
             const parentWithCsSubscription = button.closest('.subscription');
+
             if (parentWithCsName) {
                 const inputName = parentWithCsName.querySelector('#cs-name');
+                console.log(inputName);
                 inputName.disabled = !inputName.disabled;
             } else if (parentWithCsDesc) {
                 const inputDesc = parentWithCsDesc.querySelector('#cs-desc');
@@ -21,6 +36,7 @@ function editFields () {
                 const inputSignature = parentWithCsSubscription.querySelector('#cs-subscription');
                 inputSignature.disabled = !inputSignature.disabled;
             }
+
 
             const parentWithMdName = button.closest('.module');
             if (parentWithMdName) {
