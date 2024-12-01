@@ -42,6 +42,7 @@
     <script src="../js/course-update/put/put-module-update.js"></script>
     <script src="../js/course-update/put/put-course-update.js"></script>
     <script src="../js/auth/token.js"></script>
+    <script src="../js/components/course-update/new-module.js"></script>
 </head>
 
 <body>
@@ -101,22 +102,12 @@
     
                 <section class="section-edit">
                     <form action="" id="form-module-edit">
-                        <h2>Módulos</h2>
+                        <div class="header">
+                            <h2>Módulos</h2>
+                            <button type="button" id="add-module-btn"><span class="material-symbols-outlined">add</span></button>
+                        </div>
                         <div class="modules">
-                            <!-- <div class="module">
-                                <input class="md-name" type="text" required disabled value="Nome do modulo">
-                                <div class="edit-btns">
-                                    <button type="button" class="edit"><i class="fa-solid fa-pen-to-square"></i></button>
-                                    <button type="button" class="delete"><i class="fa-regular fa-trash-can"></i></button>
-                                </div>
-                            </div>
-                            <div class="module">
-                                <input class="md-name" type="text" required disabled value="Nome do modulo">
-                                <div class="edit-btns">
-                                    <button type="button" class="edit"><i class="fa-solid fa-pen-to-square"></i></button>
-                                    <button type="button" class="delete"><i class="fa-regular fa-trash-can"></i></button>
-                                </div>
-                            </div> -->
+
                         </div>
                         <div class="send-form">
                             <button class="send-form-btn" type="submit">Salvar</button>
@@ -126,7 +117,10 @@
     
                 <section class="section-edit">
                     <form action="" id="form-lesson-edit">
-                        <h2>Aulas</h2>
+                        <div class="header">
+                            <h2>Aulas</h2>
+                            <button type="button" id="add-module-btn"><span class="material-symbols-outlined">add</span></button>
+                        </div>
                         <label for="nome">Módulo:</label>
                         <select name="" id="module-select">
                             <option value="" disabled selected>Selecione um módulo</option>

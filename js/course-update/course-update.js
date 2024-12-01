@@ -102,7 +102,6 @@ function editFields () {
 
 document.addEventListener('DOMContentLoaded', () => {
     const formCurso = document.querySelector('#form-course-edit');
-
     formCurso.addEventListener('submit', (e) => {
         e.preventDefault();
         if (sessionStorage.getItem('courseData')){
@@ -110,12 +109,9 @@ document.addEventListener('DOMContentLoaded', () => {
             putCourseUpdate(courseData);
         }
     });
-});
 
-document.addEventListener('DOMContentLoaded', () => {
-    const formCurso = document.querySelector('#form-module-edit');
-
-    formCurso.addEventListener('submit', (e) => {
+    const formModule = document.querySelector('#form-module-edit');
+    formModule.addEventListener('submit', (e) => {
         e.preventDefault();
         if (sessionStorage.getItem('changedModules')){
             const changedModules = JSON.parse(sessionStorage.getItem('changedModules'));
@@ -123,3 +119,23 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 });
+
+document.addEventListener('DOMContentLoaded', () => {
+    const btnNewModule = document.querySelector('#add-module-btn');
+    btnNewModule.addEventListener('click', () => {
+        const moduleContainer = document.querySelector('.modules');
+        const newModule = '<new-module></new-module>';
+        moduleContainer.insertAdjacentHTML('beforeend', newModule);
+        deleteModule();
+    });
+});
+
+function deleteModule() {
+    const moduleDeleteBtn = document.querySelectorAll('.module-delete-btn');
+    moduleDeleteBtn.forEach( deleteBtn => {
+        deleteBtn.addEventListener('click', () => {
+            const parentModule = deleteBtn.closest('.new-module');
+            parentModule.remove();
+        });
+    });
+}
