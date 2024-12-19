@@ -194,6 +194,12 @@ select:disabled {
     border: 2px solid var(--ep-color-purple);
 }
 
+.course-update > .course-update-content > .section-edit .modules > .new-module> .module-content > .module-header> h2{
+    font-size: 18px;
+    display: flex;
+    white-space: nowrap;
+}
+
 .course-update > .course-update-content > .section-edit .modules > .new-module> .module-content> .module-header{
     display: flex;
     align-items: center;

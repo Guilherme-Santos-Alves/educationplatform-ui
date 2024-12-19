@@ -9,7 +9,7 @@ class NewModule extends HTMLElement {
         this.innerHTML = 
             `<div class="module-content">
                 <div class="module-header">
-                    <h2 class="module-title-label">Módulo: </h2>
+                    <h2 class="module-title-label">Novo Módulo: </h2>
                     <input type="text" class="module-title">
                     <button class="module-delete-btn" type="button">
                         <i class="fa-solid fa-trash-can"></i>
