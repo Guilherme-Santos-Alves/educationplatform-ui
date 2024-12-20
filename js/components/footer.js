@@ -22,31 +22,25 @@ class Header extends HTMLElement{
 
                     <ul class="footer-list">
                         <li>
-                            <h3>Blog</h3>
+                            <h3>Front-End</h3>
                         </li>
                         <li>
                             <a href="https://www.linkedin.com/in/guilherme-santos-alves-50088b1a8/" target="_blank" class="footer-link">Linkedin</a>
                         </li>
                         <li>
-                            <a href="https://github.com/Guilherme-Santos-Alves" target="_blank" class="footer-link">GitHub</a>
-                        </li>
-                        <li>
-                            <a href="" class="footer-link">Music</a>
+                            <a href="https://github.com/Guilherme-Santos-Alves/educationplatform-ui" target="_blank" class="footer-link">GitHub</a>
                         </li>
                     </ul>
 
                     <ul class="footer-list">
                         <li>
-                            <h3>Products</h3>
+                            <h3>Back-End</h3>
                         </li>
                         <li>
-                            <a href="" class="footer-link">App</a>
+                            <a href="https://www.linkedin.com/in/vitor-santos-alves/" target="_blank" class="footer-link">Linkedin</a>
                         </li>
                         <li>
-                            <a href="" class="footer-link">Desktop</a>
-                        </li>
-                        <li>
-                            <a href="" class="footer-link">Cloud</a>
+                            <a href="https://github.com/vitxr10/educationplatform-api" target="_blank" class="footer-link">GitHub</a>
                         </li>
                     </ul>
 
