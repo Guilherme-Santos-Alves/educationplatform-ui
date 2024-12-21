@@ -22,6 +22,9 @@
 
     <script src="../js/components/footer.js"></script>
     <link rel="stylesheet" href="../styles/components/ep-footer.css">
+
+    <script src="../js/auth/login.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 <body>
     <main class="form-content">
@@ -31,12 +34,13 @@
         <form id="form-login">
             <h2 class="form-title">Entrar</h2>
             <div class="mb-3">
-              <label for="exampleInputEmail1" class="form-label">Email:</label>
-              <input type="email" class="form-control" id="exampleInputEmail1">
+              <label for="email" class="form-label">Email:</label>
+              <input type="email" class="form-control" id="email">
             </div>
             <div class="mb-3">
-              <label for="exampleInputPassword1" class="form-label">Senha:</label>
-              <input type="password" class="form-control" id="exampleInputPassword1">
+              <label for="password" class="form-label">Senha:</label>
+              <input type="password" class="form-control" id="password">
+              <div id="login-error" class="text-danger mt-1 hidden"></div>
             </div>
             <button type="submit" class="btn btn-primary">Login</button>
             <div class="text-center mt-3">

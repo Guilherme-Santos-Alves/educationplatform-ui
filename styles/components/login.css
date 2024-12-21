@@ -62,6 +62,14 @@
     box-shadow: 0 0 9px rgba(93, 0, 255, 0.5);
 }
 
+.form-content> #form-login > #login-error.hidden{
+    display: none;
+}
+
+.form-content> #form-login > #login-error.visible{
+    display: block;
+}
+
 .form-content> #form-login button:hover{
     background-color: var(--ep-color-purple-light);
 }
