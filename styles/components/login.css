@@ -23,6 +23,8 @@
 
 .form-content > .form-side-content> h2{
     color: var(--ep-color-gray-lighter);
+    caret-color: transparent;
+    text-align: center;
 }
 
 .form-content > #form-login{
@@ -31,11 +33,15 @@
     padding: 10px 20px;
     background-color: var(--ep-color-gray-dark-light);
     border-radius: 0px 50px 50px 0px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .form-content > #form-login > .form-title{
     color: var(--ep-color-gray-lighter);
     margin-bottom: 20px;
+    caret-color: transparent;
 }
 
 .form-content> #form-login label{
@@ -47,12 +53,13 @@
     color: var(--ep-color-gray-lighter);
     font-size: 18px;
     background-color: transparent;
+    height: 40px;
 }
 
 .form-content> #form-login input:focus{
     border-color: var(--ep-color-purple);
     outline: none;
-    box-shadow: 0 0 5px rgba(93, 0, 255, 0.5);
+    box-shadow: 0 0 9px rgba(93, 0, 255, 0.5);
 }
 
 .form-content> #form-login button:hover{
@@ -64,6 +71,8 @@
     color: var(--ep-color-gray-lighter);
     font-size: 18px;
     border: none;
+    width: 80px;
+    height: 40px;
 }
 
 .form-content> #form-login p{
