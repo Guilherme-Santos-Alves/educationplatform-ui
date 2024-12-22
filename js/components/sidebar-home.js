@@ -1,63 +1,47 @@
 class SidebarHome extends HTMLElement {
     connectedCallback() {
         this.innerHTML = `
-            <div class="ep-sidebar-content">
-                <ul id="side-itens">
-                    <li class="side-item">
-                        <a href="main-home.html">
+            <nav id="ep-sidebar" class="sidebar p-3">
+                <ul class="nav flex-column">
+                    <li class="nav-item mb-2">
+                        <a href="course-update.html" data-tooltip="Início">
                             <i class="fa-solid fa-house"></i>
-                            <span class="item-description">
-                                Início
-                            </span>
                         </a>
                     </li>
-                    <li class="side-item">
-                        <a href="user-account.html">
+                    <li class="nav-item mb-2">
+                        <a href="user-account.html" data-tooltip="Perfil">
                             <i class="fa-regular fa-user"></i>
-                            <span class="item-description">
-                                Perfil
-                            </span>
                         </a>
                     </li>
-                    <li class="side-item">
-                        <a href="">
+                    <li class="nav-item mb-2">
+                        <a href="" data-tooltip="Suporte">
                             <i class="fa-regular fa-message"></i>
-                            <span class="item-description">
-                                Suporte
-                            </span>
                         </a>
                     </li>
-                    <li class="side-item">
-                        <a href="course-certificates.html">
+                    <li class="nav-item mb-2">
+                        <a href="course-certificates.html" data-tooltip="Certificados">
                             <i class="fa-solid fa-medal"></i>
-                            <span class="item-description">
-                                Certificados
-                            </span>
                         </a>
                     </li>
-                    <button id="logout-btn">
+                    <button id="logout-btn" data-tooltip="Sair">
                         <i class="fa-solid fa-arrow-right-from-bracket"></i>
-                        <span class="item-description">
-                            Sair
-                        </span>
                     </button>
-                </ul>            
-            </div>`;
+                </ul>
+            </nav>
+            `;
     }
 }
 
 customElements.define('ep-sidebar-home', SidebarHome);
 
-// document.addEventListener('DOMContentLoaded', () => {
-//     document.getElementById('open-sidebar-btn').addEventListener('click', () => {
-//         document.getElementById('ep-sidebar').classList.toggle('open-ep-sidebar');
-//     })
-// })
 
-/* <li class="side-item">
-                        
-<i class="fa-solid fa-magnifying-glass"></i>
-    <input class="item-description" id="search-content-input" type="text" placeholder="Pesquisar">
-</a>
+document.addEventListener('DOMContentLoaded', () => {
+    const toggleButton = document.getElementById('toggleSidebar');
+    const sidebar = document.getElementById('ep-sidebar');
+    const content = document.getElementById('content');
 
-</li> */
+    toggleButton.addEventListener('click', () => {
+        sidebar.classList.toggle('sidebar-hidden');
+        content.classList.toggle('content-expanded');
+    });
+});

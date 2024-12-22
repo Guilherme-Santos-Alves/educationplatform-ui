@@ -1,35 +1,43 @@
 #ep-sidebar{
-    display: var(--ep-sidebar-home-display);
-    flex-direction: column;
-    justify-content: space-between;
+    margin-top: var(--ep-navbar-home-size);
+    width: var(--ep-sidebar-home-size);
     background-color: var(--ep-color-dark);
-    min-height: 100vh;
-    overflow: hidden;
-    float: left;
-    position: fixed;
-    top: var(--ep-navbar-home-size);
-    transition: all .2s;
-    min-width: var(--ep-sidebar-home-size);
+    padding: 20px;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    position: sticky;
 }
 
-.ep-sidebar-content{
-    padding: 12px;
-    justify-content: center;
-    height: 100%;
-}
-
-.ep-sidebar span{
+.d-flex{
+    display: flex;
     margin: 0;
 }
 
-#side-itens {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-    list-style: none;
+.content{
+    margin-top: var(--ep-navbar-home-size);
+    padding: 20px;
+    flex-grow: 1;
+    background-color: var(--ep-color-gray-dark);
+    padding: 0px;
 }
 
-.side-item{
+ .sidebar {
+    width: 250px;
+    transition: all 0.3s ease;
+}
+
+.sidebar-hidden {
+    margin-left: calc( - var(--ep-sidebar-home-size));
+}
+.content {
+    transition: margin-left 0.3s ease;
+}
+.content-expanded {
+    margin-left: 0; 
+} 
+
+.nav-item{
     padding: 20px;
     cursor: pointer;
     border-radius: 8px;
@@ -37,14 +45,15 @@
     width: 200px;
 }
 
-.side-item.active{
-    background-color: var(--ep-color-purple);
-}
-.side-item:hover:not(.active){
+.nav-item.active{
     background-color: var(--ep-color-purple);
 }
 
-.side-item a{
+.nav-item:hover:not(.active){
+    background-color: var(--ep-color-purple);
+}
+
+.nav-item a{
     text-decoration: none;
     display: flex;
     align-items: center;
@@ -53,11 +62,14 @@
     justify-content: center;
 }
 
-.side-item.active a{
-    color: var(--ep-color-gray-lighter);
+#nav-itens {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    list-style: none;
 }
 
-.side-item a i{
+.nav-item a i{
     display: flex;
     align-items: center;
     justify-content: center;
@@ -77,10 +89,6 @@
     width: 200px;
 }
 
-#logout-btn.active{
-    background-color: green;
-}
-
 #logout-btn:hover:not(.active){
     background-color: var(--ep-color-purple);
 }
@@ -97,55 +105,35 @@
     text-overflow: ellipsis;
     font-size: 14px;
     transition: width 0.2s;
-
 }
 
-#ep-sidebar.open-ep-sidebar {
-    min-width: 15%;
+a[data-tooltip], button[data-tooltip] {
+    position: relative;
+    cursor: pointer;
 }
 
-#ep-sidebar.open-ep-sidebar .item-description{
-    width: 150px;
+a[data-tooltip]::after, button[data-tooltip]::after {
+    content: attr(data-tooltip); 
+    position: absolute;
+    left: 50%; 
+    bottom: 125%; 
+    transform: translateX(-50%); 
+    background-color: #000;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 12px;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s ease, transform 0.2s ease;
 }
 
-#ep-sidebar.open-ep-sidebar .side-item a{
-    justify-content: flex-start;
-    gap: 14px;
+a[data-tooltip]:hover::after, button[data-tooltip]:hover::after {
+    opacity: 1;
+    transform: translateX(-50%) translateY(-5px); 
 }
 
-#ep-sidebar.open-ep-sidebar #logout-btn{
-    justify-content: flex-start;
-    gap: 14px;
-}
-
-#ep-sidebar.open-ep-sidebar #logout-btn .item-description{
-    display: flex;
-    justify-content: flex-start;
-    width: 150px;
-}
-
-.side-item i{
-    color: var(--ep-color-gray-lighter);
-}
-
-#ep-sidebar .side-item #search-content-input{
-    height: 20px;
-    background-color: transparent;
-    justify-content: flex-start;
-    border: none;
-}
-
-#ep-sidebar.open-ep-sidebar .side-item #search-content-input{
-    height: 20px;
-    background-color: transparent;
-    justify-content: flex-start;
-    margin-left: 10px;
-    border-radius: 5px;
-    padding: 4px;
-    border: 2px solid var(--ep-color-gray);
-    color: var(--ep-color-gray-lighter);
-}
-
-#search-content-input::-webkit-input-placeholder {
-    opacity: 2;
+button[data-tooltip] {
+    padding: 10px 20px; 
 }

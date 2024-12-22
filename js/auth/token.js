@@ -1,1 +1,5 @@
-const tokenJwt = localStorage.getItem('tokenJwt');
+let tokenJwt;
+
+if(localStorage.getItem('tokenJwt')){
+    tokenJwt = localStorage.getItem('tokenJwt');
+};

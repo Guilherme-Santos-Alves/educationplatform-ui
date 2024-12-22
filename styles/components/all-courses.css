@@ -1,6 +1,8 @@
 .all-courses-section{
     width: 100%;
     display: flex;
+    background-color: var(--ep-color-gray-dark);
+    justify-content: center;
 }
 
 .all-courses-section> .choose-course-content{
