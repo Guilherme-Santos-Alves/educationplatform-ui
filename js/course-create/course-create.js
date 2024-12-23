@@ -36,7 +36,10 @@ function courseRegister() {
             response.json().then(( id ) => {
                 const courseId = id;
                 moduleAndLessonRegister(courseId);
-                showToast('Curso cadastrado com sucesso! <br> Você pode editar os cursos que criou na seção "Meus cursos".', 'success');
+                Swal.fire({
+                    text: `Curso cadastrado com sucesso! Você pode editar os cursos que criou na seção "Meus cursos".`,
+                    icon: "success"
+                });
                 if (!document.querySelector('.module-body')){
                     clearFormData();
                 }

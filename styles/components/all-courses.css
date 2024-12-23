@@ -9,7 +9,7 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     padding: 50px;
-    gap: 20px;
+    gap: 40px;
     width: 100%;
 }
 
@@ -22,7 +22,8 @@
     transition: all 0.5s;
     cursor: pointer;
     overflow: hidden;
-    margin: 20px;
+    margin: 0 auto;
+
     width: 300px;
 }
 

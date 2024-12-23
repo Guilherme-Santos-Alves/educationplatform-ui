@@ -9,6 +9,15 @@
     position: sticky;
 }
 
+.item-description{
+    color: white;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    font-size: 16px;
+    transition: width 0.2s;
+}
+
 .d-flex{
     display: flex;
     margin: 0;
@@ -20,9 +29,10 @@
     flex-grow: 1;
     background-color: var(--ep-color-gray-dark);
     padding: 0px;
+    width: 100%;
 }
 
- .sidebar {
+.sidebar {
     width: 250px;
     transition: all 0.3s ease;
 }
@@ -39,10 +49,12 @@
 
 .nav-item{
     padding: 20px;
+    display: flex;
     cursor: pointer;
     border-radius: 8px;
     font-size: 16px;
     width: 200px;
+    gap: 10px;
 }
 
 .nav-item.active{
@@ -78,15 +90,16 @@
 }
 
 #logout-btn{
-    background-color: transparent;
-    color: var(--ep-color-gray-lighter);
-    padding: 20px;
+    padding: 22px;
+    display: flex;
     cursor: pointer;
     border-radius: 8px;
-    display: flex;
     font-size: 16px;
-    justify-content: center;
     width: 200px;
+    gap: 10px;
+    align-items: center;
+    color: var(--ep-color-gray-lighter);
+    background-color: var(--ep-color-dark);
 }
 
 #logout-btn:hover:not(.active){
@@ -96,15 +109,8 @@
 #logout-btn i{
     width: 20px;
     height: 20px;
-}
-
-.item-description{
-    width: 0px;
-    overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-    font-size: 14px;
-    transition: width 0.2s;
+    display: flex;
+    align-items: center;
 }
 
 a[data-tooltip], button[data-tooltip] {
