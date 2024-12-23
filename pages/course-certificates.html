@@ -38,10 +38,11 @@
 </head>
 <body>
     <navbar-home class="ep-navbar-home"></navbar-home>
-    <ep-sidebar-home class="ep-sidebar open-ep-sidebar" id="ep-sidebar"></ep-sidebar-home>
 
-    <div class="ep-wrapper-home-top">
-        <div class="ep-wrapper-home-left"> 
+    <div class="layout-container">
+        <ep-sidebar-home></ep-sidebar-home>
+        
+        <div id="main-content" class="main-content flex-grow-1">
             <div class="course-certificates">
                 <div class="course-certificates-content">
                     <h1 class="title">Meus Certificados</h1>
@@ -73,5 +74,6 @@
             </div>
         </div>
     </div>
+
 </body>
 </html>

@@ -49,14 +49,17 @@ class SidebarHome extends HTMLElement {
 
 customElements.define('ep-sidebar-home', SidebarHome);
 
+/* <button id="toggleSidebar" class="btn btn-primary mb-3">Toggle Sidebar</button>
 
-// document.addEventListener('DOMContentLoaded', () => {
-//     const toggleButton = document.getElementById('toggleSidebar');
-//     const sidebar = document.getElementById('ep-sidebar');
-//     const content = document.getElementById('content');
+document.addEventListener('DOMContentLoaded', () => {
+    const toggleButton = document.getElementById('toggleSidebar');
+    const sidebar = document.getElementById('ep-sidebar');
+    const content = document.getElementById('main-content');
 
-//     toggleButton.addEventListener('click', () => {
-//         sidebar.classList.toggle('sidebar-hidden');
-//         content.classList.toggle('content-expanded');
-//     });
-// });
+    toggleButton.addEventListener('click', () => {
+        console.log('Botão de toggle clicado');
+        sidebar.classList.toggle('sidebar-hidden');
+        content.classList.toggle('content-expanded');
+    });
+    
+}); */
