@@ -67,11 +67,13 @@
 .course-modules-section > .course-modules-content > .course-modules > .module.-hide > .module-header > .show-lessons-btn i {
     transition: ease 0.5s;
     transform: rotate(0deg);
+    caret-color: transparent;
 }
 
 .course-modules-section > .course-modules-content > .course-modules > .module > .module-header > .show-lessons-btn i {
     transition: ease 0.3s;
     transform: rotate(90deg);
+    caret-color: transparent;
 }
 
 
@@ -108,4 +110,9 @@
     font-weight: 400;
     color: var(--ep-color-gray-light);
     cursor: pointer;
+}
+
+.course-modules-section ul{
+    padding-left: 0px !important;
+    margin-bottom: 0px !important;
 }
