@@ -9,7 +9,7 @@ Uma interface funcional para uma plataforma de cursos online, consumindo uma API
 O **Education Platform UI** é o front-end de uma plataforma de cursos online que atende dois tipos de usuários principais:  
 - **Alunos**, que podem:  
   - Editar informações pessoais.  
-  - Acessar cursos disponíveis.  
+  - Acessar cursos disponíveis para cada assinatura.  
   - Gerar certificados de conclusão.
      
 - **Administradores dos cursos**, que podem:  
