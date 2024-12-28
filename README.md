@@ -1,6 +1,6 @@
 # Education Platform UI
 
-Uma interface funcional para uma plataforma de cursos online, consumindo uma API desenvolvida por [@vitxr10](https://github.com/vitxr10) para gerenciamento de dados.
+Uma interface funcional para uma plataforma de cursos online, consumindo uma API REST desenvolvida por [@vitxr10](https://github.com/vitxr10) para gerenciamento de dados.
 
 ---
 
