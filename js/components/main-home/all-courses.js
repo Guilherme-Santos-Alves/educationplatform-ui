@@ -20,4 +20,3 @@ class AllCoursesSection extends HTMLElement {
 }
 
 customElements.define('all-courses-section', AllCoursesSection);
-

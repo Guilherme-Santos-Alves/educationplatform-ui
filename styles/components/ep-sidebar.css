@@ -3,7 +3,7 @@
     width: var(--ep-sidebar-home-size);
     background-color: var(--ep-color-dark);
     padding: 20px;
-    height: calc(100dvh - var(--ep-navbar-home-size));
+    height: 100%;
     top: 0;
     left: 0;
     position: sticky;
@@ -22,6 +22,7 @@
 .layout-container {
     display: flex;
     margin: 0;
+    height: calc(100dvh - var(--ep-navbar-home-size));
 }
 
 .main-content {
@@ -30,6 +31,8 @@
     flex-grow: 1;
     background-color: var(--ep-color-gray-dark);
     transition: margin-left 0.3s ease;
+    overflow-y: auto;
+    height: 100%;
 }
 
 .sidebar {
