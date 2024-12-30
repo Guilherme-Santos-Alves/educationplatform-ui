@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', () => {
+function dropdownModule() {
     const modulos = document.querySelectorAll('.module');
     modulos.forEach((modulo) => {
         const openModule = modulo.querySelector('.module-header');
@@ -8,4 +8,4 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         }
     });
-});
+}

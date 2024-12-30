@@ -175,7 +175,10 @@ function moduleAndLessonRegister(courseId) {
                 })
                 .then(response => {
                     if (response.ok) {
-                        showToast('Aula cadastrada com sucesso!', 'success');
+                        Swal.fire({
+                            text: `Aula cadastrada com sucesso!`,
+                            icon: "success"
+                        });
                     } else {
 
                         return response.json().then(error => {
@@ -191,14 +194,19 @@ function moduleAndLessonRegister(courseId) {
                         for (let field in error.errors) {
                             if (error.errors.hasOwnProperty(field)) {
                                 error.errors[field].forEach(errorMessage => {
-                                    console.log('chama o toast');
-                                   showToast('Não foi possível cadastrar uma ou mais aulas: ' + errorMessage, 'error');
+                                    Swal.fire({
+                                        text: `${errorMessage}.`,
+                                        icon: "error"
+                                    });
                                 });
                             }
                         }
                     } else {
                         console.log('Estrutura de erro inesperada');
-                        showToast('Não foi possível cadastrar uma ou mais aulas.', 'error');
+                        Swal.fire({
+                            text: `Não foi possível cadastrar uma ou mais aulas.`,
+                            icon: "error"
+                        });
                     }
                 });
             });
@@ -207,7 +215,10 @@ function moduleAndLessonRegister(courseId) {
             for (let field in error.errors) {
                 if (error.errors.hasOwnProperty(field)) {
                     error.errors[field].forEach(errorMessage => {
-                        showToast('Não foi possível cadastrar um ou mais módulos: ' + errorMessage, 'error');
+                        Swal.fire({
+                            text: `Não foi possível cadastrar um ou mais módulos: ${errorMessage}`,
+                            icon: "error"
+                        });
                     });
                 }
             }

@@ -91,6 +91,10 @@
     display: none;
 }
 
+.module-lessons> .error-message{
+    color: var(--ep-color-gray-lighter);
+}
+
 .course-modules-section> .course-modules-content> .course-modules> .module> .module-lessons> .lesson-content{
     display: flex;
     gap: 20px;
@@ -98,6 +102,7 @@
     margin: 10px -13px 0px -13px;
     padding: 10px 13px 0px 13px;
     align-items: center;
+    text-decoration: none;
 }
 
 .course-modules-section> .course-modules-content> .course-modules> .module> .module-lessons> .lesson-content> .lesson-status{
