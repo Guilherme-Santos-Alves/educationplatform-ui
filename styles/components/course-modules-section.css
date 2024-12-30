@@ -38,6 +38,10 @@
     gap: 10px;
 }
 
+.course-modules-section> .course-modules-content> .course-modules> .error-message{
+    color: var(--ep-color-gray-lighter);
+}
+
 .course-modules-section> .course-modules-content> .course-modules> .module{
     background-color: transparent;
     border: 1px solid var(--ep-color-purple);

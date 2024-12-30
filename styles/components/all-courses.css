@@ -13,6 +13,11 @@
     width: 100%;
 }
 
+.all-courses-section> .choose-course-content> .error-message{
+    color: var(--ep-color-gray-lighter);
+    width: 300px;
+}
+
 .all-courses-section> .choose-course-content> .course{
     border: 2px solid var(--ep-color-purple);
     border-radius: 10px;
@@ -49,15 +54,19 @@
     flex-direction: column;
 }
 
-.all-courses-section> .choose-course-content> .course> .course-btn> button{
+.all-courses-section> .choose-course-content> .course> .course-btn> a{
     background-color: var(--ep-color-purple);
     width: 100%;
     height: 100%;
     color: var(--ep-color-dark);
-    font-size: 14px;
+    font-size: 16px;
     font-weight: 600;
     cursor: pointer;
     transition: ease 0.5s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
 }
 
 .all-courses-section> .choose-course-content> .course> .course-btn> button:hover{
