@@ -6,38 +6,38 @@ class SidebarHome extends HTMLElement {
 
             <nav id="ep-sidebar" class="sidebar p-3">
                 <ul class="nav flex-column">
-                    <li class="nav-item mb-2">
-                        <a href="course-update.html" data-tooltip="Início">
+                    <a class="nav-item mb-2" href="main-home.html" data-tooltip="Início">
+                        <span>
                             <i class="fa-solid fa-house"></i>
-                        </a>
+                        </span>
                         <span class="item-description">
                             Início
                         </span>
-                    </li>
-                    <li class="nav-item mb-2">
-                        <a href="user-account.html" data-tooltip="Perfil">
+                    </a>
+                    <a class="nav-item mb-2" href="user-account.html" data-tooltip="Perfil">
+                        <span >
                             <i class="fa-regular fa-user"></i>
-                        </a>
+                        </span>
                         <span class="item-description">
                             Perfil
                         </span>
-                    </li>
-                    <li class="nav-item mb-2">
-                        <a href="" data-tooltip="Suporte">
+                    </a>
+                    <a class="nav-item mb-2" href="" data-tooltip="Suporte">
+                        <span>
                             <i class="fa-regular fa-message"></i>
-                        </a>
+                        </span>
                         <span class="item-description">
                             Suporte
                         </span>
-                    </li>
-                    <li class="nav-item mb-2">
-                        <a href="course-certificates.html" data-tooltip="Certificados">
+                    </a>
+                    <a class="nav-item mb-2" href="course-certificates.html" data-tooltip="Certificados">
+                        <span class="nav-icon">
                             <i class="fa-solid fa-medal"></i>
-                        </a>
+                        </span>
                         <span class="item-description">
                             Certificados
                         </span>
-                    </li>
+                    </a>
                     <button id="logout-btn" data-tooltip="Sair">
                         <i class="fa-solid fa-arrow-right-from-bracket"></i>
                         <span class="item-description">

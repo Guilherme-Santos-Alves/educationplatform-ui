@@ -11,7 +11,7 @@
 }
 
 .item-description {
-    color: white;
+    color: var(--ep-color-gray-lighter);
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
@@ -56,6 +56,8 @@
     font-size: 16px;
     width: 200px;
     gap: 10px;
+    text-decoration: none;
+    color: var(--ep-color-gray-lighter);
 }
 
 .nav-item.active{
@@ -75,19 +77,18 @@
     justify-content: center;
 }
 
-#nav-itens {
+.nav span{
     display: flex;
-    flex-direction: column;
-    gap: 8px;
-    list-style: none;
+    align-items: center;
 }
 
-.nav-item a i{
+.nav-item i{
     display: flex;
     align-items: center;
     justify-content: center;
     width: 20px;
     height: 20px;
+    color: var(--ep-color-gray-lighter);
 }
 
 #logout-btn{
@@ -123,7 +124,7 @@ a[data-tooltip]::after, button[data-tooltip]::after {
     content: attr(data-tooltip); 
     position: absolute;
     left: 50%; 
-    bottom: 125%; 
+    bottom: 70%; 
     transform: translateX(-50%); 
     background-color: #000;
     color: #fff;
