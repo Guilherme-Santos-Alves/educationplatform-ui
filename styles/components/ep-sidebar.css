@@ -27,7 +27,6 @@
 
 .main-content {
     margin-top: var(--ep-navbar-home-size);
-    padding: 20px;
     flex-grow: 1;
     background-color: var(--ep-color-gray-dark);
     transition: margin-left 0.3s ease;

@@ -19,7 +19,7 @@ function getLessonsByModule (moduleId) {
             const moduleContainer = document.querySelector(`.module[data-module-id="${moduleId}"]`);
     
             const lessonsOfModule = `
-                <a href="video-home.html?courseId=${lesson.id}" class="lesson-content">
+                <a href="video-home.html?lessonUrl=${lesson.videoLink}&moduleId=${moduleId}" class="lesson-content">
                     <div class="lesson-status">
                         <i class="fa-solid fa-circle-check"></i>
                     </div>
@@ -36,4 +36,3 @@ function getLessonsByModule (moduleId) {
         moduleContainer.querySelector('.module-lessons').insertAdjacentHTML('beforeend', errorMsg);
     });
 }
-
