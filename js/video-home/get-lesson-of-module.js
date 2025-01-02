@@ -28,7 +28,7 @@ function getLessonsOfModule() {
             const lessonContainer = document.querySelector('.module-lesson-list');
 
             const lessonBody = `
-                <a href="video-home.html?lessonId=${lesson.vimeoVideoId}&moduleId=${moduleId}" class="module-lesson">
+                <a href="video-home.html?vimeoId=${lesson.vimeoVideoId}&moduleId=${moduleId}&lessonId=${lesson.id}" class="module-lesson">
                     <iframe class="lesson-thumb"
                         src="https://player.vimeo.com/video/${lesson.vimeoVideoId}?badge=0&autopause=0&transparent=0&controls=0&autoplay=0&loop=0&muted=0&byline=0&title=0&player_id=0&app_id=58479" 
                         frameborder="0" 

@@ -19,7 +19,7 @@ function getLessonsByModule (moduleId) {
             const moduleContainer = document.querySelector(`.module[data-module-id="${moduleId}"]`);
     
             const lessonsOfModule = `
-                <a href="video-home.html?lessonId=${lesson.vimeoVideoId}&moduleId=${moduleId}" class="lesson-content">
+                <a href="video-home.html?vimeoId=${lesson.vimeoVideoId}&moduleId=${moduleId}&lessonId=${lesson.id}" class="lesson-content">
                     <div class="lesson-status">
                         <i class="fa-solid fa-circle-check"></i>
                     </div>
