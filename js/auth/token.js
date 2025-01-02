@@ -1,5 +1,6 @@
 let tokenJwt;
 
-if (localStorage.getItem('tokenJwt')){
-    tokenJwt = localStorage.getItem('tokenJwt');
-};
+if (localStorage.getItem('userSession')) {
+    const userSession = JSON.parse(localStorage.getItem('userSession'));
+    tokenJwt = userSession.token;
+}

@@ -23,11 +23,15 @@ document.addEventListener('DOMContentLoaded', () => {
             body: JSON.stringify(formData)
         })
         .then( response => {
-            console.log(response);
             if(response.ok){
                 response.json().then(( data ) => {
-                    localStorage.setItem('tokenJwt', data.data.token);
-
+                    const userData = {
+                        role: data.data.role,
+                        token: data.data.token
+                    };
+                    
+                    localStorage.setItem('userSession', JSON.stringify(userData));
+  
                     Swal.fire({
                         text: "Login realizado com sucesso!",
                         icon: "success"

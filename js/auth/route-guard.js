@@ -1,7 +1,7 @@
 window.onload = protectRoute;
 
 function isAuthenticated() {
-    return !!localStorage.getItem('tokenJwt');
+    return !!localStorage.getItem('userSession');
 }
 
 function protectRoute() {
