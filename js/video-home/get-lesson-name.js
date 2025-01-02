@@ -1,4 +1,8 @@
-document.addEventListener('DOMContentLoaded', getLessonName);
+window.onload = () => {
+    protectRoute('both');
+    getLessonName();
+    // mudar de arquivo dps
+}
 
 function getLessonName() {
     fetch(`https://localhost:7092/api/videolessons/${lessonId}`, {

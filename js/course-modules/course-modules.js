@@ -1,3 +1,7 @@
+window.onload = () => {
+    protectRoute('both');
+}
+
 function dropdownModule() {
     const modulos = document.querySelectorAll('.module');
     modulos.forEach((modulo) => {

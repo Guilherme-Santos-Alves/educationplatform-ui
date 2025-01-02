@@ -1,3 +1,7 @@
+window.onload = () => {
+    protectRoute('Administrator');
+}
+
 function editFields () {
     console.log('chamou');
 

@@ -1,3 +1,7 @@
+window.onload = () => {
+    protectRoute('both');
+}
+
 class userAccountSection extends HTMLElement{
     connectedCallback(){
         this.innerHTML = `
