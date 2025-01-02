@@ -1,9 +1,9 @@
+
+
 class SidebarHome extends HTMLElement {
     connectedCallback() {
-        this.innerHTML = `
-            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-            <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-
+        if (userRole === 'student'){
+            this.innerHTML = `
             <nav id="ep-sidebar" class="sidebar p-3">
                 <ul class="nav flex-column">
                     <a class="nav-item mb-2" href="main-home.html" data-tooltip="Início">
@@ -47,6 +47,62 @@ class SidebarHome extends HTMLElement {
                 </ul>
             </nav>
             `;
+        }
+
+        if(userRole === 'Administrator'){
+            this.innerHTML = `
+            <nav id="ep-sidebar" class="sidebar p-3">
+                <ul class="nav flex-column">
+                    <a class="nav-item mb-2" href="main-home.html" data-tooltip="Início">
+                        <span>
+                            <i class="fa-solid fa-house"></i>
+                        </span>
+                        <span class="item-description">
+                            Início
+                        </span>
+                    </a>
+                    <a class="nav-item mb-2" href="user-account.html" data-tooltip="Perfil">
+                        <span >
+                            <i class="fa-regular fa-user"></i>
+                        </span>
+                        <span class="item-description">
+                            Perfil
+                        </span>
+                    </a>
+                    <a class="nav-item mb-2" href="course-create.html" data-tooltip="Criar curso">
+                        <span >
+                            <i class="fa-regular fa-clone"></i>
+                        </span>
+                        <span class="item-description">
+                            Criar curso
+                        </span>
+                    </a>
+                    <a class="nav-item mb-2" href="course-update.html" data-tooltip="Editar Curso">
+                        <span >
+                            <i class="fa-regular fa-edit"></i>
+                        </span>
+                        <span class="item-description">
+                            Editar Curso
+                        </span>
+                    </a>
+                    <a class="nav-item mb-2" href=".html" data-tooltip="Assinaturas">
+                        <span class="nav-icon">
+                            <i class="fas fa-money-check-alt plan-icon"></i>
+                        </span>
+                        <span class="item-description">
+                            Assinaturas
+                        </span>
+                    </a>
+                    <button id="logout-btn" data-tooltip="Sair">
+                        <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                        <span class="item-description">
+                            Sair
+                        </span>
+                    </button>
+                </ul>
+            </nav>
+            `;
+        }
     }
 }
 
