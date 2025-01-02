@@ -39,6 +39,8 @@
     align-items: center;
     transition: all 0.5s;
     cursor: pointer;
+    color: var(--ep-color-gray-lighter);
+    text-decoration: none;
 }
 
 .video-home> .module-lesson-list> .module-lesson:hover{
