@@ -27,7 +27,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 response.json().then(( data ) => {
                     const userData = {
                         role: data.data.role,
-                        token: data.data.token
+                        token: data.data.token,
+                        userId: data.data.id
                     };
                     
                     localStorage.setItem('userSession', JSON.stringify(userData));
