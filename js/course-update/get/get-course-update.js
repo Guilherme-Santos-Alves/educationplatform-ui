@@ -1,20 +1,18 @@
+function getQueryParam(param) {
+    const urlParams = new URLSearchParams(window.location.search);
+    return urlParams.get(param);
+}
+
+const courseId = getQueryParam('courseId');
+
 document.addEventListener('DOMContentLoaded', () => {
     let inputName = document.getElementById('cs-name');
     let inputDesc = document.getElementById('cs-desc');
     let inputCover = document.getElementById('cs-cover');
     let selectSubscription = document.getElementById('cs-subscription');
-
-    const courseId = sessionStorage.getItem('courseId');
-    //getCourseUpdate(courseId);
-   // getModuleUpdate(courseId);
-
-    //testes
-    getCourseUpdate(2);
-    getModuleUpdate(2);
-
-    //     Usar na pagina de selecionar o curso a ser editado
-    //     const courseId = 2;
-    //     sessionStorage.setItem('courseId', courseId);
+    
+    getCourseUpdate(courseId);
+    getModuleUpdate(courseId);
 
     function getCourseUpdate(courseId) {
         fetch(`https://localhost:7092/api/courses/${courseId}`, {

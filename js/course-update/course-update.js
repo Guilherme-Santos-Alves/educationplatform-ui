@@ -67,7 +67,7 @@ function editFields () {
         courseData[key].addEventListener('change', () => {
             const courseValues = {
                 //id: sessionStorage.getItem('courseId'),
-                id: 2,
+                id: 1,
                 name: courseData.name.value,
                 description: courseData.description.value,
                 cover: courseData.cover.value,
@@ -105,15 +105,6 @@ function editFields () {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-    const formCurso = document.querySelector('#form-course-edit');
-    formCurso.addEventListener('submit', (e) => {
-        e.preventDefault();
-        if (sessionStorage.getItem('courseData')){
-            const courseData = JSON.parse(sessionStorage.getItem('courseData'));
-            putCourseUpdate(courseData);
-        }
-    });
-
     const formModule = document.querySelector('#form-module-edit');
     formModule.addEventListener('submit', (e) => {
         e.preventDefault();
