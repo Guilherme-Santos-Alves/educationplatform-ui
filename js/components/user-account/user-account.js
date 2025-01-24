@@ -20,20 +20,24 @@ class userAccountSection extends HTMLElement{
                     </div>
                     <div class="user-personal-data">
                         <h2 class="title">Informações pessoais</h2>
-                        <div class="personal-data-inputs">
+                        <form id="personal-data-form">
                                 <div class="line">
                                     <label for="user-fullname">Nome Completo</label>
-                                    <input id="user-fullname" type="text">
+                                    <input id="user-fullname" type="text" disabled required>
                                 </div>
                                 <div class="line">
                                     <label for="user-email">E-mail</label>                              
-                                    <input id="user-email" type="text">
+                                    <input id="user-email" type="text" required>
                                 </div>
                                 <div class="line">                 
                                     <label for="user-phone">Telefone</label>
-                                    <input id="user-phone" type="text">
+                                    <input id="user-phone" type="text" required>
                                 </div>
-                        </div>
+
+                                <div class="save-editions">
+                                    <button type="submit" >Salvar Alterações</button>
+                                </div>
+                        </form>
                         <div class="user-photo-edit">
                             <h2 for="">Editar Imagem de Perfil</h2>
                             <div class="photo-edit">

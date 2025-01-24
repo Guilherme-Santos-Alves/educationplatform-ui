@@ -17,22 +17,21 @@
     max-width: 800px;
     color: var(--ep-color-gray-lighter);
     border: 1px solid var(--ep-color-purple);
- 
 }
 
-.user-account-section> .user-account-content> .user-personal-data> .personal-data-inputs{
+.user-account-section> .user-account-content> .user-personal-data> #personal-data-form{
     gap: 10px;
     display: grid;
     grid-template-columns: repeat(2, auto);
     margin-top: 20px;
 }
 
-.user-account-section> .user-account-content> .user-personal-data> .personal-data-inputs> .inputs{
+.user-account-section> .user-account-content> .user-personal-data> #personal-data-form> .inputs{
     display: flex;
     flex-direction: column;
 }
 
-.user-account-section> .user-account-content> .user-personal-data> .personal-data-inputs> .line> input{
+.user-account-section> .user-account-content> .user-personal-data> #personal-data-form> .line> input{
     border: 2px solid var(--ep-color-purple-light);
     height: 40px;
     border-radius: 5px;
@@ -42,12 +41,12 @@
     font-size: 16px;
 }
 
-.user-account-section> .user-account-content> .user-personal-data> .personal-data-inputs{
+.user-account-section> .user-account-content> .user-personal-data> #personal-data-form{
     display: flex;
     flex-direction: column;
 }
 
-.user-account-section> .user-account-content> .user-personal-data> .personal-data-inputs> .line{
+.user-account-section> .user-account-content> .user-personal-data> #personal-data-form> .line{
     display: grid;
     grid-template-columns: 150px calc(100% - 150px);
     align-items: center;
