@@ -1,26 +1,7 @@
 window.onload = () => {
-    protectRoute('Administrator');
+    protectRoute('both');
     getCourse();
 }
-
-function protectRoute(expectedRole) {
-    const userRole = isAuthenticated();
-    console.log('Papel do usuário:', userRole);
-
-    if (userRole !== expectedRole) {
-        Swal.fire({
-            icon: "info",
-            text: "Você precisa estar logado ou ter permissões adequadas para acessar esta página.",
-            showConfirmButton: false,
-            timer: 2000
-        });
-
-        setTimeout(() => {
-            window.location.href = 'login.html';
-        }, 1000);
-    }
-}
-
 
 function getCourse() {
     fetch(`https://localhost:7092/api/courses`, {

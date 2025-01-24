@@ -1,6 +1,8 @@
 function isAuthenticated() {
     const userData = localStorage.getItem('userSession');
-    if (!userData) return null;
+    if (!userData){
+        return null;
+    }
 
     try {
         const user = JSON.parse(userData);
@@ -11,15 +13,28 @@ function isAuthenticated() {
     }
 }
 
+
 function protectRoute(expectedRole) {
     const userRole = isAuthenticated();
-    console.log('Papel do usuário:', userRole);
-    console.log('Papel necessario: ', expectedRole);
+
+    if (!userRole) {
+        Swal.fire({
+            icon: "info",
+            text: "Você precisa estar logado para acessar esta página.",
+            showConfirmButton: false,
+            timer: 2000
+        });
+
+        setTimeout(() => {
+            window.location.href = 'login.html';
+        }, 1000);
+        return;
+    }
 
     if (userRole !== expectedRole && expectedRole !== 'both') {
         Swal.fire({
             icon: "info",
-            text: "Você precisa estar logado ou ter permissões adequadas para acessar esta página.",
+            text: "Você não tem permissão para acessar esta página.",
             showConfirmButton: false,
             timer: 2000
         });

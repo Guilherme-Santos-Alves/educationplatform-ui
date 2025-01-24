@@ -33,8 +33,6 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 function putUserData(changedData) {
-    console.log(changedData);
-
     fetch(`https://localhost:7092/api/users/${changedData.id}`, {
         method: 'PUT',
         headers: {
