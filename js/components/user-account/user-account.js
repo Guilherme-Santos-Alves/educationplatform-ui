@@ -10,8 +10,8 @@ class userAccountSection extends HTMLElement{
                     <div class="user-account-header">
                         <div class="header-content">
                             <div class="header-description">
-                                <h1 data-translate="userAccountTitle">Olá, Guilherme!</h1>
-                                <h2 data-translate="userAccountSubtitle">Gerencie tudo que importa em um só lugar.</h2>
+                                <h1 id="user-name-title"> </h1>
+                                <h2 >Gerencie tudo que importa em um só lugar.</h2>
                             </div>
                             
                             <i class="fa-solid fa-gears"></i>
@@ -59,7 +59,7 @@ class userAccountSection extends HTMLElement{
                                     <option value="zh">Chinês</option>
                                     <option value="hi">Hindi</option>
                                     <option value="ar">Árabe</option>
-                                    <option value="pt">Português</option>
+                                    <option value="pt" selected>Português</option>
                                     <option value="bn">Bengali</option>
                                     <option value="ru">Russo</option>
                                     <option value="ja">Japonês</option>
