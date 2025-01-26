@@ -77,7 +77,7 @@ class SidebarHome extends HTMLElement {
                             Criar curso
                         </span>
                     </a>
-                    <a class="nav-item mb-2" href="course-update.html" data-tooltip="Editar Curso">
+                    <a class="nav-item mb-2" href="select-course-update.html" data-tooltip="Editar Curso">
                         <span >
                             <i class="fa-regular fa-edit"></i>
                         </span>

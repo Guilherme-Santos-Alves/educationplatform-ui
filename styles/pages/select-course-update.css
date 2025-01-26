@@ -1,0 +1,90 @@
+.select-courses-section{
+    width: 100%;
+    display: flex;
+    background-color: var(--ep-color-gray-dark);
+    justify-content: center;
+}
+
+.select-courses-section> .choose-course-content{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    padding: 50px;
+    gap: 40px;
+    width: 100%;
+}
+
+.select-courses-section> .choose-course-content> .error-message{
+    color: var(--ep-color-gray-lighter);
+    width: 300px;
+}
+
+.select-courses-section> .choose-course-content> .course{
+    border: 2px solid var(--ep-color-purple);
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    display: flex;
+    flex-direction: column;
+    transition: all 0.5s;
+    cursor: pointer;
+    overflow: hidden;
+    margin: 0 auto;
+
+    width: 300px;
+}
+
+.select-courses-section> .choose-course-content> .course:hover{
+    box-shadow: rgba(145, 51, 179, 0.211) 0px 20px 30px -10px;
+}
+
+.select-courses-section> .choose-course-content> .course> .course-picture{
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.select-courses-section> .choose-course-content> .course> .course-picture img{
+    width: 100%;
+    height: 250px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.select-courses-section> .choose-course-content> .course> .course-btn{
+    display: flex;
+    min-height: 45px;
+    flex-direction: column;
+}
+
+.select-courses-section> .choose-course-content> .course> .course-btn> a{
+    background-color: var(--ep-color-purple);
+    width: 100%;
+    height: 100%;
+    color: var(--ep-color-dark);
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: ease 0.5s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+}
+
+.select-courses-section> .choose-course-content> .course> .course-btn> button:hover{
+    background-color: var(--ep-color-purple-light);
+}
+
+.select-courses-section> .choose-course-content> .course> .course-title{
+    padding: 5px 0px;
+}
+
+.select-courses-section> .choose-course-content> .course> .course-title> h1{
+    color: var(--ep-color-gray-lighter);
+    padding: 8px 1px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 65px;
+    text-align: center;
+    font-size: 18px;
+}
+

@@ -17,6 +17,8 @@ function getCourseDescription() {
         return response.json();
     })
     .then(courseData => {
+        const courseNameSection = document.querySelector('.course-title');
+        courseNameSection.innerHTML = courseData.data.name;
         const courseDescriptionSection = document.querySelector('.course-description');
         courseDescriptionSection.innerHTML = courseData.data.description;
     })
