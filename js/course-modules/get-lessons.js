@@ -31,7 +31,7 @@ function getLessonsByModule (moduleId) {
     })
     .catch(error => {
         const moduleContainer = document.querySelector(`.module[data-module-id="${moduleId}"]`);
-        const errorMsg = `<p class="error-message">${'Erro ao carregar a aula: ' + error.message}</p>`;
+        const errorMsg = `<p class="error-message">${error.message}</p>`;
 
         moduleContainer.querySelector('.module-lessons').insertAdjacentHTML('beforeend', errorMsg);
     });

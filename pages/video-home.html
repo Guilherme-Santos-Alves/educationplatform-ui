@@ -31,21 +31,28 @@
     <link rel="stylesheet" href="../styles/components/video-player.css">
     <link rel="stylesheet" href="../styles/components/ep-scrollbar.css">
     <link rel="stylesheet" href="../styles/components/ep-sidebar.css">
+    <link rel="stylesheet" href="../styles/components/lesson-evaluate.css">
     <link rel="stylesheet" href="../styles/components/lesson-comment.css">
     <link rel="stylesheet" href="../styles/components/lesson-footer.css">
 
     <script src="../js/components/navbar-home.js"></script>
     <script src="../js/components/sidebar-home.js"></script>
 
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
     <script src="../js/components/video-home/embed-video.js"></script>
+
     <script src="../js/video-home/get-lesson-of-module.js"></script>
     <script src="../js/video-home/get-lesson-name.js"></script>
-
+    <script src="../js/video-home/post-lesson-finished.js"></script>
+    <script src="../js/video-home/lesson-evaluate.js"></script>
+    <script src="../js/video-home/video-home.js"></script>
+    
     <script src="../js/auth/token.js"></script>
     <script src="../js/auth/logout.js"></script>
     <script src="../js/auth/route-guard.js"></script>
 
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    
 
 </head>
 <body>
@@ -71,7 +78,7 @@
 
                         </div>
                         <div class="lesson-finish">
-                            <button>Finalizar Aula</button>
+                            <button id="lesson-finish-btn">Finalizar Aula</button>
                         </div>
                 </div>
             </div>
