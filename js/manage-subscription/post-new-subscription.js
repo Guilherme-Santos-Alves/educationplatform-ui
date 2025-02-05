@@ -1,4 +1,4 @@
-window.onload = () => {
+document.addEventListener('DOMContentLoaded', () => {
     const newSubscriptionBtn = document.querySelector('#add-new-subscription-btn');
     const newSubscriptionForm = document.querySelector('#new-subscription-form');
     
@@ -20,7 +20,7 @@ window.onload = () => {
         const newSubscriptionDuration = document.querySelector('#new-subscription-duration');
         postNewSubscription(newSubscriptionName, newSubscriptionDuration);
     });
-}
+});
 
 function postNewSubscription(name, duration) {
     const jsonData = {
