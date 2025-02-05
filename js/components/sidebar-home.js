@@ -85,7 +85,7 @@ class SidebarHome extends HTMLElement {
                             Editar Curso
                         </span>
                     </a>
-                    <a class="nav-item mb-2" href=".html" data-tooltip="Assinaturas">
+                    <a class="nav-item mb-2" href="manage-subscription.html" data-tooltip="Assinaturas">
                         <span class="nav-icon">
                             <i class="fas fa-money-check-alt plan-icon"></i>
                         </span>
