@@ -1,0 +1,120 @@
+.manage-subscription-section{
+    width: 100%;
+    padding: 50px;
+}
+
+.manage-subscription-section h2{
+    color: var(--ep-color-gray-lighter);
+    font-size: 24px;
+    border-left: 8px solid var(--ep-color-purple);
+    padding-left: 5px;
+    font-weight: 600;
+}
+
+
+.manage-subscription-section > .manage-subscription-content{
+    margin-top: 50px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.manage-subscription-section > .manage-subscription-content > .subscription{
+    border: 1px solid var(--ep-color-purple-light);
+    display: grid;
+    grid-template-columns: 400px auto;
+    border-radius: 5px;
+    height: 100px;
+}
+
+.manage-subscription-section > .manage-subscription-content > .subscription > .subscription-name{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--ep-color-gray-lighter);
+}
+
+
+.manage-subscription-section > .manage-subscription-content > .subscription > .subscription-btns{
+    display: grid;
+    gap: 1px;
+
+}
+
+.manage-subscription-section > .manage-subscription-content > .subscription > .subscription-btns button{
+    background-color: var(--ep-color-purple);
+    color: var(--ep-color-gray-lighter);
+}
+
+.manage-subscription-section > .manage-subscription-content > .subscription > .subscription-btns button svg{
+    width: 20px;
+    height: 20px;
+}
+
+.new-subscription-content{
+    margin-top: 30px;
+    display: grid;
+}
+
+.new-subscription-content .add-new-subscription{
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.new-subscription-content > .add-new-subscription> h4{
+    color: var(--ep-color-gray-lighter);
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.new-subscription-content > .add-new-subscription > h4 i{
+    color: var(--ep-color-purple);
+    font-size: 8px;
+    padding-right: 5px;
+}
+
+.new-subscription-content > .add-new-subscription > button{
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+    font-size: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--ep-color-purple);
+    color: var(--ep-color-gray-lighter);
+}
+
+.new-subscription-content > .new-subscription{
+    margin-top: 10px;
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+}
+
+.new-subscription-content > .new-subscription > label{
+    padding: 10px 0px 5px 0px;
+    color: white;
+}
+
+.new-subscription-content > .new-subscription > input{
+    height: 40px;
+    border-radius: 5px;
+    border: 1px solid var(--ep-color-purple-light);
+    background-color: transparent;
+    font-size: 16px;
+    padding: 5px;
+    color: var(--ep-color-gray-lighter);
+}
+
+.new-subscription-content > .new-subscription > button{
+    margin-top: 20px;
+    width: 80px;
+    height: 40px;
+    border-radius: 5px;
+    background-color: var(--ep-color-purple);
+    font-size: 16px;
+    color: var(--ep-color-gray-lighter);
+}

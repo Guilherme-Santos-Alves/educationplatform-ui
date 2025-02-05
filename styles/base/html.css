@@ -1,6 +1,6 @@
 html {
     scroll-behavior: smooth;
-    font-family: var(--ep-primary-font);
+    font-family: var(--ep-primary-font) !important;
     background-color: var(--ep-color-gray-dark);
 }
 
