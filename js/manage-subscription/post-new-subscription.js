@@ -18,9 +18,25 @@ document.addEventListener('DOMContentLoaded', () => {
         e.preventDefault();
         const newSubscriptionName = document.querySelector('#new-subscription-name');
         const newSubscriptionDuration = document.querySelector('#new-subscription-duration');
-        postNewSubscription(newSubscriptionName, newSubscriptionDuration);
+
+        const durationValue = Number(newSubscriptionDuration.value); 
+
+        if (isValidInt32(durationValue)){
+            postNewSubscription(newSubscriptionName, newSubscriptionDuration); 
+        } else{
+            Swal.fire({
+                icon: 'error',
+                text: `O tempo de duração da assinatura é inválido!`,
+                showConfirmButton: false,
+            });
+        }
+        
     });
 });
+
+function isValidInt32(number) {
+    return Number.isInteger(number) && number >= -2147483648 && number <= 2147483647;
+}
 
 function postNewSubscription(name, duration) {
     const jsonData = {
@@ -38,9 +54,11 @@ function postNewSubscription(name, duration) {
     })
     .then(response => {
         if (!response.ok) {
-            return response.text().then(errorText => {
-                throw new Error(errorText);
+
+            return response.json().then(errorJson => {
+                throw errorJson;
             });
+
         } else{
             Swal.fire({
                 text: `Assinatura cadastrada com sucesso!`,
@@ -55,9 +73,13 @@ function postNewSubscription(name, duration) {
         }
     })
     .catch(error => {
+        const formattedErrors = Object.values(error.errors)
+        .map(messages => messages.join(", "))
+        .join("\n");
+
         Swal.fire({
             icon: 'error',
-            text: `Não foi possível cadastrar a assinatura.`,
+            text: `${formattedErrors}`,
             showConfirmButton: false,
         });
     });

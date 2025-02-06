@@ -21,8 +21,12 @@ function getSubscriptions() {
         return response.json();
     })
     .then(subscriptions => {
+        let hasActiveSubscription = false;
+
         subscriptions.data.forEach(subscription => {
             if (subscription.active){
+                hasActiveSubscription = true;
+
                 const subscriptionBody = `
                     <div class="subscription" data-subscription-id="${subscription.id}">
                         <div class="subscription-name">
@@ -46,6 +50,13 @@ function getSubscriptions() {
                 manageSubscriptionContent.insertAdjacentHTML('beforeend', subscriptionBody);
             }
         });
+
+        if (!hasActiveSubscription){
+            const errorMsg = `<p class="error-message" style="color: white;">Nenhuma assinatura encontrada.</p>`;
+            manageSubscriptionContent.insertAdjacentHTML("beforeend", errorMsg);
+        }
+
+        setupDeleteEvents();
     })
     .catch(error => {
         const errorMsg = `<p class="error-message" style="color: white;">${error.message}</p>`;
