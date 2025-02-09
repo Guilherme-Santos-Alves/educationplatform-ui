@@ -32,6 +32,25 @@
     align-items: center;
     justify-content: center;
     color: var(--ep-color-gray-lighter);
+
+}
+
+.manage-subscription-section > .manage-subscription-content > .subscription > .subscription-name .subscription-name-input{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent;
+    height: 100%;
+    width: 100%;
+    outline: none;
+    text-align: center;
+    color: var(--ep-color-gray-lighter);
+
+}
+
+.manage-subscription-section > .manage-subscription-content > .subscription > .subscription-name input:disabled{
+    color: var(--ep-color-gray) !important;
+    cursor: not-allowed;
 }
 
 
@@ -41,12 +60,26 @@
 
 }
 
-.manage-subscription-section > .manage-subscription-content > .subscription > .subscription-btns button{
-    background-color: var(--ep-color-purple);
-    color: var(--ep-color-gray-lighter);
+.manage-subscription-section > .manage-subscription-content > .subscription > .subscription-btns> #send-form-btn{
+    display: none;
+
+
 }
 
-.manage-subscription-section > .manage-subscription-content > .subscription > .subscription-btns button svg{
+
+.manage-subscription-section > .manage-subscription-content > .subscription > .subscription-btns button, 
+.manage-subscription-section > .manage-subscription-content > .subscription > .subscription-btns a{
+    background-color: var(--ep-color-purple);
+    color: var(--ep-color-gray-lighter);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 48.5px;
+    width: 65px;
+}
+
+.manage-subscription-section > .manage-subscription-content > .subscription > .subscription-btns button svg, 
+.manage-subscription-section > .manage-subscription-content > .subscription > .subscription-btns a svg{
     width: 20px;
     height: 20px;
 }
