@@ -2,10 +2,10 @@ window.onload = () => {
     protectRoute('Administrator');
 }
 
-window.addEventListener('beforeunload', function (event) {
-    event.preventDefault();
-    event.returnValue = '';
-});
+// window.addEventListener('beforeunload', function (event) {
+//     event.preventDefault();
+//     event.returnValue = '';
+// });
 
 document.addEventListener('DOMContentLoaded', () => {
     document.querySelector('#course-register-form').addEventListener('submit', () => {
@@ -153,67 +153,74 @@ function moduleAndLessonRegister(courseId) {
                 clearFormData();
             }
 
-            const allLessons = module.querySelectorAll('.lesson-group');
 
-            allLessons.forEach(lesson => {
-                const lessonName = lesson.querySelector('.video-lesson-name');
-                const lessonLink = lesson.querySelector('.video-lesson-link');
-                const lessonDescription = lesson.querySelector('.video-lesson-description');
 
-                const jsonDataLessons = {
-                    name: lessonName.value,
-                    description: lessonDescription.value,
-                    video: lessonLink.value,
-                    moduleId: moduleId
-                };
-
-                console.log('aula' + JSON.stringify(jsonDataLessons));
-
-                fetch(`https://localhost:7092/api/videolessons`, {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                        'Authorization': `Bearer ${tokenJwt}`
-                    },
-                    body: JSON.stringify(jsonDataLessons)
-                })
-                .then(response => {
-                    if (response.ok) {
+            async function sendLessons() {
+                const allLessons = Array.from(module.querySelectorAll('.lesson-group'))
+                    .sort((a, b) => a.dataset.index - b.dataset.index);
+            
+                for (const lesson of allLessons) {
+                    const lessonName = lesson.querySelector('.video-lesson-name');
+                    const lessonLink = lesson.querySelector('.video-lesson-link');
+                    const lessonDescription = lesson.querySelector('.video-lesson-description');
+            
+                    const jsonDataLessons = {
+                        name: lessonName.value.trim(),
+                        description: lessonDescription.value.trim(),
+                        video: lessonLink.value.trim(),
+                        moduleId: moduleId
+                    };
+            
+                    console.log('Enviando aula:', jsonDataLessons);
+            
+                    try {
+                        const response = await fetch(`https://localhost:7092/api/videolessons`, {
+                            method: 'POST',
+                            headers: {
+                                'Content-Type': 'application/json',
+                                'Authorization': `Bearer ${tokenJwt}`
+                            },
+                            body: JSON.stringify(jsonDataLessons)
+                        });
+            
+                        if (!response.ok) {
+                            const error = await response.json();
+                            throw error;
+                        }
+            
                         Swal.fire({
                             text: `Aula cadastrada com sucesso!`,
                             icon: "success"
                         });
-                    } else {
-
-                        return response.json().then(error => {
-                            throw error;
-                        });
-                    }
-                    clearFormData();
-                })
-                .catch(error => {
-                    console.log('deu ruim na aula', error);
-                
-                    if (error.errors) {
-                        for (let field in error.errors) {
-                            if (error.errors.hasOwnProperty(field)) {
-                                error.errors[field].forEach(errorMessage => {
-                                    Swal.fire({
-                                        text: `${errorMessage}.`,
-                                        icon: "error"
+            
+                        clearFormData();
+                    } catch (error) {
+                        console.error('Erro ao cadastrar aula:', error);
+            
+                        if (error.errors) {
+                            for (let field in error.errors) {
+                                if (error.errors.hasOwnProperty(field)) {
+                                    error.errors[field].forEach(errorMessage => {
+                                        Swal.fire({
+                                            text: `${errorMessage}.`,
+                                            icon: "error"
+                                        });
                                     });
-                                });
+                                }
                             }
+                        } else {
+                            Swal.fire({
+                                text: `Não foi possível cadastrar uma ou mais aulas.`,
+                                icon: "error"
+                            });
                         }
-                    } else {
-                        console.log('Estrutura de erro inesperada');
-                        Swal.fire({
-                            text: `Não foi possível cadastrar uma ou mais aulas.`,
-                            icon: "error"
-                        });
                     }
-                });
-            });
+                }
+            }
+            
+            // Chamando a função para executar
+            sendLessons();
+            
         })
         .catch(error => {
             for (let field in error.errors) {
