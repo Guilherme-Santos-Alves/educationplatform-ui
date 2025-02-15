@@ -1,5 +1,6 @@
 window.onload = () => {
     protectRoute('Administrator');
+    getSubscriptions();
 }
 
 // window.addEventListener('beforeunload', function (event) {
