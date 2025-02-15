@@ -25,6 +25,7 @@
     grid-template-columns: 400px auto;
     border-radius: 5px;
     height: 100px;
+    width: 467px;
 }
 
 .manage-subscription-section > .manage-subscription-content > .subscription > .subscription-name{
@@ -57,15 +58,11 @@
 .manage-subscription-section > .manage-subscription-content > .subscription > .subscription-btns{
     display: grid;
     gap: 1px;
-
 }
 
 .manage-subscription-section > .manage-subscription-content > .subscription > .subscription-btns> #send-form-btn{
     display: none;
-
-
 }
-
 
 .manage-subscription-section > .manage-subscription-content > .subscription > .subscription-btns button, 
 .manage-subscription-section > .manage-subscription-content > .subscription > .subscription-btns a{

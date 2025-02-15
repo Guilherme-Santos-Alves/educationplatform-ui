@@ -25,7 +25,12 @@ function getSelectCourseUpdate() {
                         <h1>${course.name}</h1>
                     </div>
                     <div class="course-btn">
-                        <a href="course-update.html?courseId=${course.id}">Editar curso</a>
+                        <a href="course-update.html?courseId=${course.id}">
+                            <span>
+                                <i class="fa-regular fa-edit"></i>
+                            </span>
+                            Editar curso
+                        </a>
                     </div>
                 </div>
             `;

@@ -67,6 +67,7 @@
     justify-content: center;
     align-items: center;
     text-decoration: none;
+    gap: 10px;
 }
 
 .select-courses-section> .choose-course-content> .course> .course-btn> button:hover{
