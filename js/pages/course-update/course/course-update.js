@@ -3,32 +3,27 @@ window.onload = () => {
 }
 
 function editFields () {
-    console.log('chamou');
-
     let editButtons = document.querySelectorAll('.edit');
 
     document.querySelector('#form-lesson-edit').addEventListener('click', (event) => {
-    if (event.target.closest('.edit')) {
-        const button = event.target.closest('.edit');
-        const parentWithLsName = button.closest('.lesson');
-        if (parentWithLsName) {
-            const inputLsName = parentWithLsName.querySelector('.ls-name');
-            inputLsName.disabled = !inputLsName.disabled;
+        if (event.target.closest('.edit')) {
+            const button = event.target.closest('.edit');
+            const parentWithLsName = button.closest('.lesson');
+            if (parentWithLsName) {
+                const inputLsName = parentWithLsName.querySelector('.ls-name');
+                inputLsName.disabled = !inputLsName.disabled;
+            }
         }
-    }
-});
-
+    });
 
     editButtons.forEach(button => {
         button.addEventListener('click', function() {
             const parentWithCsName      = button.closest('.name');
             const parentWithCsDesc      = button.closest('.description');
             const parentWithCsCover     = button.closest('.cover');
-            const parentWithCsSubscription = button.closest('.subscription');
 
             if (parentWithCsName) {
                 const inputName = parentWithCsName.querySelector('#cs-name');
-                console.log(inputName);
                 inputName.disabled = !inputName.disabled;
             } else if (parentWithCsDesc) {
                 const inputDesc = parentWithCsDesc.querySelector('#cs-desc');
@@ -36,11 +31,7 @@ function editFields () {
             } else if (parentWithCsCover) {
                 const inputCover = parentWithCsCover.querySelector('#cs-cover');
                 inputCover.disabled = !inputCover.disabled;
-            } else if (parentWithCsSubscription) {
-                const inputSignature = parentWithCsSubscription.querySelector('#cs-subscription');
-                inputSignature.disabled = !inputSignature.disabled;
             }
-
 
             const parentWithMdName = button.closest('.module');
             if (parentWithMdName) {
@@ -53,28 +44,6 @@ function editFields () {
                 const inputLsName = parentWithLsName.querySelector('.ls-name');
                 inputLsName.disabled = !inputLsName.disabled;
             }
-        });
-    });
-
-    const courseData = {
-        name: document.querySelector('#cs-name'),
-        description: document.querySelector('#cs-desc'),
-        cover: document.querySelector('#cs-cover'),
-        subscription: document.querySelector('#cs-subscription')
-    };
-    
-    Object.keys(courseData).forEach(key => {
-        courseData[key].addEventListener('change', () => {
-            const courseValues = {
-                //id: sessionStorage.getItem('courseId'),
-                id: 1,
-                name: courseData.name.value,
-                description: courseData.description.value,
-                cover: courseData.cover.value,
-                //subscription: courseData.subscription.value
-            };
-    
-            sessionStorage.setItem('courseData', JSON.stringify(courseValues));
         });
     });
     
@@ -113,9 +82,7 @@ document.addEventListener('DOMContentLoaded', () => {
             putModuleUpdate(changedModules);
         }
     });
-});
 
-document.addEventListener('DOMContentLoaded', () => {
     const btnNewModule = document.querySelector('#add-module-btn');
     btnNewModule.addEventListener('click', () => {
         const moduleContainer = document.querySelector('.modules');

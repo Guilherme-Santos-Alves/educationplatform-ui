@@ -3,36 +3,20 @@ document.addEventListener('DOMContentLoaded', () => {
         name: document.querySelector('#cs-name'),
         description: document.querySelector('#cs-desc'),
         cover: document.querySelector('#cs-cover'),
-        subscription: document.querySelector('#cs-subscription')
     };
 
     const formCurso = document.querySelector('#form-course-edit');
     formCurso.addEventListener('submit', (e) => {
         e.preventDefault();
+
         const courseData = {
-            //id: get params,
-            id: 1,
+            id: courseId,
             name: courseFields.name.value,
             description: courseFields.description.value,
             cover: courseFields.cover.value,
-            //subscription: courseFields.subscription.value
         }
 
-        Swal.fire({
-            title: 'Confirmar atualização',
-            text: 'Você tem certeza que deseja atualizar este curso?',
-            icon: 'warning',
-            iconColor: '#8543e2',
-            showCancelButton: true,
-            confirmButtonColor: '#8543e2',
-            cancelButtonColor: '#2C2F31',
-            confirmButtonText: 'Sim, atualizar!',
-            cancelButtonText: 'Cancelar'
-        }).then((result) => {
-            if (result.isConfirmed) {
-                putCourseUpdate(courseData);
-            }
-        });
+        putCourseUpdate(courseData);
     });
 });
 
@@ -47,11 +31,11 @@ function putCourseUpdate(courseData) {
     })
     .then(response => {
         if (!response.ok) {
-            return response.json().then(error => {
-                throw new Error(`Erro: ${error.message || 'Falha desconhecida'}`);
+            return response.json().then(errorJson => {
+                throw errorJson;
             });
         }
-
+    
         if (response.status === 204) {
             Swal.fire({
                 icon: 'success',
@@ -59,20 +43,23 @@ function putCourseUpdate(courseData) {
                 showConfirmButton: false,
                 timer: 2000
             }).then(() => {
-                location.reload();
+               location.reload();
             });
-
+    
             return null;
         }
 
         return response.json();
     })
-    .then(data => {
-        if (data) {
-            console.log("Resposta da API:", data);
-        }
-    })
     .catch(error => {
-        console.error("Erro na requisição:", error.message || error);
+        const formattedErrors = Object.values(error.errors)
+        .map(messages => messages.join(", "))
+        .join("\n");
+    
+        Swal.fire({
+            icon: 'error',
+            text: `${formattedErrors}`,
+            showConfirmButton: true,
+        });
     });
 }
