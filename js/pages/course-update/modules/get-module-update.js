@@ -10,20 +10,24 @@ function getModuleUpdate(courseId) {
         if (response.ok) {
             response.json().then(modules => {
                 modules.data.forEach(module => {
-                    const inputModule = `
+                    if (module.active){
+                        const inputModule = `
                         <div class="module">
                             <input class="md-name" type="text" required disabled value="${module.name}" data-module-id="${module.id}">
                             <div class="edit-btns">
                                 <button type="button" class="edit"><i class="fa-solid fa-pen-to-square"></i></button>
-                                <button type="button" class="delete"><i class="fa-regular fa-trash-can"></i></button>
+                                <button type="button" class="delete-module-btn"><i class="fa-regular fa-trash-can"></i></button>
                             </div>
                         </div>`;
 
-                    const formModule = document.querySelector('#form-module-edit');
-                    formModule.querySelector('.modules').insertAdjacentHTML('beforeend', inputModule);
+                        const formModule = document.querySelector('#form-module-edit');
+                        formModule.querySelector('.modules').insertAdjacentHTML('beforeend', inputModule);
+                    }                  
                 });
                 editFields();
                 getLessonUpdate(modules.data);
+                moduleFields();
+                setupDeleteEvents();
             });
         }
     });

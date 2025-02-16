@@ -32,8 +32,6 @@
     <script src="../js/components/navbar-home.js"></script>
     <script src="../js/components/sidebar-home.js"></script>
 
-    <script src="../js/pages/course-update/course-update.js"></script>
-
     <script src="../js/pages/course-update/course/course-update.js"></script>
     <script src="../js/pages/course-update/course/get-course-update.js"></script>
     <script src="../js/pages/course-update/course/put-course-update.js"></script>
@@ -42,6 +40,9 @@
 
     <script src="../js/pages/course-update/modules/get-module-update.js"></script>
     <script src="../js/pages/course-update/modules/put-module-update.js"></script>
+    <script src="../js/pages/course-update/modules/delete-module.js"></script>
+    <script src="../js/pages/course-update/modules/post-new-module.js"></script>
+    <script src="../js/components/course-update/new-module.js"></script>
 
 
     <script src="../js/auth/token.js"></script>
@@ -100,11 +101,14 @@
                     </section>
         
                     <section class="section-edit">
+                        <div class="header">
+                            <h2>Módulos</h2>
+                            <button type="button" id="add-module-btn">
+                                <span class="material-symbols-outlined">add</span>
+                            </button>
+                        </div>
                         <form action="" id="form-module-edit">
-                            <div class="header">
-                                <h2>Módulos</h2>
-                                <button type="button" id="add-module-btn"><span class="material-symbols-outlined">add</span></button>
-                            </div>
+                            
                             <div class="modules">
     
                             </div>

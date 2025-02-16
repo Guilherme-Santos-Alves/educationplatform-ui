@@ -1,34 +1,78 @@
-function putModuleUpdate(changedModules) {
-    console.log(changedModules);
-    changedModules.forEach( module => {
+document.addEventListener('DOMContentLoaded', () => {
+    const formModule = document.querySelector('#form-module-edit');
+    formModule.addEventListener('submit', async (e) => {
+        e.preventDefault();
 
-        const moduleData = {
-            id: module.id,
-            name: module.name,
-            description: 'testando' //module.description
-        };
+        const allModules = document.querySelectorAll('.md-name');
+        const changedModules = [];
 
-        fetch(`https://localhost:7092/api/modules/${moduleData.id}`, {
+        allModules.forEach(module => {
+            if (module.getAttribute('data-md-changed')) {
+                changedModules.push({
+                    id: Number(module.dataset.moduleId),
+                    name: module.value,
+                    description: '3'
+                });
+            }
+        });
+
+        if (changedModules.length > 0) {
+            await updateModulesIndividually(changedModules);
+        } else {
+            console.log("Nenhum módulo foi alterado.");
+        }
+    });
+});
+
+function moduleFields() {
+    const allModules = document.querySelectorAll('.md-name');
+    console.log(allModules);
+    allModules.forEach(module => {
+        module.addEventListener('input', () => { 
+            module.setAttribute('data-md-changed', 'true'); 
+        });
+    });
+}
+
+function updateModulesIndividually(changedModules){
+    changedModules.forEach(module => {
+        fetch(`https://localhost:7092/api/modules/${module.id}`, {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json',
                 'Authorization': `Bearer ${tokenJwt}`
             },
-            body: JSON.stringify(moduleData)
+            body: JSON.stringify(module)
         })
         .then(response => {
             if (!response.ok) {
-                return response.json().then(error => {
-                    throw new Error(`Erro: ${error.message || 'Falha desconhecida'}`);
+                return response.text().then(errorText => {
+                    throw new Error(errorText);
                 });
             }
+    
+            if (response.status === 204) {
+                Swal.fire({
+                    icon: 'success',
+                    text: 'Informações atualizadas com sucesso!',
+                    showConfirmButton: false,
+                    timer: 2000
+                }).then(() => {
+                    location.reload();
+                });
+    
+                return null;
+            }
+    
             return response.json();
         })
-        .then(data => {
-            console.log("Resposta da API:", data);
-        })
         .catch(error => {
-            console.error("Erro na requisição:", error.message || error);
+            Swal.fire({
+                icon: 'error',
+                text: `${error.message}`,
+                showConfirmButton: true,
+                timer: 2000
+            });
         });
-    });
+    })
 }
