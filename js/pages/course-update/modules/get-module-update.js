@@ -9,11 +9,18 @@ function getModuleUpdate(courseId) {
     .then(response => {
         if (response.ok) {
             response.json().then(modules => {
+                console.log(modules);
                 modules.data.forEach(module => {
                     if (module.active){
                         const inputModule = `
-                        <div class="module">
-                            <input class="md-name" type="text" required disabled value="${module.name}" data-module-id="${module.id}">
+                        <div class="module" data-module-id="${module.id}">
+                            <div class="md-inputs">
+                                <label for="">Nome:</label>
+                                <input class="md-name" type="text" required disabled value="${module.name}">
+                                <label for="">Descrição:</label>
+                                <input class="md-desc" type="text" required disabled value="${module.description}">
+                            </div>
+
                             <div class="edit-btns">
                                 <button type="button" class="edit"><i class="fa-solid fa-pen-to-square"></i></button>
                                 <button type="button" class="delete-module-btn"><i class="fa-regular fa-trash-can"></i></button>

@@ -3,21 +3,24 @@ document.addEventListener('DOMContentLoaded', () => {
     formModule.addEventListener('submit', async (e) => {
         e.preventDefault();
 
-        const allModules = document.querySelectorAll('.md-name');
+        const allModules = document.querySelectorAll('.module');
         const changedModules = [];
 
         allModules.forEach(module => {
             if (module.getAttribute('data-md-changed')) {
+                const inputName = module.querySelector('.md-name');
+                const inputDesc = module.querySelector('.md-desc');
+
                 changedModules.push({
                     id: Number(module.dataset.moduleId),
-                    name: module.value,
-                    description: '3'
+                    name: inputName.value,
+                    description: inputDesc.value
                 });
             }
         });
 
         if (changedModules.length > 0) {
-            await updateModulesIndividually(changedModules);
+            updateModulesIndividually(changedModules);
         } else {
             console.log("Nenhum módulo foi alterado.");
         }

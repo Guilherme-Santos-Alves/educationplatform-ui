@@ -7,23 +7,20 @@ class NewModule extends HTMLElement {
 
     connectedCallback() {
         this.innerHTML = 
-            `<div class="module-content">
-                <div class="module-header">
-                    <h2 class="module-title-label">Novo Módulo: </h2>
-                    <input type="text" class="module-title">
-                    <button class="module-delete-btn" type="button">
-                        <i class="fa-solid fa-trash-can"></i>
+            `<div class="new-md-content">
+                <div class="new-md-header">
+                    <h3 class="new-md-title">Novo Módulo: </h3>
+                    <button type="button" class="delete-new-md-btn">
+                        <i class="fa-regular fa-trash-can"></i>
                     </button>
                 </div>
-                <div class="module-description">
-                    <label for="">Descrição:</label>
-                    <input type="text" class="module-desc">
+                <div class="mb-3">
+                    <label class="form-label">Nome:</label>
+                    <input type="text" class="new-md-name" required>
                 </div>
-                <ul class="lessons-content">
-
-                </ul>
-                <div class="add-lesson">
-                    <button class="add-lesson-btn" type="button">Adicionar aula</button>
+                <div class="mb-3">
+                    <label class="form-label">Descrição:</label>
+                    <input type="text" class="new-md-desc" required>
                 </div>
             </div>`;
     }

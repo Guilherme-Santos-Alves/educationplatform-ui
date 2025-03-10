@@ -18,7 +18,7 @@ function setupDeleteEvents(){
             })
             .then((result) => {
                 if (result.isConfirmed) {
-                    const moduleId = module.querySelector('.md-name').getAttribute('data-module-id');
+                    const moduleId = module.getAttribute('data-module-id');
                     deleteModule(moduleId);
                 }
             });
@@ -64,4 +64,16 @@ function deleteModule(moduleId) {
             showConfirmButton: true,
         });
     });
+}
+
+function deleteNewModule() {
+    const allNewModules = document.querySelectorAll('.new-module');
+
+    allNewModules.forEach(module => {
+        const deleteNewMdBtn = module.querySelector('.delete-new-md-btn');
+        deleteNewMdBtn.addEventListener('click', () => {
+            const parentModule = deleteNewMdBtn.closest('.new-module');
+            parentModule.remove();
+        });
+    })
 }

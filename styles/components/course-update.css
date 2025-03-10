@@ -37,6 +37,7 @@
     max-width: 100%;
     color: var(--ep-color-gray-lighter);
     border: 1px solid var(--ep-color-purple);
+    overflow: hidden;
 }
 
 .course-update > .course-update-content > .section-edit .header{
@@ -44,8 +45,6 @@
     display: flex;
     gap: 20px;
 }
-
-
 
 .course-update > .course-update-content > .section-edit .header > button{
     width: 25px;
@@ -86,7 +85,7 @@
 .course-update > .course-update-content > .section-edit .cover input, 
 .course-update > .course-update-content > .section-edit .subscription select{
     flex: 1;
-    border: 2px solid var(--ep-color-purple-light);
+    border: 1px solid var(--ep-color-purple-light);
     height: 40px;
     border-radius: 5px;
     background-color: transparent;
@@ -137,17 +136,50 @@
     gap: 10px;
 }
 
-.course-update > .course-update-content > .section-edit .module, 
+.course-update > .course-update-content > .section-edit .module{
+    display: flex;
+    align-items: center;
+    margin: 20px 0px;
+    padding-top: 5px;
+}
+
 .course-update > .course-update-content > .section-edit .lesson{
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 20px;
 }
 
-.course-update > .course-update-content > .section-edit .module input, 
+.course-update > .course-update-content > .section-edit .module > .md-inputs{
+    display: grid;
+    width: 100%;
+    gap: 1px;
+    
+}
+
+.course-update > .course-update-content > .section-edit .module input{
+    border: 1px solid var(--ep-color-purple-light);
+    height: 40px;
+    border-radius: 5px;
+    background-color: transparent;
+    color: var(--ep-color-gray-lighter);
+    padding: 5px;
+    font-size: 16px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.course-update > .course-update-content > .section-edit .module .edit-btns{
+    display: flex;
+    align-items: center;
+    gap: 1px;
+    margin-left: 10px;
+    color: var(--ep-color-gray-lighter);
+}
+
 .course-update > .course-update-content > .section-edit .lesson input{
     flex: 1;
-    border: 2px solid var(--ep-color-purple-light);
+    border: 1px solid var(--ep-color-purple-light);
     height: 40px;
     border-radius: 5px;
     background-color: transparent;
@@ -184,53 +216,3 @@ select:disabled {
     cursor: not-allowed;
 }
 
-
-
-.course-update > .course-update-content > .section-edit .modules > .new-module{
-    display: grid;
-    padding: 20px;
-    margin: 30px 0px 0px 0px;
-    border-radius: 5px;
-    border: 2px solid var(--ep-color-purple);
-}
-
-.course-update > .course-update-content > .section-edit .modules > .new-module> .module-content > .module-header> h2{
-    font-size: 18px;
-    display: flex;
-    white-space: nowrap;
-}
-
-.course-update > .course-update-content > .section-edit .modules > .new-module> .module-content> .module-header{
-    display: flex;
-    align-items: center;
-    margin-bottom: 20px;
-}
-
-.course-update > .course-update-content > .section-edit .modules > .new-module> .module-content> .module-header> .module-title{
-    width: 90%;
-    margin: 0px 20px;
-    border: 1px solid var(--ep-color-purple);
-    background-color: transparent;
-    height: 40px;
-    border-radius: 5px;
-    padding: 5px;
-    font-size: 16px;
-    color: var(--ep-color-gray-lighter);
-}
-
-.course-update > .course-update-content > .section-edit .modules > .new-module> .module-content> .module-header> .module-delete-btn{
-    display: flex;
-
-}
-
-.course-update > .course-update-content > .section-edit .modules > .new-module> .module-content> .module-header> .module-delete-btn> i{
-    color: var(--ep-color-gray-lighter);
-    font-size: 26px;
-    background-color: var(--ep-color-dark);
-    cursor: pointer;
-}
-
-.course-update > .course-update-content > .section-edit .modules > .new-module > .module-content > .module-description text{
-    background-color: red;
-    width: 100%;
-}

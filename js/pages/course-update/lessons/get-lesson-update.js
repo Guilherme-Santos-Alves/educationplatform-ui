@@ -2,10 +2,12 @@ function getLessonUpdate(modules) {
     const moduleSelect = document.querySelector('#module-select');
 
     modules.forEach( module => {
-        const newOption = document.createElement('option');
-        newOption.value = module.id;
-        newOption.textContent = module.name;
-        moduleSelect.appendChild(newOption);
+        if (module.active){
+            const newOption = document.createElement('option');
+            newOption.value = module.id;
+            newOption.textContent = module.name;
+            moduleSelect.appendChild(newOption);
+        }
     });
 
     moduleSelect.addEventListener('change', () => {

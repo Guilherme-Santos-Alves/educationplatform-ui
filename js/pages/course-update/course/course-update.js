@@ -37,6 +37,8 @@ function editFields () {
             if (parentWithMdName) {
                 const inputMdName = parentWithMdName.querySelector('.md-name');
                 inputMdName.disabled = !inputMdName.disabled;
+                const inputMdDesc = parentWithMdName.querySelector('.md-desc');
+                inputMdDesc.disabled = !inputMdDesc.disabled;
             }
 
             const parentWithLsName = button.closest('.lesson');
@@ -46,29 +48,19 @@ function editFields () {
             }
         });
     });
-    
-    const allModules = document.querySelectorAll('.md-name');
+
+    const allModules = document.querySelectorAll('.module');
     allModules.forEach( module => {
-        module.addEventListener('change', () => {
-            const moduleData = {
-                id: module.dataset.moduleId,
-                name: module.value
-            };
 
-            let changedModules = [];
+        const inputName = module.querySelector('.md-name');
+        const inputDesc = module.querySelector('.md-desc');
 
-            if (sessionStorage.hasOwnProperty('changedModules')){
-                changedModules = JSON.parse(sessionStorage.getItem('changedModules'));
-            }
+        inputName.addEventListener('input', () => {
+            module.setAttribute("data-md-changed", "true");
+        });
 
-            const existingModuleIndex = changedModules.findIndex(item => item.id === moduleData.id);
-            if (existingModuleIndex !== -1) {
-                changedModules[existingModuleIndex].name = moduleData.name;
-            } else {
-                changedModules.push(moduleData);
-            }
-
-            sessionStorage.setItem('changedModules', JSON.stringify(changedModules));
+        inputDesc.addEventListener('input', () => {
+            module.setAttribute("data-md-changed", "true");
         });
     });
 }

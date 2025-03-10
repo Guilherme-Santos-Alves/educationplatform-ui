@@ -1,10 +1,3 @@
-function getQueryParam(param) {
-    const urlParams = new URLSearchParams(window.location.search);
-    return urlParams.get(param);
-}
-
-const courseId = getQueryParam('courseId');
-
 document.addEventListener('DOMContentLoaded', () => {
     let inputName = document.getElementById('cs-name');
     let inputDesc = document.getElementById('cs-desc');

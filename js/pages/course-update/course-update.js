@@ -1,3 +1,10 @@
+function getQueryParam(param) {
+    const urlParams = new URLSearchParams(window.location.search);
+    return urlParams.get(param);
+}
+
+const courseId = getQueryParam('courseId');
+
 document.addEventListener('DOMContentLoaded', () => {
     const formLessonEdit = document.querySelector('#form-lesson-edit');
     
@@ -9,4 +16,6 @@ document.addEventListener('DOMContentLoaded', () => {
         
         
     })
+
+    
 })
