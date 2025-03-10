@@ -30,24 +30,25 @@ function getModules() {
 
         if (Array.isArray(modules) && modules.length > 0) {
             modules.forEach(module => {
-                const template = `
-                    <div class="module" data-module-id="${module.id}">
-                        <div class="module-header">
-                            <h2 class="title">${module.name}</h2>
-                            <button class="show-lessons-btn">
-                                <i class="fa-solid fa-chevron-right"></i>
-                            </button>
+                if (module.active){
+                    const template = `
+                        <div class="module" data-module-id="${module.id}">
+                            <div class="module-header">
+                                <h2 class="title">${module.name}</h2>
+                                <button class="show-lessons-btn">
+                                    <i class="fa-solid fa-chevron-right"></i>
+                                </button>
+                            </div>
+                            <ul class="module-lessons">
+                                
+                            </ul> 
                         </div>
-                        <ul class="module-lessons">
-                            
-                        </ul> 
-                    </div>
-                `;
-                document.querySelector(".course-modules").insertAdjacentHTML("beforeend", template); 
-                getLessonsByModule(module.id);
-
+                    `;
+                    document.querySelector(".course-modules").insertAdjacentHTML("beforeend", template); 
+                    getLessonsByModule(module.id);
+                }
             });
-
+            
             dropdownModule();
         } else {
             document.querySelector(".course-modules").innerHTML = `<p class="error-message">Nenhum módulo encontrado.</p>`;

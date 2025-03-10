@@ -16,17 +16,19 @@ function getLessonsByModule (moduleId) {
     })
     .then(lessons => {
         lessons.data.forEach(lesson => {
-            const moduleContainer = document.querySelector(`.module[data-module-id="${moduleId}"]`);
-    
-            const lessonsOfModule = `
-                <a href="video-home.html?vimeoId=${lesson.vimeoVideoId}&moduleId=${moduleId}&lessonId=${lesson.id}" class="lesson-content">
-                    <div class="lesson-status">
-                        <i class="fa-solid fa-circle-check"></i>
-                    </div>
-                    <ul class="lesson-name">${lesson.name}</ul>
-                </a>
-            `;
-            moduleContainer.querySelector('.module-lessons').insertAdjacentHTML('beforeend', lessonsOfModule);
+            if (lesson.active){
+                const moduleContainer = document.querySelector(`.module[data-module-id="${moduleId}"]`);
+        
+                const lessonsOfModule = `
+                    <a href="video-home.html?vimeoId=${lesson.vimeoVideoId}&moduleId=${moduleId}&lessonId=${lesson.id}" class="lesson-content">
+                        <div class="lesson-status">
+                            <i class="fa-solid fa-circle-check"></i>
+                        </div>
+                        <ul class="lesson-name">${lesson.name}</ul>
+                    </a>
+                `;
+                moduleContainer.querySelector('.module-lessons').insertAdjacentHTML('beforeend', lessonsOfModule);
+            }
         });
     })
     .catch(error => {
