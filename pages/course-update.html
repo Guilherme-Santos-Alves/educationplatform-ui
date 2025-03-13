@@ -29,6 +29,7 @@
     <link rel="stylesheet" href="../styles/components/ep-sidebar.css">
     <link rel="stylesheet" href="../styles/components/course-update.css">
     <link rel="stylesheet" href="../styles/components/new-module.css">
+    <link rel="stylesheet" href="../styles/components/new-lesson.css">
     
     <script src="../js/components/navbar-home.js"></script>
     <script src="../js/components/sidebar-home.js"></script>
@@ -41,12 +42,15 @@
 
     <script src="../js/pages/course-update/lessons/get-lesson-update.js"></script>
     <script src="../js/pages/course-update/lessons/put-lesson-update.js"></script>
+    <script src="../js/pages/course-update/lessons/post-new-lesson.js"></script>
+    <script src="../js/components/course-update/new-lesson.js"></script>
 
     <script src="../js/pages/course-update/modules/get-module-update.js"></script>
     <script src="../js/pages/course-update/modules/put-module-update.js"></script>
     <script src="../js/pages/course-update/modules/delete-module.js"></script>
     <script src="../js/pages/course-update/modules/post-new-module.js"></script>
     <script src="../js/components/course-update/new-module.js"></script>
+
 
 
     <script src="../js/auth/token.js"></script>
@@ -126,6 +130,9 @@
                         <form action="" id="form-lesson-edit">
                             <div class="header">
                                 <h2>Aulas</h2>
+                                <div class="btn-new-ls-content">
+                                
+                                </div>
                             </div>
                             <select name="" id="module-select">
                                 <option value="" disabled selected>Selecione um módulo</option>
@@ -133,10 +140,8 @@
                             <div class="lessons">
                                 
                             </div>
-                    
                             <div class="send-form">
-                                <button type="submit">mmmm</button>
-                                <!-- //<button class="send-form-btn" id="lesson-form-btn" type="submit">Salvar</button> -->
+                                <button class="send-form-btn" id="lesson-form-btn" type="submit">Salvar</button>
                             </div>
                         </form>
                     </section>

@@ -22,24 +22,71 @@ function getLessonUpdate(modules) {
             },
         })
         .then(response => {
-            if (response.ok) {
-                response.json().then(lessons => {
-                    console.log(lessons);
-                    lessons.data.forEach(lesson => {
-                        const inputModule = `
-                            <div class="lesson">
-                                <input class="ls-name" type="text" disabled required value="${lesson.name}" data-lesson-id="${lesson.id}">
-                                <div class="edit-btns">
-                                    <button type="button" class="edit"><i class="fa-solid fa-pen-to-square"></i></button>
-                                    <button type="button" class="delete"><i class="fa-regular fa-trash-can"></i></button>
-                                </div>
-                            </div>`;
-    
-                        const formLesson = document.querySelector('#form-lesson-edit');
-                        formLesson.querySelector('.lessons').insertAdjacentHTML('beforeend', inputModule);
-                    });
+            if (!response.ok) {
+                return response.text().then(errorText => {
+                    const error = new Error(errorText);
+                    error.status = response.status; // Adiciona o status ao erro
+                    throw error;
+                });
+            }
+            return response.json();
+        })        
+        .then(lessons => {
+            console.log(lessons);
+            const formLesson = document.querySelector('#form-lesson-edit');
+            formLesson.querySelector('.lessons').innerHTML = '';
+            lessons.data.forEach(lesson => {
+                const inputModule = `
+                    <div class="lesson">
+                        <div class="ls-inputs">
+                            <label for="">Nome:</label>
+                            <input class="ls-name" type="text" disabled required value="${lesson.name}" data-lesson-id="${lesson.id}">
+                            <label for="">Descrição:</label>
+                            <input class="ls-desc" type="text" disabled required value="${lesson.description}" data-lesson-id="${lesson.id}">
+                        </div>
+                        <div class="edit-btns">
+                            <button type="button" class="edit"><i class="fa-solid fa-pen-to-square"></i></button>
+                            <button type="button" class="delete"><i class="fa-regular fa-trash-can"></i></button>
+                        </div>
+                    </div>
+                `;
+                formLesson.querySelector('.lessons').insertAdjacentHTML('beforeend', inputModule);
+
+                const newLessonBtnContainer = document.querySelector('.btn-new-ls-content');
+                newLessonBtnContainer.innerHTML = '';
+                const newLessonBtn = `
+                    <button type="button" id="add-lesson-btn">
+                        <i class="fa fa-plus"></i>
+                    </button>
+                `;
+                newLessonBtnContainer.insertAdjacentHTML('beforeend', newLessonBtn);
+
+            });
+            setupNewLessonEvents();
+            lessonFields();
+            editFields();
+        })
+        .catch(error => {
+            if (error.status === 404){
+                const newLessonBtnContainer = document.querySelector('.btn-new-ls-content');
+                newLessonBtnContainer.innerHTML = '';
+                const newLessonBtn = `
+                    <button type="button" id="add-lesson-btn">
+                        <i class="fa fa-plus"></i>
+                    </button>
+                `;
+                newLessonBtnContainer.insertAdjacentHTML('beforeend', newLessonBtn);
+
+                setupNewLessonEvents();
+            } else {
+                Swal.fire({
+                    icon: 'error',
+                    text: `${error.message}`,
+                    showConfirmButton: true,
+                    timer: 2000
                 });
             }
         });
     });
 };
+

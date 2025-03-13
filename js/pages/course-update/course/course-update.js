@@ -45,6 +45,8 @@ function editFields () {
             if (parentWithLsName) {
                 const inputLsName = parentWithLsName.querySelector('.ls-name');
                 inputLsName.disabled = !inputLsName.disabled;
+                const inputLsDesc = parentWithLsName.querySelector('.ls-desc');
+                inputLsDesc.disabled = !inputLsDesc.disabled;
             }
         });
     });

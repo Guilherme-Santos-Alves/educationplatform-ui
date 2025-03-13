@@ -10,49 +10,71 @@ function LessonUpdate() {
     });
 }
 
-function putLessonUpdate(name, lessonId) { 
-    const jsonData = {
-        id: parseInt(lessonId),
-        name: name,
-        description: 'teste'
-    }
+function lessonFields() {
+    const formLessonEdit = document.querySelector('#form-lesson-edit');
+    const allLessons = formLessonEdit.querySelectorAll('.lesson');
 
-    fetch(`https://localhost:7092/api/videolessons/${lessonId}`, {
-        method: 'PUT',
-        headers: {
-            'Content-Type': 'application/json',
-            'Authorization': `Bearer ${tokenJwt}`
-        },
-        body: JSON.stringify(jsonData)
-        
-    })
-    .then(response => {
-        if (!response.ok) {
-            return response.text().then(errorText => {
-                throw new Error(errorText);
-            });
-        }
+    allLessons.forEach( lesson => {
 
-        if (response.status === 204) {
-            Swal.fire({
-                icon: 'success',
-                text: 'Aula atualizada com sucesso!',
-                showConfirmButton: false,
-                timer: 2000
-            }).then(() => {
-                location.reload();
-            });
+        const inputName = lesson.querySelector('.ls-name');
+        const inputDesc = lesson.querySelector('.ls-desc');
 
-            return null;
-        }
+        inputName.addEventListener('input', () => {
+            lesson.setAttribute("data-ls-changed", "true");
+        });
 
-        return response.json();
-    })
-    .catch(error => {
-        Swal.fire({
-            icon: 'error',
-            text: `${error.message}`,
-            showConfirmButton: true,
+        inputDesc.addEventListener('input', () => {
+            lesson.setAttribute("data-ls-changed", "true");
         });
     });
+}
+
+function putLessonUpdate(changedLessons) { 
+    console.log("ls-alterada", changedLessons);
+    changedLessons.forEach(lesson => {
+        const jsonData = {
+            id: lesson.id,
+            name: lesson.name,
+            description: lesson.description
+        }
+
+        fetch(`https://localhost:7092/api/videolessons/${lesson.id}`, {
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${tokenJwt}`
+            },
+            body: JSON.stringify(jsonData)
+            
+        })
+        .then(response => {
+            if (!response.ok) {
+                return response.text().then(errorText => {
+                    throw new Error(errorText);
+                });
+            }
+    
+            if (response.status === 204) {
+                Swal.fire({
+                    icon: 'success',
+                    text: 'Aula atualizada com sucesso!',
+                    showConfirmButton: false,
+                    timer: 2000
+                }).then(() => {
+                    location.reload();
+                });
+    
+                return null;
+            }
+    
+            return response.json();
+        })
+        .catch(error => {
+            Swal.fire({
+                icon: 'error',
+                text: `${error.message}`,
+                showConfirmButton: true,
+            });
+        });
+    })
 }
