@@ -5,17 +5,6 @@ window.onload = () => {
 function editFields () {
     let editButtons = document.querySelectorAll('.edit');
 
-    document.querySelector('#form-lesson-edit').addEventListener('click', (event) => {
-        if (event.target.closest('.edit')) {
-            const button = event.target.closest('.edit');
-            const parentWithLsName = button.closest('.lesson');
-            if (parentWithLsName) {
-                const inputLsName = parentWithLsName.querySelector('.ls-name');
-                inputLsName.disabled = !inputLsName.disabled;
-            }
-        }
-    });
-
     editButtons.forEach(button => {
         button.addEventListener('click', function() {
             const parentWithCsName      = button.closest('.name');
@@ -66,5 +55,3 @@ function editFields () {
         });
     });
 }
-
-

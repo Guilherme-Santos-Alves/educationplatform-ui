@@ -3,7 +3,6 @@ function setupDeleteEvents(){
 
     modules.forEach(module => {
         const deleteBtn = module.querySelector('.delete-module-btn');
-
         deleteBtn.addEventListener('click', () => {
             Swal.fire({
                 title: "Tem certeza?",
@@ -27,7 +26,6 @@ function setupDeleteEvents(){
 }
 
 function deleteModule(moduleId) {
-    console.log('delete o modulo');
     fetch(`https://localhost:7092/api/modules/${moduleId}`, {
         method: 'DELETE',
         headers: {

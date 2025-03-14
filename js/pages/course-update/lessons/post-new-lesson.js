@@ -35,22 +35,25 @@ function postNewLesson(jsonDataLesson) {
         }
 
         if (!response.ok) {
-            return response.json().then(error => {
+            return response.text().then(errorText => {
+                const error = new Error(errorText);
+                error.status = response.status;
                 throw error;
             });
         }
         return response.json();
     })
     .catch(error => {
-        for (let field in error.errors) {
-            if (error.errors.hasOwnProperty(field)) {
-                error.errors[field].forEach(errorMessage => {
-                    Swal.fire({
-                        text: `Não foi possível cadastrar um ou mais aulas: ${errorMessage}`,
-                        icon: "error"
-                    });
-                });
-            }
+        if (error.status === 500){
+            Swal.fire({
+                text: `Não foi possível cadastrar uma ou mais aulas: Url inválida`,
+                icon: "error"
+            });
+        } else {
+            Swal.fire({
+                text: `Não foi possível cadastrar uma ou mais aulas: ${error.message}`,
+                icon: "error"
+            });
         }
     });
 }
@@ -68,10 +71,6 @@ function setupNewLessonEvents(){
 }
 
 function haveNewLessons(newLessons) {
-
-
-    console.log('chegou', newLessons);
-
     newLessons.forEach(lesson => {
         const lsName = lesson.querySelector('.new-ls-name');
         const lsDesc = lesson.querySelector('.new-ls-desc');
@@ -88,17 +87,4 @@ function haveNewLessons(newLessons) {
         postNewLesson(jsonData); 
     });
 
-}
-
-function deleteNewLesson() {
-    console.log('del new ls');
-    const allNewLessons = document.querySelectorAll('.new-lesson');
-
-    allNewLessons.forEach(Lesson => {
-        const deleteNewLsBtn = Lesson.querySelector('.delete-new-ls-btn');
-        deleteNewLsBtn.addEventListener('click', () => {
-            const parentLesson = deleteNewLsBtn.closest('.new-lesson');
-            parentLesson.remove();
-        });
-    })
 }

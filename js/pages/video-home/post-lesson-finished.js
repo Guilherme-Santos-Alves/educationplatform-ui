@@ -1,10 +1,10 @@
-window.onload = () => {
+document.addEventListener('DOMContentLoaded', () => {
     const finishLessonBtn = document.querySelector('#lesson-finish-btn');
 
     finishLessonBtn.addEventListener('click', () => {
         showEvaluationModal();
     })
-}
+})
 
 function postLessonFinished(lessonRating) {
     const jsonData = {

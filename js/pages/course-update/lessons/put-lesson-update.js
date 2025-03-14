@@ -1,3 +1,10 @@
+document.addEventListener('DOMContentLoaded', () => {
+    const moduleSelect = document.querySelector('#module-select');
+    moduleSelect.addEventListener('change', () => {
+        editFields();
+    });
+});
+
 function LessonUpdate() { 
     const formLessonEdit = document.querySelector('#form-lesson-edit');
     const allLessons = formLessonEdit.querySelectorAll('.lesson');
