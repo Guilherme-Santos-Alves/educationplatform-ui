@@ -22,15 +22,19 @@ function getCourse() {
         return response.json();
     })
     .then(courses => {
+        const courseContainer = document.querySelector('.choose-course-content');
+        courseContainer.innerHTML = '';
+    
+        let hasActiveCourses = false;
+    
         courses.data.forEach(course => {
-            if (course.active){
-                const courseContainer = document.querySelector('.choose-course-content');
-                courseContainer.innerHTML = '';
-
+            if (course.active) {
+                hasActiveCourses = true;
+    
                 const courseBody = `
                     <div class="course" data-course-id="${course.id}">
                         <div class="course-picture">
-                            <img src="https://miro.medium.com/v2/resize:fit:1358/0*VYGU5sx8ET8hbar1" alt="">
+                            <img src="${course.cover}" alt="">
                         </div>
                         <div class="course-title">
                             <h1>${course.name}</h1>
@@ -40,48 +44,28 @@ function getCourse() {
                         </div>
                     </div>
                 `;
-
+    
                 courseContainer.insertAdjacentHTML('beforeend', courseBody);
-            } else {
-                const courseContainer = document.querySelector('.choose-course-content');
-                courseContainer.innerHTML = '';
-                courseContainer.innerHTML = `
-                    <p class="error-message">Nenhum curso encontrado.</p>
-                `;
             }
         });
-    })
-    .catch(error => {
-        
-        console.error('Erro ao buscar os cursos:', error);
-        console.log(error);
-
-        const courseContainer = document.querySelector('.choose-course-content');
-        courseContainer.innerHTML = '';
-        courseContainer.innerHTML = `
-            <p class="error-message">Não foi possível carregar os cursos. Tente novamente mais tarde.</p>
-        `;
-
-        if (error.status === 404){
+    
+        if (!hasActiveCourses) {
             courseContainer.innerHTML = `
                 <p class="error-message">Nenhum curso encontrado.</p>
-             `;
+            `;
         }
+    })
+    .catch(error => {
+        console.error('Erro ao buscar os cursos:', error);
+    
+        const courseContainer = document.querySelector('.choose-course-content');
         
+        let errorMessage = `<p class="error-message">Não foi possível carregar os cursos. Tente novamente mais tarde.</p>`;
+        
+        if (error.status === 404) {
+            errorMessage = `<p class="error-message">Nenhum curso encontrado.</p>`;
+        }
+
+        courseContainer.innerHTML = errorMessage;
     });
 };
-
-
-{/* <div class="choose-course-content">
-    <div class="course">
-        <div class="course-picture">
-            <img src="https://miro.medium.com/v2/resize:fit:1358/0*VYGU5sx8ET8hbar1" alt="">
-        </div>
-        <div class="course-title">
-            <h1>Curso</h1>
-        </div>
-        <div class="course-btn">
-            <button>Ver curso</button>
-        </div>
-    </div>
-</div> */}
