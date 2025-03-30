@@ -113,34 +113,3 @@
     display: flex;
     align-items: center;
 }
-
-a[data-tooltip], button[data-tooltip] {
-    position: relative;
-    cursor: pointer;
-}
-
-a[data-tooltip]::after, button[data-tooltip]::after {
-    content: attr(data-tooltip); 
-    position: absolute;
-    left: 50%; 
-    bottom: 70%; 
-    transform: translateX(-50%); 
-    background-color: #000;
-    color: #fff;
-    padding: 5px 10px;
-    border-radius: 4px;
-    font-size: 12px;
-    white-space: nowrap;
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity 0.2s ease, transform 0.2s ease;
-}
-
-a[data-tooltip]:hover::after, button[data-tooltip]:hover::after {
-    opacity: 1;
-    transform: translateX(-50%) translateY(-5px); 
-}
-
-button[data-tooltip] {
-    padding: 10px 20px; 
-}

@@ -52,6 +52,26 @@
     align-items: center;
 }
 
+.user-account-section> .user-account-content> .user-personal-data #personal-data-form .save-editions{
+    border-radius: 15px;
+    min-width: 560px;
+    width: 100%;
+    max-width: 800px;
+    color: var(--ep-color-gray-lighter);
+    display: flex;
+    justify-content: flex-end;
+}
+
+.user-account-section> .user-account-content> .user-personal-data #personal-data-form .save-editions button{
+    background-color: var(--ep-color-purple);
+    padding: 10px 20px;
+    color: var(--ep-color-gray-lighter);
+    font-weight: 400;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 15px;
+}
+
 .user-account-section> .user-account-content> .user-config{
     padding: 20px;
     border: 2px solid var(--ep-color-purple);
@@ -61,7 +81,7 @@
     display: flex;
     flex-direction: column;
     gap: 20px;
-    margin-top: 20px;
+    margin-top: 5px;
 }
 
 .user-account-section> .user-account-content> .user-personal-data> .user-photo-edit> .photo-edit{

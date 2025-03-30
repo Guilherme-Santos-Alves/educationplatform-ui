@@ -8,27 +8,13 @@ document.addEventListener('DOMContentLoaded', () => {
     personalDataForm.addEventListener('submit', (e) => {
         e.preventDefault();
 
-        Swal.fire({
-            title: "Tem certeza?",
-            text: "confirme para atualizar!",
-            icon: "warning",
-            showCancelButton: true,
-            iconColor: "#161021",
-            confirmButtonColor: "#9a67e1",
-            cancelButtonColor: "#161021",
-            confirmButtonText: "Sim, atualizar!",
-            cancelButtonText: "Cancelar"
-          }).then((result) => {
-            if (result.isConfirmed) {
-                const changedData = {
-                    id: userSession.userId,
-                    email: userEmail.value,
-                    phone: userphone.value
-                }
+        const changedData = {
+            id: userSession.userId,
+            email: userEmail.value,
+            phone: userphone.value
+        }
 
-                putUserData(changedData);
-            }
-          });
+        putUserData(changedData);
     })
 });
 

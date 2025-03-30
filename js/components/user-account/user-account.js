@@ -147,7 +147,6 @@ class userAccountSection extends HTMLElement{
                                     </div>
 
                                 </div>
-                                <button class="save-editions-btn">Salvar Alterações</button>
                         </form>
                     </div>
                     <div class="save-editions">
