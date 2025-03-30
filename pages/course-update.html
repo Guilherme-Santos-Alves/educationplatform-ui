@@ -39,6 +39,7 @@
     <script src="../js/pages/course-update/course/course-update.js"></script>
     <script src="../js/pages/course-update/course/get-course-update.js"></script>
     <script src="../js/pages/course-update/course/put-course-update.js"></script>
+    <script src="../js/pages/course-update/course/delete-course.js"></script>
 
     <script src="../js/pages/course-update/lessons/get-lesson-update.js"></script>
     <script src="../js/pages/course-update/lessons/put-lesson-update.js"></script>
@@ -78,7 +79,16 @@
                     <section class="section-edit">
     
                         <form action="" id="form-course-edit">
-                            <h2>Curso</h2>
+                            <div class="header">
+                                <div class="title">
+                                    <h2>Curso</h2>
+                                </div> 
+                                <div class="btn">
+                                    <button type="button" id="delete-course-btn">
+                                        <i class="fa-regular fa-trash-can"></i>
+                                    </button>
+                                </div>
+                            </div>
                             <div class="name">
                                 <label for="nome">Nome:</label>
                                 <input class="cs-data" type="text" disabled id="cs-name" required>

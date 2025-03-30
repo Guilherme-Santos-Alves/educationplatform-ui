@@ -24,20 +24,24 @@
     margin: 20px 0;
     border-radius: 15px;
     padding: 20px;
-    width: 100%;
-    color: var(--ep-color-gray-lighter);
-    border: 1px solid var(--ep-color-purple);
-}
-
-.course-update > .course-update-content > .section-edit {
-    display: grid;
-    margin: 20px 0;
-    border-radius: 15px;
-    padding: 20px;
     max-width: 100%;
     color: var(--ep-color-gray-lighter);
     border: 1px solid var(--ep-color-purple);
     overflow: hidden;
+}
+
+.course-update > .course-update-content > .section-edit> #form-course-edit> .header{
+    display: flex;
+    justify-content: space-between;
+}
+
+
+.course-update > .course-update-content > .section-edit> #form-course-edit> .header #delete-course-btn{
+    font-size: 26px;
+    color: var(--ep-color-gray-lighter);
+    cursor: pointer;
+    background-color: transparent;
+    margin-right: -3px;
 }
 
 .course-update > .course-update-content > .section-edit .header{
@@ -46,7 +50,9 @@
     gap: 20px;
 }
 
-.course-update > .course-update-content > .section-edit .header > button{
+#add-module-btn,
+#add-lesson-btn{
+    margin-top: 8px;
     width: 25px;
     height: 25px;
     background-color: var(--ep-color-purple);
@@ -56,6 +62,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    font-size: 14px;
 }
 
 .course-update > .course-update-content > .section-edit .header > button > span{

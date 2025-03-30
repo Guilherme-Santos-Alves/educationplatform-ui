@@ -8,7 +8,11 @@ function getSelectCourseUpdate() {
     })
     .then(response => {
         if (!response.ok) {
-            throw new Error(`HTTP error! Status: ${response.status}`);
+            return response.text().then(errorText => {
+                const error = new Error(errorText);
+                error.status = response.status;
+                throw error;
+            });
         }
         return response.json();
     })
@@ -37,6 +41,12 @@ function getSelectCourseUpdate() {
                 `;
 
                 courseContainer.insertAdjacentHTML('beforeend', courseBody);
+            } else {
+                const courseContainer = document.querySelector('.choose-course-content');
+                courseContainer.innerHTML = '';
+                courseContainer.innerHTML = `
+                    <p class="error-message">Nenhum curso encontrado.</p>
+                `;
             }
         });
     })
@@ -47,5 +57,11 @@ function getSelectCourseUpdate() {
         courseContainer.innerHTML = `
             <p class="error-message">Não foi possível carregar os cursos. Tente novamente mais tarde.</p>
         `;
+
+        if (error.status === 404){
+            courseContainer.innerHTML = `
+                <p class="error-message">Nenhum curso encontrado.</p>
+             `;
+        }
     });
 };

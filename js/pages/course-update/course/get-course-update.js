@@ -1,4 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
+    const formCourse = document.getElementById('form-course-edit');
     let inputName = document.getElementById('cs-name');
     let inputDesc = document.getElementById('cs-desc');
     let inputCover = document.getElementById('cs-cover');
@@ -27,6 +28,8 @@ document.addEventListener('DOMContentLoaded', () => {
             inputName.value = courseData.name;
             inputDesc.value = courseData.description;
             inputCover.value = courseData.cover;
+            formCourse.setAttribute('data-course-id', `${courseData.id}`);
+            setupDeleteCourseEvents();
         })
         .catch(error => {
             Swal.fire({

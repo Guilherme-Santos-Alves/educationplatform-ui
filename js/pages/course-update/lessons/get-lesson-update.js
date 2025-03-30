@@ -35,6 +35,7 @@ function getLessonUpdate(modules) {
             formLesson.querySelector('.lessons').innerHTML = '';
             lessons.data.forEach(lesson => {
                 if (lesson.active){
+                    formLesson.querySelector('.lessons').innerHTML = '';
                     const inputModule = `
                     <div class="lesson" data-lesson-id="${lesson.id}">
                         <div class="ls-inputs">
@@ -51,6 +52,12 @@ function getLessonUpdate(modules) {
                     `;
                     formLesson.querySelector('.lessons').insertAdjacentHTML('beforeend', inputModule);
                 
+                } else {
+                    formLesson.querySelector('.lessons').innerHTML = '';
+                    const errorMsg = `
+                        <p>Nenhuma aula encontrada para o módulo especificado.</p>
+                    `;
+                    formLesson.querySelector('.lessons').insertAdjacentHTML('beforeend', errorMsg);
                 }
                 
                 const newLessonBtnContainer = document.querySelector('.btn-new-ls-content');
@@ -80,6 +87,12 @@ function getLessonUpdate(modules) {
                     </button>
                 `;
                 newLessonBtnContainer.insertAdjacentHTML('beforeend', newLessonBtn);
+
+                formLesson.querySelector('.lessons').innerHTML = '';
+                const errorMsg = `
+                        <p>Nenhuma aula encontrada para o módulo especificado.</p>
+                    `;
+                formLesson.querySelector('.lessons').insertAdjacentHTML('beforeend', errorMsg);
 
                 setupNewLessonEvents();
             } 

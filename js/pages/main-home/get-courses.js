@@ -13,7 +13,11 @@ function getCourse() {
     })
     .then(response => {
         if (!response.ok) {
-            throw new Error(`HTTP error! Status: ${response.status}`);
+            return response.text().then(errorText => {
+                const error = new Error(errorText);
+                error.status = response.status;
+                throw error;
+            });
         }
         return response.json();
     })
@@ -21,6 +25,7 @@ function getCourse() {
         courses.data.forEach(course => {
             if (course.active){
                 const courseContainer = document.querySelector('.choose-course-content');
+                courseContainer.innerHTML = '';
 
                 const courseBody = `
                     <div class="course" data-course-id="${course.id}">
@@ -37,17 +42,32 @@ function getCourse() {
                 `;
 
                 courseContainer.insertAdjacentHTML('beforeend', courseBody);
+            } else {
+                const courseContainer = document.querySelector('.choose-course-content');
+                courseContainer.innerHTML = '';
+                courseContainer.innerHTML = `
+                    <p class="error-message">Nenhum curso encontrado.</p>
+                `;
             }
         });
     })
     .catch(error => {
+        
         console.error('Erro ao buscar os cursos:', error);
         console.log(error);
 
         const courseContainer = document.querySelector('.choose-course-content');
+        courseContainer.innerHTML = '';
         courseContainer.innerHTML = `
             <p class="error-message">Não foi possível carregar os cursos. Tente novamente mais tarde.</p>
         `;
+
+        if (error.status === 404){
+            courseContainer.innerHTML = `
+                <p class="error-message">Nenhum curso encontrado.</p>
+             `;
+        }
+        
     });
 };
 

@@ -10,9 +10,6 @@ document.addEventListener('DOMContentLoaded', () => {
     
     formLessonEdit.addEventListener('submit', (e) => {
         e.preventDefault();
-        //LessonUpdate();
-
-       // e.preventDefault();
 
         const allLessons = document.querySelectorAll('.lesson');
         const changedLessons = [];
@@ -31,16 +28,10 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
 
-        console.log(changedLessons);
-
         if (changedLessons.length > 0) {
             putLessonUpdate(changedLessons);
         } else {
             console.log("Nenhuma aula foi alterada.");
         }
-        
-        
-    })
-
-    
-})
+    });
+});
