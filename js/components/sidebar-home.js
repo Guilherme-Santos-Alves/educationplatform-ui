@@ -2,7 +2,7 @@
 
 class SidebarHome extends HTMLElement {
     connectedCallback() {
-        if (userRole === 'student'){
+        if (userRole === 'Student'){
             this.innerHTML = `
             <nav id="ep-sidebar" class="sidebar p-3">
                 <ul class="nav flex-column">

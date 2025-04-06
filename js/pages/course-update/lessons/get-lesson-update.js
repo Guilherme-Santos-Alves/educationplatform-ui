@@ -13,7 +13,7 @@ function getLessonUpdate(modules) {
     moduleSelect.addEventListener('change', () => {
         const moduleId = moduleSelect.value;
 
-        fetch(`https://localhost:7092/api/videolessons/module/${moduleId}`, {
+        fetch(`https://localhost:7092/api/videolessons/modules/${moduleId}`, {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json',
@@ -33,7 +33,7 @@ function getLessonUpdate(modules) {
         .then(lessons => {
             const formLesson = document.querySelector('#form-lesson-edit');
             formLesson.querySelector('.lessons').innerHTML = '';
-            lessons.data.forEach(lesson => {
+            lessons.forEach(lesson => {
                 if (lesson.active){
                     formLesson.querySelector('.lessons').innerHTML = '';
                     const inputModule = `

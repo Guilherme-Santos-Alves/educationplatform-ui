@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
             return response.json();
         })
         .then(course => {
-            const courseData = course.data;
+            const courseData = course;
             inputName.value = courseData.name;
             inputDesc.value = courseData.description;
             inputCover.value = courseData.cover;

@@ -16,7 +16,7 @@ function getLessonName() {
     })
     .then(lesson => {
         const lessonFooter = document.querySelector('.lesson-footer');
-        lessonFooter.querySelector('.lesson-title').innerHTML = `<h2>${lesson.data.name}</h2>`
+        lessonFooter.querySelector('.lesson-title').innerHTML = `<h2>${lesson.name}</h2>`
     })
     .catch(error => {
         const lessonFooter = document.querySelector('.lesson-footer');

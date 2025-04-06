@@ -28,11 +28,11 @@ function getUserData(userId, userDataFields) {
         return response.json();
     })
     .then(user => {
-        const userFirstName = user.data.fullName.split(' ')[0];
+        const userFirstName = user.fullName.split(' ')[0];
         userDataFields.userNameTitle.innerHTML = `Olá, ${userFirstName}`;
-        userDataFields.userName.value = user.data.fullName;
-        userDataFields.userEmail.value = user.data.email;
-        userDataFields.userPhone.value = user.data.phone;
+        userDataFields.userName.value = user.fullName;
+        userDataFields.userEmail.value = user.email;
+        userDataFields.userPhone.value = user.phone;
     })
     .catch(error => {
         Swal.fire({

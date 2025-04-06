@@ -8,7 +8,7 @@ const moduleId = getQueryParam('moduleId');
 document.addEventListener('DOMContentLoaded', getLessonsOfModule);
 
 function getLessonsOfModule() {
-    fetch(`https://localhost:7092/api/videolessons/module/${moduleId}`, {
+    fetch(`https://localhost:7092/api/videolessons/modules/${moduleId}`, {
         method: 'GET',
         headers: {
             'Content-Type': 'application/json',
@@ -24,7 +24,7 @@ function getLessonsOfModule() {
         return response.json();
     })
     .then(lessons => {
-        lessons.data.forEach(lesson => {
+        lessons.forEach(lesson => {
             const lessonContainer = document.querySelector('.module-lesson-list');
 
             const lessonBody = `

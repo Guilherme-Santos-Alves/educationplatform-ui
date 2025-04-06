@@ -10,7 +10,7 @@ function getModuleUpdate(courseId) {
         if (response.ok) {
             response.json().then(modules => {
                 console.log(modules);
-                modules.data.forEach(module => {
+                modules.forEach(module => {
                     if (module.active){
                         const inputModule = `
                         <div class="module" data-module-id="${module.id}">
@@ -32,7 +32,7 @@ function getModuleUpdate(courseId) {
                     }                  
                 });
                 editFields();
-                getLessonUpdate(modules.data);
+                getLessonUpdate(modules);
                 moduleFields();
                 setupDeleteEvents();
             });

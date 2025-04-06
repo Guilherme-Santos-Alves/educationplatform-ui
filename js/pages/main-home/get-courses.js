@@ -39,6 +39,14 @@ function getCourse() {
                         <div class="course-title">
                             <h1>${course.name}</h1>
                         </div>
+
+                        <div class="progress-container">
+                            <div class="progress-bar" style="width: ${100}%">
+                                <span class="progress-text">${Math.round(100)}%</span>
+                            </div>
+                        </div>
+
+
                         <div class="course-btn">
                             <a href="course-module.html?courseId=${course.id}">Ver curso</a>
                         </div>

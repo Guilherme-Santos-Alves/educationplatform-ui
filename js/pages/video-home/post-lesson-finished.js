@@ -13,6 +13,8 @@ function postLessonFinished(lessonRating) {
         nota: lessonRating
     }
 
+    console.log(jsonData);
+
     fetch(`https://localhost:7092/api/videoLessons/${jsonData.videoLessonId}`, {
         method: 'POST',
         headers: {
