@@ -23,12 +23,14 @@ document.addEventListener('DOMContentLoaded', () => {
             body: JSON.stringify(formData)
         })
         .then( response => {
+            console.log(response);
             if(response.ok){
+                console.log(response);
                 response.json().then(( data ) => {
                     const userData = {
-                        role: data.data.role,
-                        token: data.data.token,
-                        userId: data.data.id
+                        role: data.role,
+                        token: data.token,
+                        userId: data.id
                     };
                     
                     localStorage.setItem('userSession', JSON.stringify(userData));

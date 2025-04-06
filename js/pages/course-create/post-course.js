@@ -28,7 +28,11 @@ function courseRegister() {
     .then( response => {
         if (response.ok) {
             response.json().then(( id ) => {
-                const courseId = id;
+                
+
+                const courseId = id.id;
+                console.log(id);
+
                 moduleAndLessonRegister(courseId);
                 Swal.fire({
                     text: `Curso cadastrado com sucesso! Você pode editar os cursos que criou na seção "Meus cursos".`,

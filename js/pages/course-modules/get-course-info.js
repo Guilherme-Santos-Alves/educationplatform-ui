@@ -18,9 +18,9 @@ function getCourseDescription() {
     })
     .then(courseData => {
         const courseNameSection = document.querySelector('.course-title');
-        courseNameSection.innerHTML = courseData.data.name;
+        courseNameSection.innerHTML = courseData.name;
         const courseDescriptionSection = document.querySelector('.course-description');
-        courseDescriptionSection.innerHTML = courseData.data.description;
+        courseDescriptionSection.innerHTML = courseData.description;
     })
     .catch(error => {
         const courseDescriptionSection = document.querySelector('.course-description');

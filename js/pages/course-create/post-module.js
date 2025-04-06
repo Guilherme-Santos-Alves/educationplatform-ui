@@ -9,6 +9,8 @@ function moduleAndLessonRegister(courseId) {
             name: moduleName.value,
             description: 'teste'
         }
+
+        console.log(jsonDataModule);
         
         fetch(`https://localhost:7092/api/modules`, {
             method: 'POST',
@@ -24,14 +26,21 @@ function moduleAndLessonRegister(courseId) {
                     throw error;
                 });
             }
-            return response.json();
+            return response.json(); // <- Aqui é a resposta da API, onde está o moduleId
         })
-        .then(moduleId => {
-            if (!document.querySelector('.lesson-group')){
+        .then(responseBody => {
+            console.log('🟢 Resposta da API:', responseBody);
+        
+            const moduleId = responseBody.id; // Supondo que a API retorne { "id": 42 }
+        
+            
+        
+            // Continua o fluxo
+            sendLessons(moduleId, module);
+        
+            if (!document.querySelector('.lesson-group')) {
                 clearFormData();
             }
-
-            sendLessons(moduleId, module);
         })
         .catch(error => {
             for (let field in error.errors) {
@@ -45,5 +54,7 @@ function moduleAndLessonRegister(courseId) {
                 }
             }
         });
+        
+        
     });
 }

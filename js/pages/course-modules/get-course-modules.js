@@ -26,7 +26,7 @@ function getModules() {
     .then(modulesResponse => {
         console.log(modulesResponse);
 
-        const modules = modulesResponse.data;
+        const modules = modulesResponse;
 
         if (Array.isArray(modules) && modules.length > 0) {
             modules.forEach(module => {

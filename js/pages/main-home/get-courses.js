@@ -27,7 +27,7 @@ function getCourse() {
     
         let hasActiveCourses = false;
     
-        courses.data.forEach(course => {
+        courses.forEach(course => {
             if (course.active) {
                 hasActiveCourses = true;
     

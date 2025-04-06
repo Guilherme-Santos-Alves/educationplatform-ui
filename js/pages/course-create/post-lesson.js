@@ -1,4 +1,5 @@
 async function sendLessons(moduleId, module) {
+    console.log('cad aula: ', moduleId);
     const allLessons = Array.from(module.querySelectorAll('.lesson-group'))
         .sort((a, b) => a.dataset.index - b.dataset.index);
 
@@ -13,6 +14,9 @@ async function sendLessons(moduleId, module) {
             video: lessonLink.value.trim(),
             moduleId: moduleId
         };
+
+        console.log(jsonDataLessons);
+
 
         try {
             const response = await fetch(`https://localhost:7092/api/videolessons`, {

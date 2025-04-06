@@ -1,5 +1,6 @@
 function getLessonsByModule (moduleId) {
-    fetch(`https://localhost:7092/api/videolessons/module/${moduleId}`, {
+    console.log('mdId', moduleId);
+    fetch(`https://localhost:7092/api/videolessons/modules/${moduleId}`, {
         method: 'GET',
         headers: {
             'Content-Type': 'application/json',
@@ -7,6 +8,7 @@ function getLessonsByModule (moduleId) {
         },
     })
     .then(response => {
+        console.log('resp get aula', response);
         if (!response.ok) {
             return response.text().then(errorText => {
                 throw new Error(errorText);
@@ -15,7 +17,8 @@ function getLessonsByModule (moduleId) {
         return response.json();
     })
     .then(lessons => {
-        lessons.data.forEach(lesson => {
+        
+        lessons.forEach(lesson => {
             if (lesson.active){
                 const moduleContainer = document.querySelector(`.module[data-module-id="${moduleId}"]`);
         

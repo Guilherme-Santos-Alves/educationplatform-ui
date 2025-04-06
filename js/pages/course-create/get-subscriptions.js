@@ -18,7 +18,7 @@ function getSubscriptions() {
         let subscriptionSelect = document.querySelector('#course-subscription');
 
         let isActive = 0;
-        subscriptionsData.data.forEach(subscription => {
+        subscriptionsData.forEach(subscription => {
             if (subscription.active){
                 const option = `<option value="${subscription.id}">${subscription.name}</option>`;
                 subscriptionSelect.insertAdjacentHTML('beforeend', option);

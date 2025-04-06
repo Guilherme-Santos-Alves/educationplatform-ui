@@ -23,7 +23,7 @@ function getSubscriptions() {
     .then(subscriptions => {
         let hasActiveSubscription = false;
 
-        subscriptions.data.forEach(subscription => {
+        subscriptions.forEach(subscription => {
             if (subscription.active){
                 hasActiveSubscription = true;
 
